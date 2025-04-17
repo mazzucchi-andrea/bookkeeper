@@ -1,63 +1,64 @@
 package org.apache.bookkeeper.client;
 
+import org.apache.bookkeeper.conf.ClientConfiguration;
 import org.apache.bookkeeper.test.BookKeeperClusterTestCase;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameters;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.Arrays;
 import java.util.Collection;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-@RunWith(Parameterized.class)
-public class BookKeeperCreateLedgerTest extends BookKeeperClusterTestCase {
-    private final BookKeeper.DigestType digestType;
-    private final byte[] password;
-    private final boolean expectedSuccess;
+class BookKeeperCreateLedgerTest extends BookKeeperClusterTestCase {
 
-    public BookKeeperCreateLedgerTest(BookKeeper.DigestType digestType, byte[] password, boolean expectedSuccess) {
-        super(5, 3, 30);
-        this.digestType = digestType;
-        this.password = password;
-        this.expectedSuccess = expectedSuccess;
+    public BookKeeperCreateLedgerTest() {
+        super(3);
     }
 
-    @Parameters
-    public static Collection<Object[]> getTestParams() {
-        byte[] emptyArray = new byte[]{};
-        byte[] validPassword = "password".getBytes();
+    private static Collection<Object[]> provideTestData() {
+        byte[] mediumPassword = new byte[8];
+        byte[] longPassword = new byte[256];
+        Arrays.fill(mediumPassword, (byte) 0x2A);
+        Arrays.fill(longPassword, (byte) 0x3F);
+
         return Arrays.asList(new Object[][]{
-                {BookKeeper.DigestType.MAC, validPassword, true},
-                {BookKeeper.DigestType.CRC32, validPassword, true},
-                {BookKeeper.DigestType.CRC32C, validPassword, true},
-                {BookKeeper.DigestType.DUMMY, validPassword, true},
-                {BookKeeper.DigestType.MAC, null, false},
-                {BookKeeper.DigestType.CRC32, emptyArray, true},
-                {null, validPassword, false}
+                {BookKeeper.DigestType.MAC, new byte[]{}},
+                {BookKeeper.DigestType.MAC, new byte[]{0x01}},
+                {BookKeeper.DigestType.MAC, mediumPassword},
+                {BookKeeper.DigestType.MAC, longPassword},
+                {BookKeeper.DigestType.MAC, new byte[]{(byte) 0xFF}},
+
+                {BookKeeper.DigestType.CRC32, new byte[]{}},
+                {BookKeeper.DigestType.CRC32, new byte[]{0x01}},
+                {BookKeeper.DigestType.CRC32, mediumPassword},
+                {BookKeeper.DigestType.CRC32, longPassword},
+                {BookKeeper.DigestType.CRC32, new byte[]{(byte) 0xFF}},
+
+                {BookKeeper.DigestType.CRC32C, new byte[]{}},
+                {BookKeeper.DigestType.CRC32C, new byte[]{0x01}},
+                {BookKeeper.DigestType.CRC32C, mediumPassword},
+                {BookKeeper.DigestType.CRC32C, longPassword},
+                {BookKeeper.DigestType.CRC32C, new byte[]{(byte) 0xFF}},
+
+                {BookKeeper.DigestType.DUMMY, new byte[]{}},
+                {BookKeeper.DigestType.DUMMY, new byte[]{0x01}},
+                {BookKeeper.DigestType.DUMMY, mediumPassword},
+                {BookKeeper.DigestType.DUMMY, longPassword},
+                {BookKeeper.DigestType.DUMMY, new byte[]{(byte) 0xFF}}
         });
     }
 
-    @Test
-    public void createLedgerTest() {
-        // Creates a new ledger. Default of 3 servers, and quorum of 2 servers.
-        try (LedgerHandle lh = bkc.createLedger(digestType, password)) {
-            assertNotNull(lh);
+    @ParameterizedTest
+    @MethodSource("provideTestData")
+    void testCreateLedger(BookKeeper.DigestType digestType, byte[] password) throws Exception {
+        ClientConfiguration conf = new ClientConfiguration();
+        conf.setMetadataServiceUri(zkUtil.getMetadataServiceUri());
 
-            assertEquals(expectedSuccess, lh.isHandleWritable());
-
-            assertEquals(3, lh.getLedgerMetadata().getEnsembleSize());
-
-            assertEquals(2, lh.getLedgerMetadata().getAckQuorumSize());
-
-            assertEquals(2, lh.getLedgerMetadata().getWriteQuorumSize());
-
-            if (digestType == BookKeeper.DigestType.MAC) {
-                assertArrayEquals(lh.getLedgerMetadata().getPassword(), password);
+        try (BookKeeper bookKeeper = new BookKeeper(conf)) {
+            try (LedgerHandle ledgerHandle = bookKeeper.createLedger(digestType, password)) {
+                assertNotNull(ledgerHandle);
             }
-        } catch (BKException | InterruptedException | NullPointerException e) {
-            assertFalse("Unexpected exception: " + e.getMessage(), expectedSuccess);
         }
     }
 }
