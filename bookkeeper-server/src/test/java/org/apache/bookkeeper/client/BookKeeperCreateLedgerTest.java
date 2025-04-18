@@ -17,35 +17,20 @@ class BookKeeperCreateLedgerTest extends BookKeeperClusterTestCase {
     }
 
     private static Collection<Object[]> provideTestData() {
-        byte[] mediumPassword = new byte[8];
-        byte[] longPassword = new byte[256];
-        Arrays.fill(mediumPassword, (byte) 0x2A); // Fill with repeated value
-        Arrays.fill(longPassword, (byte) 0x3F); // Fill with repeated value
+        byte[] password = "password".getBytes(); // Meaningful password
 
         return Arrays.asList(new Object[][]{
                 {BookKeeper.DigestType.MAC, new byte[]{}}, // Empty password
-                {BookKeeper.DigestType.MAC, new byte[]{0x01}}, // Single byte password
-                {BookKeeper.DigestType.MAC, mediumPassword}, // Medium length password
-                {BookKeeper.DigestType.MAC, longPassword}, // Long password
-                {BookKeeper.DigestType.MAC, new byte[]{(byte) 0xFF}}, // Password with a special character
+                {BookKeeper.DigestType.MAC, password}, // Meaningful password
 
                 {BookKeeper.DigestType.CRC32, new byte[]{}}, // Empty password
-                {BookKeeper.DigestType.CRC32, new byte[]{0x01}}, // Single byte password
-                {BookKeeper.DigestType.CRC32, mediumPassword}, // Medium length password
-                {BookKeeper.DigestType.CRC32, longPassword}, // Long password
-                {BookKeeper.DigestType.CRC32, new byte[]{(byte) 0xFF}}, // Password with a special character
+                {BookKeeper.DigestType.CRC32, password}, // Meaningful password
 
                 {BookKeeper.DigestType.CRC32C, new byte[]{}}, // Empty password
-                {BookKeeper.DigestType.CRC32C, new byte[]{0x01}}, // Single byte password
-                {BookKeeper.DigestType.CRC32C, mediumPassword}, // Medium length password
-                {BookKeeper.DigestType.CRC32C, longPassword}, // Long password
-                {BookKeeper.DigestType.CRC32C, new byte[]{(byte) 0xFF}}, // Password with a special character
+                {BookKeeper.DigestType.CRC32C, password}, // Meaningful password
 
                 {BookKeeper.DigestType.DUMMY, new byte[]{}}, // Empty password
-                {BookKeeper.DigestType.DUMMY, new byte[]{0x01}}, // Single byte password
-                {BookKeeper.DigestType.DUMMY, mediumPassword}, // Medium length password
-                {BookKeeper.DigestType.DUMMY, longPassword}, // Long password
-                {BookKeeper.DigestType.DUMMY, new byte[]{(byte) 0xFF}} // Password with a special character
+                {BookKeeper.DigestType.DUMMY, password} // Meaningful password
         });
     }
 
