@@ -240,7 +240,22 @@
             <artifactId>awaitility</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.evosuite</groupId>
+            <artifactId>evosuite-standalone-runtime</artifactId>
+            <version>${evosuiteVersion}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.pitest</groupId>
+            <artifactId>pitest-junit5-plugin</artifactId>
+            <version>1.2.3</version>
+        </dependency>
     </dependencies>
+
+    <properties>
+        <evosuiteVersion>1.0.6</evosuiteVersion>
+    </properties>
 
     <build>
         <plugins>
@@ -288,7 +303,16 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
-                    <trimStackTrace>false</trimStackTrace>
+                    <properties>
+                        <property>
+                            <name>listener</name>
+                            <value>org.evosuite.runtime.InitializingListener</value>
+                        </property>
+                    </properties>
+                    <excludes>
+                        <exclude>org.apache.bookkeeper.client.LedgerHandle_ESTest</exclude>
+                        <exclude>org.apache.bookkeeper.client.LedgerHandle_ESTest_scaffolding</exclude>
+                    </excludes>
                 </configuration>
             </plugin>
             <plugin>
@@ -339,18 +363,24 @@
                 <groupId>org.pitest</groupId>
                 <artifactId>pitest-maven</artifactId>
                 <version>1.19.4</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.pitest</groupId>
-                        <artifactId>pitest-junit5-plugin</artifactId>
-                        <version>1.2.3</version>
-                    </dependency>
-                </dependencies>
                 <configuration>
                     <targetClasses>
                         <param>org.apache.bookkeeper.client.LedgerHandle</param>
                     </targetClasses>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.evosuite.plugins</groupId>
+                <artifactId>evosuite-maven-plugin</artifactId>
+                <version>${evosuiteVersion}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare</goal>
+                        </goals>
+                        <phase>process-test-classes</phase>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
