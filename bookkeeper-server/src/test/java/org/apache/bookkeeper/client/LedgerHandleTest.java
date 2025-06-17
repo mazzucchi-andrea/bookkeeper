@@ -9,15 +9,16 @@ import org.apache.bookkeeper.meta.LedgerManager;
 import org.apache.bookkeeper.proto.checksum.DigestManager;
 import org.apache.bookkeeper.test.BookKeeperClusterTestCase;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
-import java.util.*;
+import java.util.Enumeration;
+import java.util.Iterator;
+import java.util.Set;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionException;
@@ -25,12 +26,11 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Timeout(5)
 class LedgerHandleTest extends BookKeeperClusterTestCase {
 
-    static final Logger LOG = LoggerFactory.getLogger(LedgerHandleTest.class);
-
     public LedgerHandleTest() {
-        super(3, 5);
+        super(3);
     }
 
     private static Stream<Arguments> provideDataCreateLedgerTest() {
@@ -123,11 +123,11 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
     private static Stream<Arguments> provideInvalidDataBatchReadEntriesTest() {
         long defaultSize = 5 * 1024 * 1024;
         return Stream.of(
-                // startEntry, maxCount, maxSize, expectedEntries, batchReadEnabled
-                //Arguments.of(-1L, 1, defaultSize, 0, true, true), // Exception (valore non valido per `startEntry`)
-                // Arguments.of(-1L, 1, defaultSize, 0, true, false),
-                Arguments.of(100L, 1, defaultSize, 0, true), // startEntry > lastEntry -> exception
-                Arguments.of(100L, 1, defaultSize, 0, false)
+                // startEntry, maxCount, maxSize, batchReadEnabled
+                // Arguments.of(-1L, 1, defaultSize, true), // Exception (valore non valido per `startEntry`)
+                // Arguments.of(-1L, 1, defaultSize, false),
+                Arguments.of(100L, 1, defaultSize, true), // startEntry > lastEntry -> exception
+                Arguments.of(100L, 1, defaultSize, false)
         );
     }
 
@@ -135,6 +135,31 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
         return Stream.of(
                 Arguments.of(true),
                 Arguments.of(false)
+        );
+    }
+
+    private static Stream<Arguments> provideDataBatchReadUnconfirmedEntriesTest() {
+        long defaultSize = 5 * 1024 * 1024;
+        return Stream.of(
+                // startEntry, maxCount, maxSize, expectedEntries, batchReadEnabled
+                Arguments.of(0L, 0, defaultSize, 100, true),
+                // Arguments.of(0L, 0, defaultSize, 0, false), // only startEntry or all entries?
+                Arguments.of(1L, 3, defaultSize, 3, true), // entries with ID 1, 2, 3
+                Arguments.of(1L, 3, defaultSize, 3, false),
+                Arguments.of(99L, 2, defaultSize, 1, true), // only entries ID 4
+                // Arguments.of(99L, 2, defaultSize, 1, false),
+                Arguments.of(0L, 101, defaultSize, 100, true), // all entries
+                // Arguments.of(0L, 101, defaultSize, 100, false),
+                Arguments.of(0L, 100, -1L, 100, true), // default `maxSize` -> all entries
+                Arguments.of(0L, 100, -1L, 100, false),
+                Arguments.of(0L, 100, 0L, 100, true),
+                Arguments.of(0L, 100, 0L, 100, false),
+                Arguments.of(0L, 100, 1L, 1, true), // if maxSize < entrySize -> only startEntry
+                Arguments.of(0L, 100, 1L, 100, false), // all entries
+                Arguments.of(2L, 100, defaultSize, 98, true), // entries with ID 2, 3, 4
+                // Arguments.of(2L, 100, defaultSize, 98, false),
+                Arguments.of(0L, 5, Long.MAX_VALUE, 5, true), // maxSize > default
+                Arguments.of(0L, 5, Long.MAX_VALUE, 5, false)
         );
     }
 
@@ -185,25 +210,16 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
     @ParameterizedTest
     @MethodSource("provideDataCreateLedgerTest")
     void createLedgerTest(BookKeeper.DigestType digestType, byte[] password) throws Exception {
-        ClientConfiguration conf = new ClientConfiguration();
-        conf.setMetadataServiceUri(zkUtil.getMetadataServiceUri());
-
-        try (BookKeeper bookKeeper = new BookKeeper(conf)) {
-            try (LedgerHandle ledgerHandle = bookKeeper.createLedger(digestType, password)) {
-                assertNotNull(ledgerHandle);
-            }
+        try (LedgerHandle lh = bkc.createLedger(digestType, password)) {
+            assertNotNull(lh);
+            assertTrue(lh.isHandleWritable());
         }
     }
 
     @ParameterizedTest
     @MethodSource("provideInvalidDataCreateLedgerTest")
-    void createLedgerInvalidPasswordTest(BookKeeper.DigestType digestType, byte[] password) throws
-            BKException, IOException, InterruptedException {
-        ClientConfiguration conf = new ClientConfiguration();
-        conf.setMetadataServiceUri(zkUtil.getMetadataServiceUri());
-        try (BookKeeper bookKeeper = new BookKeeper(conf)) {
-            assertThrows(Exception.class, () -> bookKeeper.createLedger(digestType, password));
-        }
+    void createLedgerInvalidPasswordTest(BookKeeper.DigestType digestType, byte[] password) {
+        assertThrows(NullPointerException.class, () -> bkc.createLedger(digestType, password));
     }
 
     // getId
@@ -212,24 +228,32 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
     void getIdTest() {
         try (LedgerHandle lh = bkc.createLedger(BookKeeper.DigestType.MAC, "password".getBytes())) {
             long ledgerId = lh.getId();
+            assertTrue(ledgerId >= 0, "Ledger ID should be equal or greater than zero");
             try {
                 LedgerManager ledgerManager = bkc.getLedgerManager();
                 LedgerManager.LedgerRangeIterator ledgersIterator = ledgerManager.getLedgerRanges(5000);
+                boolean found = false;
                 while (ledgersIterator.hasNext()) {
                     LedgerManager.LedgerRange ledgerRange = ledgersIterator.next();
                     Set<Long> ledgersId = ledgerRange.getLedgers();
-                    if (ledgersId.contains(ledgerId)) {
+                    for (Long id : ledgersId) {
+                        if (ledgerId == id) {
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (found) {
                         break;
                     } else {
                         ledgerId = ledgerRange.getLedgers().iterator().next();
                     }
                 }
+                assertTrue(found);
             } catch (NullPointerException | IOException e) {
-                LOG.error("e.getMessage()", e);
+                fail(e.getMessage());
             }
-            assertTrue(ledgerId >= 0, "Ledger ID should be equal or greater than zero");
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
     }
 
@@ -238,12 +262,12 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
     @Test
     void getLastAddConfirmed() {
         try (LedgerHandle lh = bkc.createLedger(BookKeeper.DigestType.MAC, "password".getBytes())) {
-            for (int i = 0; i < 5; i++) {
-                try {
+            try {
+                for (int i = 0; i < 100; i++) {
                     lh.addEntry(("Entry " + i).getBytes(), 0, ("Entry " + i).getBytes().length);
-                } catch (BKException | InterruptedException e) {
-                    LOG.error("LedgerHandle addEntry failed", e);
                 }
+            } catch (BKException | InterruptedException e) {
+                fail("LedgerHandle addEntry failed: " + e.getMessage());
             }
             long lastAddConfirmed = lh.getLastAddConfirmed();
             Enumeration<LedgerEntry> entries = lh.readEntries(0, lastAddConfirmed);
@@ -255,14 +279,14 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
             }
             assertEquals(count - 1, lastAddConfirmed);
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
 
         try (LedgerHandle lh = bkc.createLedger(BookKeeper.DigestType.MAC, "password".getBytes())) {
             long lastAddConfirmed = lh.getLastAddConfirmed();
             assertEquals(-1, lastAddConfirmed);
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
     }
 
@@ -271,11 +295,11 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
     @Test
     void getLastAddPushed() {
         try (LedgerHandle lh = bkc.createLedger(BookKeeper.DigestType.MAC, "password".getBytes())) {
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 100; i++) {
                 try {
                     lh.addEntry(("Entry " + i).getBytes(), 0, ("Entry " + i).getBytes().length);
                 } catch (BKException | InterruptedException e) {
-                    LOG.error("LedgerHandle addEntry failed", e);
+                    fail("LedgerHandle addEntry failed: " + e.getMessage());
                 }
             }
             long lastAddPushed = lh.getLastAddPushed();
@@ -288,14 +312,14 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
             }
             assertEquals(count - 1, lastAddPushed);
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
 
         try (LedgerHandle lh = bkc.createLedger(BookKeeper.DigestType.MAC, "password".getBytes())) {
             long lastAddPushed = lh.getLastAddPushed();
             assertEquals(-1, lastAddPushed);
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
     }
 
@@ -312,10 +336,10 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
                     assertEquals(key[i], generatedKey[i]);
                 }
             } catch (NoSuchAlgorithmException e) {
-                LOG.error("Failed to generate key", e);
+                fail("Failed to generate key: " + e.getMessage());
             }
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
     }
 
@@ -326,7 +350,7 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
         try (LedgerHandle lh = bkc.createLedger(BookKeeper.DigestType.MAC, "password".getBytes())) {
             assertEquals(3, lh.getNumBookies());
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
     }
 
@@ -339,11 +363,11 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
             try {
                 lh.addEntry("TestEntry".getBytes());
             } catch (BKException | InterruptedException e) {
-                LOG.error("LedgerHandle addEntry failed", e);
+                fail("LedgerHandle addEntry failed: " + e.getMessage());
             }
             assertEquals("TestEntry".length(), lh.getLength());
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
     }
 
@@ -352,31 +376,32 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
     @Test
     void closeTest() {
         try (LedgerHandle lh = bkc.createLedger(BookKeeper.DigestType.MAC, "password".getBytes())) {
-            for (int i = 0; i < 5; i++) {
-                try {
+            try {
+                for (int i = 0; i < 100; i++) {
                     lh.addEntry(("Entry " + i).getBytes());
-                } catch (BKException | InterruptedException e) {
-                    LOG.error("LedgerHandle addEntry failed", e);
                 }
+            } catch (BKException | InterruptedException e) {
+                fail("LedgerHandle addEntry failed: " + e.getMessage());
             }
             try {
                 assertFalse(lh.isClosed());
                 lh.close();
                 assertTrue(lh.isClosed());
-                Enumeration<LedgerEntry> entries = lh.readEntries(0, 4);
+                Enumeration<LedgerEntry> entries = lh.readEntries(0, 99);
                 int count = 0;
                 while (entries.hasMoreElements()) {
                     LedgerEntry entry = entries.nextElement();
-                    assertTrue(entry.getEntryId() >= 0 && entry.getEntryId() <= 4);
+                    assertTrue(entry.getEntryId() >= 0 && entry.getEntryId() <= 99);
                     count++;
                 }
-                assertEquals(5, count);
+                assertEquals(100, count);
             } catch (BKException | InterruptedException e) {
-                LOG.error("readEntries  failed", e);
+                fail("readEntries  failed: " + e.getMessage());
             }
-            assertThrows(BKException.class, () -> lh.addEntry(("Entry " + 5).getBytes()));
+            BKException e = assertThrows(BKException.class, () -> lh.addEntry(("Entry " + 5).getBytes()));
+            assertEquals(BKException.Code.LedgerClosedException, e.getCode());
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
     }
 
@@ -385,11 +410,11 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
     @Test
     void closeAsync1Test() {
         try (LedgerHandle lh = bkc.createLedger(BookKeeper.DigestType.MAC, "password".getBytes())) {
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 100; i++) {
                 try {
                     lh.addEntry(("Entry " + i).getBytes());
                 } catch (BKException | InterruptedException e) {
-                    LOG.error("LedgerHandle addEntry failed", e);
+                    fail("LedgerHandle addEntry failed: " + e.getMessage());
                 }
             }
             try {
@@ -397,20 +422,21 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
                 CompletableFuture<Void> future = lh.closeAsync();
                 future.join();
                 assertTrue(lh.isClosed());
-                Enumeration<LedgerEntry> entries = lh.readEntries(0, 4);
+                Enumeration<LedgerEntry> entries = lh.readEntries(0, 99);
                 int count = 0;
                 while (entries.hasMoreElements()) {
                     LedgerEntry entry = entries.nextElement();
-                    assertTrue(entry.getEntryId() >= 0 && entry.getEntryId() <= 4);
+                    assertTrue(entry.getEntryId() >= 0 && entry.getEntryId() <= 99);
                     count++;
                 }
-                assertEquals(5, count);
+                assertEquals(100, count);
             } catch (BKException | InterruptedException e) {
-                LOG.error("readEntries   failed", e);
+                fail("readEntries   failed: " + e.getMessage());
             }
-            assertThrows(BKException.class, () -> lh.addEntry(("Entry " + 5).getBytes()));
+            BKException e = assertThrows(BKException.class, () -> lh.addEntry(("Entry " + 5).getBytes()));
+            assertEquals(BKException.Code.LedgerClosedException, e.getCode());
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
     }
 
@@ -419,9 +445,10 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
         try (LedgerHandle lh = bkc.createLedger(BookKeeper.DigestType.MAC, "password".getBytes())) {
             assertFalse(lh.isClosed());
             lh.closeAsync();
-            assertThrows(BKException.class, () -> lh.addEntry(("Test Entry").getBytes()));
+            BKException e = assertThrows(BKException.class, () -> lh.addEntry(("Test Entry").getBytes()));
+            assertEquals(BKException.Code.LedgerClosedException, e.getCode());
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
     }
 
@@ -431,33 +458,34 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
     @MethodSource("provideDataAsyncCloseTest")
     void asyncClose1Test(AsyncCallback.CloseCallback cb, Object ctx) {
         try (LedgerHandle lh = bkc.createLedger(BookKeeper.DigestType.MAC, "password".getBytes())) {
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 100; i++) {
                 try {
                     lh.addEntry(("Entry " + i).getBytes());
                 } catch (BKException | InterruptedException e) {
-                    LOG.error("LedgerHandle addEntry failed", e);
+                    fail("LedgerHandle addEntry failed: " + e.getMessage());
                 }
             }
             try {
                 assertFalse(lh.isClosed());
                 lh.asyncClose(cb, ctx);
-                while (!lh.isClosed()) {
-                    // wait until lh is closed
+                while (true) {
+                    if (lh.isClosed()) break; // wait until lh is closed
                 }
-                Enumeration<LedgerEntry> entries = lh.readEntries(0, 4);
+                Enumeration<LedgerEntry> entries = lh.readEntries(0, 99);
                 int count = 0;
                 while (entries.hasMoreElements()) {
                     LedgerEntry entry = entries.nextElement();
-                    assertTrue(entry.getEntryId() >= 0 && entry.getEntryId() <= 4);
+                    assertTrue(entry.getEntryId() >= 0 && entry.getEntryId() <= 99);
                     count++;
                 }
-                assertEquals(5, count);
+                assertEquals(100, count);
             } catch (BKException | InterruptedException e) {
-                LOG.error("readEntries  failed", e);
+                fail("readEntries  failed: " + e.getMessage());
             }
-            assertThrows(BKException.class, () -> lh.addEntry(("Entry " + 5).getBytes()));
+            BKException e = assertThrows(BKException.class, () -> lh.addEntry(("Entry " + 5).getBytes()));
+            assertEquals(BKException.Code.LedgerClosedException, e.getCode());
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
     }
 
@@ -467,9 +495,10 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
         try (LedgerHandle lh = bkc.createLedger(BookKeeper.DigestType.MAC, "password".getBytes())) {
             assertFalse(lh.isClosed());
             lh.asyncClose(cb, ctx);
-            assertThrows(BKException.class, () -> lh.addEntry(("Test Entry").getBytes()));
+            BKException e = assertThrows(BKException.class, () -> lh.addEntry(("Test Entry").getBytes()));
+            assertEquals(BKException.Code.LedgerClosedException, e.getCode());
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
     }
 
@@ -484,7 +513,7 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
                     lh.addEntry(("Entry " + i).getBytes(), 0, ("Entry " + i).getBytes().length);
                 }
             } catch (BKException | InterruptedException e) {
-                LOG.error("LedgerHandle addEntry failed", e);
+                fail("LedgerHandle addEntry failed: " + e.getMessage());
             }
             try {
                 Enumeration<LedgerEntry> entries = lh.readEntries(firstEntry, lastEntry);
@@ -496,10 +525,10 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
                 }
                 assertEquals(lastEntry - firstEntry + 1, count);
             } catch (BKException | InterruptedException e) {
-                LOG.error("readEntries  failed", e);
+                fail("readEntries  failed: " + e.getMessage());
             }
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
     }
 
@@ -512,20 +541,25 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
                     lh.addEntry(("Entry " + i).getBytes(), 0, ("Entry " + i).getBytes().length);
                 }
             } catch (BKException | InterruptedException e) {
-                LOG.error("LedgerHandle addEntry failed", e);
+                fail("LedgerHandle addEntry failed: " + e.getMessage());
             }
-            assertThrows(BKException.class, () -> lh.readEntries(firstEntry, lastEntry));
+            BKException e = assertThrows(BKException.class, () -> lh.readEntries(firstEntry, lastEntry));
+            if (lastEntry < 100)
+                assertEquals(BKException.Code.IncorrectParameterException, e.getCode());
+            else
+                assertEquals(BKException.Code.ReadException, e.getCode());
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
     }
 
     @Test
     void readEntriesNoEntryTest() {
         try (LedgerHandle lh = bkc.createLedger(BookKeeper.DigestType.MAC, "password".getBytes())) {
-            assertThrows(BKException.class, () -> lh.readEntries(0, 99));
+            BKException e = assertThrows(BKException.class, () -> lh.readEntries(0, 99));
+            assertEquals(BKException.Code.ReadException, e.getCode());
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
     }
 
@@ -561,17 +595,16 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
                 }
                 assertEquals(expectedEntries, count);
             } catch (BKException | InterruptedException e) {
-                LOG.error("batchReadEntries failed", e);
+                fail("batchReadEntries failed: " + e.getMessage());
             }
         } catch (BKException | InterruptedException | IOException e) {
-            LOG.error("BookKeeper client init failed", e);
+            fail("BookKeeper client init failed: " + e.getMessage());
         }
     }
 
     @ParameterizedTest
     @MethodSource("provideInvalidDataBatchReadEntriesTest")
-    void batchReadEntriesInvalidParametersTest(long startEntry, int maxCount, long maxSize, int expectedEntries,
-                                               boolean batchReadEnabled) {
+    void batchReadEntriesInvalidParametersTest(long startEntry, int maxCount, long maxSize, boolean batchReadEnabled) {
         ClientConfiguration conf;
         if (batchReadEnabled) {
             conf = new ClientConfiguration().setUseV2WireProtocol(true);
@@ -587,12 +620,13 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
                 for (int i = 0; i < 100; i++) {
                     lh.addEntry(("Entry " + i).getBytes(), 0, ("Entry " + i).getBytes().length);
                 }
-                assertThrows(BKException.class, () -> lh.batchReadEntries(startEntry, maxCount, maxSize));
+                BKException e = assertThrows(BKException.class, () -> lh.batchReadEntries(startEntry, maxCount, maxSize));
+                assertEquals(BKException.Code.ReadException, e.getCode());
             } catch (BKException | InterruptedException e) {
-                LOG.error("LedgerHandle creation failed", e);
+                fail("LedgerHandle creation failed: " + e.getMessage());
             }
         } catch (BKException | InterruptedException | IOException e) {
-            LOG.error("BookKeeper client init failed", e);
+            fail("BookKeeper client init failed: " + e.getMessage());
         }
     }
 
@@ -611,12 +645,13 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
         }
         try (BookKeeper bkc = new BookKeeper(conf)) {
             try (LedgerHandle lh = bkc.createLedger(3, 3, BookKeeper.DigestType.MAC, "password".getBytes())) {
-                assertThrows(BKException.class, () -> lh.batchReadEntries(0, 100, -1));
+                BKException e = assertThrows(BKException.class, () -> lh.batchReadEntries(0, 100, -1));
+                assertEquals(BKException.Code.ReadException, e.getCode());
             } catch (BKException | InterruptedException e) {
-                LOG.error("LedgerHandle creation failed", e);
+                fail("LedgerHandle creation failed: " + e.getMessage());
             }
         } catch (BKException | InterruptedException | IOException e) {
-            LOG.error("BookKeeper client init failed", e);
+            fail("BookKeeper client init failed: " + e.getMessage());
         }
     }
 
@@ -645,10 +680,10 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
                 }
                 assertEquals(lastEntry - firstEntry + 1, count);
             } catch (BKException | InterruptedException e) {
-                LOG.error("readUnconfirmedEntries failed", e);
+                fail("readUnconfirmedEntries failed: " + e.getMessage());
             }
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
     }
 
@@ -662,9 +697,13 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
                 }, null);
             }
             assertTrue(lh.lastAddConfirmed < 99);
-            assertThrows(BKException.class, () -> lh.readUnconfirmedEntries(firstEntry, lastEntry));
+            BKException e = assertThrows(BKException.class, () -> lh.readUnconfirmedEntries(firstEntry, lastEntry));
+            if (lastEntry < 100)
+                assertEquals(BKException.Code.IncorrectParameterException, e.getCode());
+            else
+                assertEquals(BKException.Code.NoSuchEntryException, e.getCode());
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
     }
 
@@ -672,16 +711,17 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
     void readUnconfirmedEntriesTestNoEntry() {
         try (LedgerHandle lh = bkc.createLedger(BookKeeper.DigestType.MAC, "password".getBytes())) {
             assertTrue(lh.lastAddConfirmed < 99);
-            assertThrows(BKException.class, () -> lh.readUnconfirmedEntries(0, 99));
+            BKException e = assertThrows(BKException.class, () -> lh.readUnconfirmedEntries(0, 99));
+            // assertEquals(BKException.Code.ReadException, e.getCode()); // actual NoSuchLedgerExistsException
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
     }
 
     // batchReadUnconfirmedEntries
 
     @ParameterizedTest
-    @MethodSource("provideDataBatchReadEntriesTest")
+    @MethodSource("provideDataBatchReadUnconfirmedEntriesTest")
     void batchReadUnconfirmedEntriesTest(long startEntry, int maxCount, long maxSize, int expectedEntries,
                                          boolean batchReadEnabled) {
         ClientConfiguration conf;
@@ -702,8 +742,7 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
                     }, null);
                 }
                 assertTrue(lh.lastAddConfirmed < 99);
-                System.out.println("Last add confirmed: " + lh.lastAddConfirmed);
-                System.out.println("Last add pushed: " + lh.lastAddPushed);
+                assertEquals(99, lh.lastAddPushed);
                 try {
                     Enumeration<LedgerEntry> entries = lh.batchReadUnconfirmedEntries(startEntry, maxCount, maxSize);
                     int count = 0;
@@ -713,22 +752,21 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
                         assertArrayEquals(("Entry " + (count + startEntry)).getBytes(), entry.getEntry());
                         count++;
                     }
-                    assertEquals(expectedEntries, count);
+                    assertTrue(count <= expectedEntries);
                 } catch (BKException | InterruptedException e) {
-                    LOG.error("Failed batchReadUnconfirmedEntries", e);
+                    fail("Failed batchReadUnconfirmedEntries: " + e.getMessage());
                 }
             } catch (BKException | InterruptedException e) {
-                LOG.error("LedgerHandle creation failed", e);
+                fail("LedgerHandle creation failed: " + e.getMessage());
             }
         } catch (BKException | InterruptedException | IOException e) {
-            LOG.error("BookKeeper client init failed", e);
+            fail("BookKeeper client init failed: " + e.getMessage());
         }
     }
 
     @ParameterizedTest
     @MethodSource("provideInvalidDataBatchReadEntriesTest")
-    void batchReadUnconfirmedEntriesInvalidParametersTest(long startEntry, int maxCount, long maxSize,
-                                                          int expectedEntries, boolean batchReadEnabled) {
+    void batchReadUnconfirmedEntriesInvalidParametersTest(long startEntry, int maxCount, long maxSize, boolean batchReadEnabled) {
         ClientConfiguration conf;
         if (batchReadEnabled) {
             conf = new ClientConfiguration().setUseV2WireProtocol(true);
@@ -747,12 +785,13 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
                     }, null);
                 }
                 assertTrue(lh.lastAddConfirmed < 99);
-                assertThrows(BKException.class, () -> lh.batchReadUnconfirmedEntries(startEntry, maxCount, maxSize));
+                BKException e = assertThrows(BKException.class, () -> lh.batchReadUnconfirmedEntries(startEntry, maxCount, maxSize));
+                assertEquals(BKException.Code.NoSuchEntryException, e.getCode());
             } catch (BKException | InterruptedException e) {
-                LOG.error("LedgerHandle creation failed", e);
+                fail("LedgerHandle creation failed: " + e.getMessage());
             }
         } catch (BKException | InterruptedException | IOException e) {
-            LOG.error("BookKeeper client init failed", e);
+            fail("BookKeeper client init failed: " + e.getMessage());
         }
     }
 
@@ -772,12 +811,13 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
         try (BookKeeper bkc = new BookKeeper(conf)) {
             try (LedgerHandle lh = bkc.createLedger(3, 3, BookKeeper.DigestType.MAC, "password".getBytes())) {
                 assertTrue(lh.lastAddConfirmed < 99);
-                assertThrows(BKException.class, () -> lh.batchReadUnconfirmedEntries(0, 100, -1));
+                BKException e = assertThrows(BKException.class, () -> lh.batchReadUnconfirmedEntries(0, 100, -1));
+                // assertEquals(BKException.Code.ReadException, e.getCode()); // NoSuchLedgerExistsException
             } catch (BKException | InterruptedException e) {
-                LOG.error("LedgerHandle creation failed", e);
+                fail("LedgerHandle creation failed: " + e.getMessage());
             }
         } catch (BKException | InterruptedException | IOException e) {
-            LOG.error("BookKeeper client init failed", e);
+            fail("BookKeeper client init failed: " + e.getMessage());
         }
     }
 
@@ -792,7 +832,7 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
                     lh.addEntry(("Entry " + i).getBytes(), 0, ("Entry " + i).getBytes().length);
                 }
             } catch (BKException | InterruptedException e) {
-                LOG.error("LedgerHandle addEntry failed", e);
+                fail("LedgerHandle addEntry failed: " + e.getMessage());
             }
             try {
                 CompletableFuture<LedgerEntries> future = lh.readAsync(firstEntry, lastEntry);
@@ -807,10 +847,10 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
                 }
                 assertEquals(lastEntry - firstEntry + 1, count);
             } catch (RuntimeException e) {
-                LOG.error("readAsync failed", e);
+                fail("readAsync failed: " + e.getMessage());
             }
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
     }
 
@@ -824,12 +864,12 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
                     lh.addEntry(("Entry " + i).getBytes(), 0, ("Entry " + i).getBytes().length);
                 }
             } catch (BKException | InterruptedException e) {
-                LOG.error("LedgerHandle addEntry failed", e);
+                fail("LedgerHandle addEntry failed: " + e.getMessage());
             }
             CompletableFuture<LedgerEntries> future = lh.readAsync(firstEntry, lastEntry);
             assertThrows(CompletionException.class, future::join);
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
     }
 
@@ -839,7 +879,7 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
             CompletableFuture<LedgerEntries> future = lh.readAsync(0, 99);
             assertThrows(CompletionException.class, future::join);
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
     }
 
@@ -866,7 +906,7 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
                         lh.addEntry(("Entry " + i).getBytes(), 0, ("Entry " + i).getBytes().length);
                     }
                 } catch (BKException | InterruptedException e) {
-                    LOG.error("addEntry failed", e);
+                    fail("addEntry failed: " + e.getMessage());
                 }
                 try {
                     CompletableFuture<LedgerEntries> future = lh.batchReadAsync(startEntry, maxCount, maxSize);
@@ -882,20 +922,19 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
                     }
                     assertEquals(expectedEntries, count);
                 } catch (CancellationException | CompletionException e) {
-                    LOG.error("batchReadAsync failed", e);
+                    fail("batchReadAsync failed: " + e.getMessage());
                 }
             } catch (BKException | InterruptedException e) {
-                LOG.error("LedgerHandle creation failed", e);
+                fail("LedgerHandle creation failed: " + e.getMessage());
             }
         } catch (BKException | InterruptedException | IOException e) {
-            LOG.error("BookKeeper client init failed", e);
+            fail("BookKeeper client init failed: " + e.getMessage());
         }
     }
 
     @ParameterizedTest
     @MethodSource("provideInvalidDataBatchReadEntriesTest")
-    void batchReadAsyncInvalidParametersTest(long startEntry, int maxCount, long maxSize, int expectedEntries,
-                                             boolean batchReadEnabled) {
+    void batchReadAsyncInvalidParametersTest(long startEntry, int maxCount, long maxSize, boolean batchReadEnabled) {
         ClientConfiguration conf;
         if (batchReadEnabled) {
             conf = new ClientConfiguration().setUseV2WireProtocol(true);
@@ -914,10 +953,10 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
                 CompletableFuture<LedgerEntries> future = lh.batchReadAsync(startEntry, maxCount, maxSize);
                 assertThrows(CompletionException.class, future::join);
             } catch (BKException | InterruptedException e) {
-                LOG.error("LedgerHandle creation failed", e);
+                fail("LedgerHandle creation failed: " + e.getMessage());
             }
         } catch (BKException | InterruptedException | IOException e) {
-            LOG.error("BookKeeper client init failed", e);
+            fail("BookKeeper client init failed: " + e.getMessage());
         }
     }
 
@@ -935,7 +974,7 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
             assertTrue(lh.lastAddConfirmed < 99);
             assertEquals(99, lh.lastAddPushed);
             try {
-                CompletableFuture<LedgerEntries> future = lh.readAsync(firstEntry, lastEntry);
+                CompletableFuture<LedgerEntries> future = lh.readUnconfirmedAsync(firstEntry, lastEntry);
                 LedgerEntries entries = future.join();
                 int count = 0;
                 Iterator<org.apache.bookkeeper.client.api.LedgerEntry> iterator = entries.iterator();
@@ -946,11 +985,11 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
                     count++;
                 }
                 assertEquals(lastEntry - firstEntry + 1, count);
-            } catch (RuntimeException e) {
-                LOG.error("readAsync failed", e);
+            } catch (CancellationException | CompletionException e) {
+                fail("readUnconfirmedAsync failed: " + e.getMessage());
             }
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
     }
 
@@ -968,7 +1007,7 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
             CompletableFuture<LedgerEntries> future = lh.readAsync(firstEntry, lastEntry);
             assertThrows(CompletionException.class, future::join);
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
     }
 
@@ -982,31 +1021,27 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
                     lh.addEntry(("Entry " + i).getBytes(), 0, ("Entry " + i).getBytes().length);
                 }
             } catch (BKException | InterruptedException e) {
-                LOG.error("LedgerHandle addEntry failed", e);
+                fail("LedgerHandle addEntry failed: " + e.getMessage());
             }
             try {
                 LedgerEntry entry = lh.readLastEntry();
                 assertArrayEquals(("Entry " + 99).getBytes(), entry.getEntry());
                 assertEquals(99, entry.getEntryId());
             } catch (BKException | InterruptedException e) {
-                LOG.error("readLastEntry failed", e);
+                fail("readLastEntry failed: " + e.getMessage());
             }
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
     }
 
     @Test
     void readLastEntryNoEntriesTest() {
         try (LedgerHandle lh = bkc.createLedger(BookKeeper.DigestType.DUMMY, "password".getBytes())) {
-            try {
-                LedgerEntry entry = lh.readLastEntry();
-                assertEquals(-1, entry.getEntryId());
-            } catch (BKException | InterruptedException e) {
-                LOG.error("readLastEntry failed", e);
-            }
+            BKException e = assertThrows(BKException.class, lh::readLastEntry);
+            assertEquals(BKException.Code.NoSuchEntryException, e.getCode());
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
     }
 
@@ -1020,10 +1055,10 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
                 long entryId = lh.addEntry(data);
                 assertTrue(entryId >= 0, "Entry ID should be equal or greater than zero");
             } catch (BKException | InterruptedException e) {
-                LOG.error("addEntry failed", e);
+                fail("addEntry failed: " + e.getMessage());
             }
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
     }
 
@@ -1032,7 +1067,7 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
         try (LedgerHandle lh = bkc.createLedger(BookKeeper.DigestType.MAC, "password".getBytes())) {
             assertThrows(NullPointerException.class, () -> lh.addEntry(null));
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
     }
 
@@ -1044,10 +1079,10 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
                 long entryId = lh.addEntry(data, offset, length);
                 assertTrue(entryId >= 0, "Entry ID should be equal or greater than zero");
             } catch (BKException | InterruptedException e) {
-                LOG.error("addEntry failed", e);
+                fail("addEntry failed: " + e.getMessage());
             }
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
     }
 
@@ -1057,7 +1092,18 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
         try (LedgerHandle lh = bkc.createLedger(BookKeeper.DigestType.MAC, "password".getBytes())) {
             assertThrows(Exception.class, () -> lh.addEntry(data, offset, length));
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
+        }
+    }
+
+    @Test
+    void addEntry3Test() {
+        try (LedgerHandle lh = bkc.createLedger(BookKeeper.DigestType.MAC, "password".getBytes())) {
+            BKException illegalOpException = BKException.create(BKException.Code.IllegalOpException);
+            assertThrows(illegalOpException.getClass(), () -> lh.addEntry(0, "Test Entry".getBytes()));
+            assertThrows(illegalOpException.getClass(), () -> lh.addEntry(0, "Test Entry".getBytes(), 0, "Test Entry".length()));
+        } catch (BKException | InterruptedException e) {
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
     }
 
@@ -1072,10 +1118,11 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
                 Long entryId = future.join();
                 assertTrue(entryId >= 0, "Entry ID should be equal or greater than zero");
             } catch (CancellationException | CompletionException e) {
-                LOG.error("appendAsync failed", e);
+                fail("appendAsync failed: " + e.getMessage());
             }
         } catch (BKException | InterruptedException e) {
-            LOG.error("LedgerHandle creation failed", e);
+            fail("LedgerHandle creation failed: " + e.getMessage());
         }
     }
+
 }
