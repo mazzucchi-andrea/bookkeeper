@@ -3,7 +3,7 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class RegressionTest0 {
+public class RegressionTest3 {
 
     public static boolean debug = false;
 
@@ -19,157 +19,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0001() throws Throwable {
+    public void test1501() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0001");
-        org.apache.bookkeeper.conf.ServerConfiguration serverConfiguration0 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.format(serverConfiguration0, false, false);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0002() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0002");
-        long long0 = org.apache.bookkeeper.client.LedgerHandle.INVALID_LEDGER_ID;
-        org.junit.Assert.assertTrue("'" + long0 + "' != '" + (-2882382797L) + "'", long0 == (-2882382797L));
-    }
-
-    @Test
-    public void test0003() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0003");
-        org.apache.bookkeeper.client.BookKeeper bookKeeper0 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            org.apache.bookkeeper.client.BookKeeperAdmin bookKeeperAdmin1 = new org.apache.bookkeeper.client.BookKeeperAdmin(bookKeeper0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0004() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0004");
-        org.apache.bookkeeper.conf.ServerConfiguration serverConfiguration0 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean1 = org.apache.bookkeeper.client.BookKeeperAdmin.initBookie(serverConfiguration0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0005() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0005");
-        long long0 = org.apache.bookkeeper.client.LedgerHandle.INVALID_ENTRY_ID;
-        org.junit.Assert.assertTrue("'" + long0 + "' != '" + (-1L) + "'", long0 == (-1L));
-    }
-
-    @Test
-    public void test0006() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0006");
-        org.apache.bookkeeper.client.BookKeeper bookKeeper0 = null;
-        org.apache.bookkeeper.conf.ClientConfiguration clientConfiguration1 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            org.apache.bookkeeper.client.BookKeeperAdmin bookKeeperAdmin2 = new org.apache.bookkeeper.client.BookKeeperAdmin(bookKeeper0, clientConfiguration1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: Client configuration cannot be null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0007() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0007");
-        // The following exception was thrown during execution in test generation
-        try {
-            org.apache.bookkeeper.client.BookKeeperAdmin bookKeeperAdmin1 = new org.apache.bookkeeper.client.BookKeeperAdmin("hi!");
-            org.junit.Assert.fail("Expected exception of type java.io.IOException; message: Failed to initialize metadata client driver");
-        } catch (java.io.IOException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0008() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0008");
-        org.apache.bookkeeper.conf.ClientConfiguration clientConfiguration0 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            org.apache.bookkeeper.client.BookKeeperAdmin bookKeeperAdmin1 = org.apache.bookkeeper.client.BookKeeperAdmin.newBookKeeperAdmin(clientConfiguration0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0009() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0009");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.meta.LedgerManager ledgerManager2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) 100, bookieId1, ledgerManager2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0010() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0010");
-        org.apache.bookkeeper.conf.ServerConfiguration serverConfiguration0 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean1 = org.apache.bookkeeper.client.BookKeeperAdmin.initNewCluster(serverConfiguration0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0011() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0011");
-        org.apache.bookkeeper.conf.ClientConfiguration clientConfiguration0 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            org.apache.bookkeeper.client.BookKeeperAdmin bookKeeperAdmin1 = new org.apache.bookkeeper.client.BookKeeperAdmin(clientConfiguration0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0012() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0012");
+            System.out.format("%n%s%n", "RegressionTest3.test1501");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) 'a', "hi!", (java.lang.Object) 1.0f);
+            resultCallBack1.processResult((int) (byte) 100, "", (java.lang.Object) (-1L));
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -177,147 +34,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0013() throws Throwable {
+    public void test1502() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0013");
-        // The following exception was thrown during execution in test generation
-        try {
-            org.apache.bookkeeper.client.BookKeeperAdmin bookKeeperAdmin1 = new org.apache.bookkeeper.client.BookKeeperAdmin("");
-            org.junit.Assert.fail("Expected exception of type java.io.IOException; message: Failed to initialize metadata client driver");
-        } catch (java.io.IOException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0014() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0014");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.client.api.LedgerMetadata ledgerMetadata2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) 0, bookieId1, ledgerMetadata2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0015() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0015");
-        org.apache.bookkeeper.client.BookKeeper bookKeeper0 = null;
-        org.apache.bookkeeper.stats.StatsLogger statsLogger1 = null;
-        org.apache.bookkeeper.conf.ClientConfiguration clientConfiguration2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            org.apache.bookkeeper.client.BookKeeperAdmin bookKeeperAdmin3 = new org.apache.bookkeeper.client.BookKeeperAdmin(bookKeeper0, statsLogger1, clientConfiguration2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: Client configuration cannot be null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0016() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0016");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.client.api.LedgerMetadata ledgerMetadata2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie(0L, bookieId1, ledgerMetadata2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0017() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0017");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.meta.LedgerManager ledgerManager2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) 0, bookieId1, ledgerManager2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0018() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0018");
-        org.apache.bookkeeper.conf.ServerConfiguration serverConfiguration0 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean4 = org.apache.bookkeeper.client.BookKeeperAdmin.nukeExistingCluster(serverConfiguration0, "hi!", "hi!", true);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0019() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0019");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.meta.LedgerManager ledgerManager2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) (short) 100, bookieId1, ledgerManager2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0020() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0020");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.client.api.LedgerMetadata ledgerMetadata2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) (byte) 0, bookieId1, ledgerMetadata2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0021() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0021");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.meta.LedgerManager ledgerManager2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie(1L, bookieId1, ledgerManager2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0022() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0022");
+            System.out.format("%n%s%n", "RegressionTest3.test1502");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (short) 0, "", (java.lang.Object) (byte) 100);
+            resultCallBack1.processResult((int) '4', "hi!", (java.lang.Object) (-1));
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -325,28 +49,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0023() throws Throwable {
+    public void test1503() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0023");
-        org.apache.bookkeeper.conf.ServerConfiguration serverConfiguration0 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.format(serverConfiguration0, true, true);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0024() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0024");
+            System.out.format("%n%s%n", "RegressionTest3.test1503");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (byte) -1, "", (java.lang.Object) "");
+            resultCallBack1.processResult((int) (byte) 10, "hi!", (java.lang.Object) (short) -1);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -354,114 +64,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0025() throws Throwable {
+    public void test1504() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0025");
-        org.apache.bookkeeper.conf.ServerConfiguration serverConfiguration0 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean4 = org.apache.bookkeeper.client.BookKeeperAdmin.nukeExistingCluster(serverConfiguration0, "", "hi!", false);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0026() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0026");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.client.api.LedgerMetadata ledgerMetadata2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie(100L, bookieId1, ledgerMetadata2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0027() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0027");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.meta.LedgerManager ledgerManager2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) (short) 10, bookieId1, ledgerManager2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0028() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0028");
-        org.apache.bookkeeper.conf.ServerConfiguration serverConfiguration0 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean4 = org.apache.bookkeeper.client.BookKeeperAdmin.nukeExistingCluster(serverConfiguration0, "", "", false);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0029() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0029");
-        org.apache.bookkeeper.conf.ServerConfiguration serverConfiguration0 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.format(serverConfiguration0, false, true);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0030() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0030");
-        org.apache.bookkeeper.conf.ServerConfiguration serverConfiguration0 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.format(serverConfiguration0, true, false);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0031() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0031");
-        org.apache.bookkeeper.conf.ServerConfiguration serverConfiguration0 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean4 = org.apache.bookkeeper.client.BookKeeperAdmin.nukeExistingCluster(serverConfiguration0, "hi!", "hi!", false);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0032() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0032");
+            System.out.format("%n%s%n", "RegressionTest3.test1504");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult(0, "hi!", (java.lang.Object) 'a');
+            resultCallBack1.processResult(100, "hi!", (java.lang.Object) "");
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -469,44 +79,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0033() throws Throwable {
+    public void test1505() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0033");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.client.api.LedgerMetadata ledgerMetadata2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) 1, bookieId1, ledgerMetadata2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0034() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0034");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.client.api.LedgerMetadata ledgerMetadata2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) (short) 1, bookieId1, ledgerMetadata2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0035() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0035");
+            System.out.format("%n%s%n", "RegressionTest3.test1505");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (byte) -1, "", (java.lang.Object) 1.0f);
+            resultCallBack1.processResult((int) (byte) 10, "hi!", (java.lang.Object) 0.0f);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -514,14 +94,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0036() throws Throwable {
+    public void test1506() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0036");
+            System.out.format("%n%s%n", "RegressionTest3.test1506");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (byte) 0, "hi!", (java.lang.Object) 0.0d);
+            resultCallBack1.processResult((int) (short) -1, "", (java.lang.Object) (byte) -1);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -529,44 +109,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0037() throws Throwable {
+    public void test1507() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0037");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.meta.LedgerManager ledgerManager2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) (short) -1, bookieId1, ledgerManager2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0038() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0038");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.client.api.LedgerMetadata ledgerMetadata2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) 10, bookieId1, ledgerMetadata2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0039() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0039");
+            System.out.format("%n%s%n", "RegressionTest3.test1507");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (short) 100, "hi!", (java.lang.Object) 1.0f);
+            resultCallBack1.processResult((int) (short) 100, "hi!", (java.lang.Object) 1);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -574,14 +124,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0040() throws Throwable {
+    public void test1508() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0040");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.meta.LedgerManager ledgerManager2 = null;
+            System.out.format("%n%s%n", "RegressionTest3.test1508");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) 'a', bookieId1, ledgerManager2);
+            resultCallBack1.processResult((int) (short) 1, "hi!", (java.lang.Object) (byte) -1);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -589,14 +139,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0041() throws Throwable {
+    public void test1509() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0041");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.client.api.LedgerMetadata ledgerMetadata2 = null;
+            System.out.format("%n%s%n", "RegressionTest3.test1509");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) (byte) 10, bookieId1, ledgerMetadata2);
+            resultCallBack1.processResult((int) 'a', "", (java.lang.Object) 1.0d);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -604,14 +154,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0042() throws Throwable {
+    public void test1510() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0042");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.client.api.LedgerMetadata ledgerMetadata2 = null;
+            System.out.format("%n%s%n", "RegressionTest3.test1510");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) (short) 100, bookieId1, ledgerMetadata2);
+            resultCallBack1.processResult((int) (short) 1, "hi!", (java.lang.Object) 0.0f);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -619,9 +169,118 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0043() throws Throwable {
+    public void test1511() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0043");
+            System.out.format("%n%s%n", "RegressionTest3.test1511");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(0, "", (java.lang.Object) voidCompletableFuture4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1512() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1512");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) -1, "hi!", (java.lang.Object) resultCallBack5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1513() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1513");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) 'a', "", (java.lang.Object) (-2882382797L));
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1514() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1514");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 10, "", (java.lang.Object) 10);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1515() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1515");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((-1), "hi!", (java.lang.Object) true);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1516() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1516");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) '4', "", (java.lang.Object) (-1.0d));
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1517() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1517");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(1, "hi!", (java.lang.Object) (byte) 0);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1518() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1518");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
@@ -629,7 +288,7 @@ public class RegressionTest0 {
         java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) ' ', "", (java.lang.Object) wildcardClass6);
+            resultCallBack1.processResult(1, "", (java.lang.Object) resultCallBack5);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -638,1124 +297,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0044() throws Throwable {
+    public void test1519() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0044");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 10, "hi!", (java.lang.Object) (byte) 0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0045() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0045");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 0, "", (java.lang.Object) (short) -1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0046() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0046");
-        org.apache.bookkeeper.conf.ServerConfiguration serverConfiguration0 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean4 = org.apache.bookkeeper.client.BookKeeperAdmin.nukeExistingCluster(serverConfiguration0, "", "", true);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0047() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0047");
-        org.apache.bookkeeper.conf.ServerConfiguration serverConfiguration0 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean4 = org.apache.bookkeeper.client.BookKeeperAdmin.nukeExistingCluster(serverConfiguration0, "hi!", "", false);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0048() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0048");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.client.api.LedgerMetadata ledgerMetadata2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie(1L, bookieId1, ledgerMetadata2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0049() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0049");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.client.api.LedgerMetadata ledgerMetadata2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie(10L, bookieId1, ledgerMetadata2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0050() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0050");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.meta.LedgerManager ledgerManager2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) (byte) 100, bookieId1, ledgerManager2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0051() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0051");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.meta.LedgerManager ledgerManager2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) '4', bookieId1, ledgerManager2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0052() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0052");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.meta.LedgerManager ledgerManager2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) 10, bookieId1, ledgerManager2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0053() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0053");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.client.api.LedgerMetadata ledgerMetadata2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) 100, bookieId1, ledgerMetadata2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0054() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0054");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.client.api.LedgerMetadata ledgerMetadata2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) (short) 10, bookieId1, ledgerMetadata2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0055() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0055");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 10, "hi!", (java.lang.Object) 1L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0056() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0056");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 0, "", (java.lang.Object) (short) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0057() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0057");
-        org.apache.bookkeeper.conf.ServerConfiguration serverConfiguration0 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean4 = org.apache.bookkeeper.client.BookKeeperAdmin.nukeExistingCluster(serverConfiguration0, "hi!", "", true);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0058() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0058");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "", (java.lang.Object) (byte) 1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0059() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0059");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 10, "", (java.lang.Object) true);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0060() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0060");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(100, "", (java.lang.Object) 1.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0061() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0061");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.client.api.LedgerMetadata ledgerMetadata2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) (byte) 1, bookieId1, ledgerMetadata2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0062() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0062");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.client.api.LedgerMetadata ledgerMetadata2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((-1L), bookieId1, ledgerMetadata2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0063() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0063");
-        org.apache.bookkeeper.conf.ServerConfiguration serverConfiguration0 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean4 = org.apache.bookkeeper.client.BookKeeperAdmin.nukeExistingCluster(serverConfiguration0, "", "hi!", true);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0064() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0064");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.meta.LedgerManager ledgerManager2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie(10L, bookieId1, ledgerManager2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0065() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0065");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.meta.LedgerManager ledgerManager2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie(0L, bookieId1, ledgerManager2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0066() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0066");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.client.api.LedgerMetadata ledgerMetadata2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) 'a', bookieId1, ledgerMetadata2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0067() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0067");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.meta.LedgerManager ledgerManager2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) '#', bookieId1, ledgerManager2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0068() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0068");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.meta.LedgerManager ledgerManager2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) (byte) 0, bookieId1, ledgerManager2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0069() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0069");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) -1, "hi!", (java.lang.Object) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0070() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0070");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.meta.LedgerManager ledgerManager2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) 1, bookieId1, ledgerManager2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0071() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0071");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 10, "hi!", (java.lang.Object) (short) 100);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0072() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0072");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 10, "", (java.lang.Object) 10L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0073() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0073");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(100, "", (java.lang.Object) (-1.0d));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0074() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0074");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) '#', "hi!", (java.lang.Object) (short) 0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0075() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0075");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 10, "", (java.lang.Object) '4');
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0076() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0076");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 10, "", (java.lang.Object) 100L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0077() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0077");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.client.api.LedgerMetadata ledgerMetadata2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) '#', bookieId1, ledgerMetadata2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0078() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0078");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 0, "", (java.lang.Object) 0.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0079() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0079");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 10, "hi!", (java.lang.Object) (byte) 100);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0080() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0080");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) ' ', "", (java.lang.Object) '#');
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0081() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0081");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.meta.LedgerManager ledgerManager2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) (short) 1, bookieId1, ledgerManager2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0082() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0082");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) '4', "hi!", (java.lang.Object) 'a');
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0083() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0083");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.client.api.LedgerMetadata ledgerMetadata2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) ' ', bookieId1, ledgerMetadata2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0084() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0084");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 10, "", (java.lang.Object) voidCompletableFuture4);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0085() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0085");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(1, "", (java.lang.Object) 1.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0086() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0086");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) -1, "hi!", (java.lang.Object) "hi!");
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0087() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0087");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.meta.LedgerManager ledgerManager2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) (byte) -1, bookieId1, ledgerManager2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0088() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0088");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.client.api.LedgerMetadata ledgerMetadata2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) (short) -1, bookieId1, ledgerMetadata2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0089() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0089");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.client.api.LedgerMetadata ledgerMetadata2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) '4', bookieId1, ledgerMetadata2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0090() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0090");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) ' ', "", (java.lang.Object) 0.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0091() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0091");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.lang.Object obj4 = new java.lang.Object();
-        java.lang.Class<?> wildcardClass5 = obj4.getClass();
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) '4', "", (java.lang.Object) wildcardClass5);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-        org.junit.Assert.assertNotNull(wildcardClass5);
-    }
-
-    @Test
-    public void test0092() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0092");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 1, "hi!", (java.lang.Object) 1.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0093() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0093");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.lang.Object obj4 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 0, "", obj4);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0094() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0094");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.meta.LedgerManager ledgerManager2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((-1L), bookieId1, ledgerManager2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0095() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0095");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) -1, "", (java.lang.Object) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0096() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0096");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.client.api.LedgerMetadata ledgerMetadata2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) (byte) 100, bookieId1, ledgerMetadata2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0097() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0097");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.meta.LedgerManager ledgerManager2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie(100L, bookieId1, ledgerManager2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0098() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0098");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.meta.LedgerManager ledgerManager2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) ' ', bookieId1, ledgerManager2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0099() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0099");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 1, "hi!", (java.lang.Object) (byte) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0100() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0100");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 1, "", (java.lang.Object) ' ');
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0101() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0101");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((-1), "", (java.lang.Object) (-1L));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0102() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0102");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "hi!", (java.lang.Object) (byte) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0103() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0103");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 1, "hi!", (java.lang.Object) ' ');
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0104() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0104");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.meta.LedgerManager ledgerManager2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) (-1), bookieId1, ledgerManager2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0105() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0105");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(1, "hi!", (java.lang.Object) resultCallBack5);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0106() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0106");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "hi!", (java.lang.Object) (byte) 0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0107() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0107");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 0, "hi!", (java.lang.Object) (short) 100);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0108() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0108");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 10, "hi!", (java.lang.Object) 100);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0109() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0109");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 1, "", (java.lang.Object) (byte) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0110() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0110");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "hi!", (java.lang.Object) 100.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0111() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0111");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 0, "", (java.lang.Object) false);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0112() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0112");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.meta.LedgerManager ledgerManager2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) (byte) 1, bookieId1, ledgerManager2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0113() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0113");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 1, "hi!", (java.lang.Object) 10.0f);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0114() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0114");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((-1), "hi!", (java.lang.Object) (-1.0f));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0115() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0115");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 1, "", (java.lang.Object) (short) 100);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0116() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0116");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.lang.Object obj4 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 10, "", obj4);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0117() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0117");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 1, "", (java.lang.Object) 1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0118() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0118");
+            System.out.format("%n%s%n", "RegressionTest3.test1519");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
@@ -1763,7 +307,7 @@ public class RegressionTest0 {
         java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (byte) 0, "", (java.lang.Object) wildcardClass6);
+            resultCallBack1.processResult((int) '#', "hi!", (java.lang.Object) resultCallBack5);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -1772,14 +316,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0119() throws Throwable {
+    public void test1520() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0119");
+            System.out.format("%n%s%n", "RegressionTest3.test1520");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) '#', "", (java.lang.Object) 100);
+            resultCallBack1.processResult((int) (short) 1, "hi!", (java.lang.Object) 100.0d);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -1787,44 +331,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0120() throws Throwable {
+    public void test1521() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0120");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.meta.LedgerManager ledgerManager2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((-2882382797L), bookieId1, ledgerManager2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0121() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0121");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.meta.LedgerManager ledgerManager2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) (byte) 10, bookieId1, ledgerManager2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0122() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0122");
+            System.out.format("%n%s%n", "RegressionTest3.test1521");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) '#', "hi!", (java.lang.Object) (-1.0d));
+            resultCallBack1.processResult((int) '#', "hi!", (java.lang.Object) 10.0d);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -1832,735 +346,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0123() throws Throwable {
+    public void test1522() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0123");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) 'a', "hi!", (java.lang.Object) (byte) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0124() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0124");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.lang.Object obj4 = new java.lang.Object();
-        java.lang.Class<?> wildcardClass5 = obj4.getClass();
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 100, "hi!", (java.lang.Object) wildcardClass5);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-        org.junit.Assert.assertNotNull(wildcardClass5);
-    }
-
-    @Test
-    public void test0125() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0125");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) ' ', "", (java.lang.Object) (byte) 100);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0126() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0126");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) 'a', "", (java.lang.Object) (byte) -1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0127() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0127");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 100, "hi!", (java.lang.Object) false);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0128() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0128");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((-1), "hi!", (java.lang.Object) (short) 1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0129() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0129");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 10, "hi!", (java.lang.Object) 100.0f);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0130() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0130");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "hi!", (java.lang.Object) 1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0131() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0131");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "", (java.lang.Object) '#');
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0132() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0132");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 100, "hi!", (java.lang.Object) 0L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0133() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0133");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.lang.Object obj4 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(10, "hi!", obj4);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0134() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0134");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 100, "", (java.lang.Object) (-1.0d));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0135() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0135");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 0, "hi!", (java.lang.Object) 0L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0136() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0136");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 1, "", (java.lang.Object) "");
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0137() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0137");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(1, "", (java.lang.Object) 10L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0138() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0138");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.client.api.LedgerMetadata ledgerMetadata2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) (byte) -1, bookieId1, ledgerMetadata2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0139() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0139");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "hi!", (java.lang.Object) (byte) 1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0140() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0140");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) -1, "", (java.lang.Object) 0L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0141() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0141");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "hi!", (java.lang.Object) (short) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0142() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0142");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) 'a', "hi!", (java.lang.Object) 'a');
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0143() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0143");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "hi!", (java.lang.Object) 10L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0144() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0144");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(10, "", (java.lang.Object) 1.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0145() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0145");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 1, "hi!", (java.lang.Object) (short) 100);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0146() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0146");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) 'a', "", (java.lang.Object) ' ');
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0147() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0147");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) 'a', "", (java.lang.Object) (byte) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0148() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0148");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 100, "", (java.lang.Object) "hi!");
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0149() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0149");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) -1, "hi!", (java.lang.Object) '4');
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0150() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0150");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "", (java.lang.Object) "");
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0151() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0151");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) -1, "hi!", (java.lang.Object) (byte) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0152() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0152");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 10, "", (java.lang.Object) 10.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0153() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0153");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "", (java.lang.Object) 0.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0154() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0154");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) -1, "hi!", (java.lang.Object) (byte) 1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0155() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0155");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.client.api.LedgerMetadata ledgerMetadata2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) (-1), bookieId1, ledgerMetadata2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0156() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0156");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 100, "hi!", (java.lang.Object) true);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0157() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0157");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.client.api.LedgerMetadata ledgerMetadata2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) (short) 0, bookieId1, ledgerMetadata2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0158() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0158");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 100, "", (java.lang.Object) (byte) 0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0159() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0159");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 1, "hi!", (java.lang.Object) resultCallBack5);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0160() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0160");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 100, "", (java.lang.Object) (short) -1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0161() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0161");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(100, "hi!", (java.lang.Object) 10L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0162() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0162");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 1, "", (java.lang.Object) (byte) 0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0163() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0163");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(1, "", (java.lang.Object) 0L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0164() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0164");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 10, "", (java.lang.Object) 100.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0165() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0165");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 1, "", (java.lang.Object) 0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0166() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0166");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) -1, "", (java.lang.Object) 0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0167() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0167");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 100, "hi!", (java.lang.Object) 0.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0168() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0168");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) -1, "hi!", (java.lang.Object) (-1L));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0169() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0169");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(1, "hi!", (java.lang.Object) (byte) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0170() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0170");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) 'a', "", (java.lang.Object) 0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0171() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0171");
+            System.out.format("%n%s%n", "RegressionTest3.test1522");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
@@ -2568,7 +356,7 @@ public class RegressionTest0 {
         java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (short) 1, "hi!", (java.lang.Object) resultCallBack5);
+            resultCallBack1.processResult(100, "", (java.lang.Object) wildcardClass6);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -2577,814 +365,16 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0172() throws Throwable {
+    public void test1523() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0172");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(10, "", (java.lang.Object) (byte) 1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0173() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0173");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) ' ', "", (java.lang.Object) 10.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0174() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0174");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(1, "hi!", (java.lang.Object) (byte) 100);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0175() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0175");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) 'a', "hi!", (java.lang.Object) (byte) 1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0176() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0176");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "hi!", (java.lang.Object) (short) -1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0177() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0177");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.meta.LedgerManager ledgerManager2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((long) (short) 0, bookieId1, ledgerManager2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0178() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0178");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((-1), "hi!", (java.lang.Object) (-1L));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0179() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0179");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) -1, "", (java.lang.Object) (-1.0d));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0180() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0180");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 1, "", (java.lang.Object) (short) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0181() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0181");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "", (java.lang.Object) '4');
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0182() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0182");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) '#', "", (java.lang.Object) resultCallBack5);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0183() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0183");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "", (java.lang.Object) (-1));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0184() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0184");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 1, "hi!", (java.lang.Object) (byte) 1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0185() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0185");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.lang.Object obj4 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 10, "hi!", obj4);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0186() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0186");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 100, "", (java.lang.Object) 1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0187() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0187");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(1, "hi!", (java.lang.Object) 0.0f);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0188() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0188");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 100, "hi!", (java.lang.Object) (short) 0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0189() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0189");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 100, "", (java.lang.Object) 1L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0190() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0190");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) ' ', "hi!", (java.lang.Object) (-2882382797L));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0191() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0191");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 1, "", (java.lang.Object) 10.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0192() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0192");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) -1, "hi!", (java.lang.Object) "");
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0193() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0193");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(100, "", (java.lang.Object) (byte) -1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0194() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0194");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(10, "hi!", (java.lang.Object) 100L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0195() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0195");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 0, "hi!", (java.lang.Object) (short) 1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0196() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0196");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 1, "", (java.lang.Object) 1L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0197() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0197");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(1, "hi!", (java.lang.Object) (-2882382797L));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0198() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0198");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) '4', "hi!", (java.lang.Object) false);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0199() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0199");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((-1), "", (java.lang.Object) (short) 100);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0200() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0200");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 10, "", (java.lang.Object) 100L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0201() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0201");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((-1), "", (java.lang.Object) 1L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0202() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0202");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 100, "", (java.lang.Object) 0.0f);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0203() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0203");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(1, "hi!", (java.lang.Object) 10L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0204() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0204");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "", (java.lang.Object) 1.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0205() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0205");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 10, "", (java.lang.Object) (-1L));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0206() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0206");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 10, "", (java.lang.Object) (short) 0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0207() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0207");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) '#', "", (java.lang.Object) 1.0f);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0208() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0208");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 10, "", (java.lang.Object) 0.0f);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0209() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0209");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 1, "hi!", (java.lang.Object) '4');
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0210() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0210");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 100, "hi!", (java.lang.Object) (byte) 100);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0211() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0211");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "", (java.lang.Object) (-2882382797L));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0212() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0212");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((-1), "", (java.lang.Object) 0.0f);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0213() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0213");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 10, "hi!", (java.lang.Object) (-1));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0214() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0214");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 1, "", (java.lang.Object) 100.0f);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0215() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0215");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 10, "", (java.lang.Object) 1.0f);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0216() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0216");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(100, "", (java.lang.Object) 0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0217() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0217");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) '4', "hi!", (java.lang.Object) (-2882382797L));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0218() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0218");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 0, "hi!", (java.lang.Object) "");
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0219() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0219");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 1, "hi!", (java.lang.Object) false);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0220() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0220");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "", (java.lang.Object) true);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0221() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0221");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) '#', "", (java.lang.Object) 0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0222() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0222");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) -1, "", (java.lang.Object) true);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0223() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0223");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 100, "hi!", (java.lang.Object) (short) -1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0224() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0224");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 10, "hi!", (java.lang.Object) (short) 0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0225() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0225");
+            System.out.format("%n%s%n", "RegressionTest3.test1523");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         java.lang.Object obj4 = new java.lang.Object();
         java.lang.Class<?> wildcardClass5 = obj4.getClass();
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult(0, "hi!", (java.lang.Object) wildcardClass5);
+            resultCallBack1.processResult((int) (byte) 0, "", (java.lang.Object) wildcardClass5);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -3393,14 +383,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0226() throws Throwable {
+    public void test1524() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0226");
+            System.out.format("%n%s%n", "RegressionTest3.test1524");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) '#', "hi!", (java.lang.Object) 0);
+            resultCallBack1.processResult((int) (byte) 100, "", (java.lang.Object) 'a');
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -3408,14 +398,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0227() throws Throwable {
+    public void test1525() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0227");
+            System.out.format("%n%s%n", "RegressionTest3.test1525");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult(1, "hi!", (java.lang.Object) 100L);
+            resultCallBack1.processResult((int) (short) 100, "hi!", (java.lang.Object) (short) 100);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -3423,14 +413,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0228() throws Throwable {
+    public void test1526() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0228");
+            System.out.format("%n%s%n", "RegressionTest3.test1526");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (byte) -1, "", (java.lang.Object) 'a');
+            resultCallBack1.processResult((-1), "", (java.lang.Object) 100L);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -3438,14 +428,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0229() throws Throwable {
+    public void test1527() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0229");
+            System.out.format("%n%s%n", "RegressionTest3.test1527");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((-1), "", (java.lang.Object) (byte) -1);
+            resultCallBack1.processResult((int) (short) 10, "", (java.lang.Object) '#');
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -3453,14 +443,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0230() throws Throwable {
+    public void test1528() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0230");
+            System.out.format("%n%s%n", "RegressionTest3.test1528");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (byte) -1, "hi!", (java.lang.Object) 10.0f);
+            resultCallBack1.processResult((int) (short) 1, "hi!", (java.lang.Object) (short) 1);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -3468,14 +458,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0231() throws Throwable {
+    public void test1529() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0231");
+            System.out.format("%n%s%n", "RegressionTest3.test1529");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (byte) 1, "", (java.lang.Object) (byte) 100);
+            resultCallBack1.processResult((int) (short) -1, "", (java.lang.Object) 0.0f);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -3483,14 +473,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0232() throws Throwable {
+    public void test1530() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0232");
+            System.out.format("%n%s%n", "RegressionTest3.test1530");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (short) -1, "hi!", (java.lang.Object) (byte) 1);
+            resultCallBack1.processResult((int) (short) 0, "", (java.lang.Object) (-1.0f));
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -3498,14 +488,32 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0233() throws Throwable {
+    public void test1531() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0233");
+            System.out.format("%n%s%n", "RegressionTest3.test1531");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(10, "", obj4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1532() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1532");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult(10, "", (java.lang.Object) "");
+            resultCallBack1.processResult((int) (byte) -1, "", (java.lang.Object) 10L);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -3513,29 +521,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0234() throws Throwable {
+    public void test1533() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0234");
-        org.apache.bookkeeper.net.BookieId bookieId1 = null;
-        org.apache.bookkeeper.client.api.LedgerMetadata ledgerMetadata2 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean3 = org.apache.bookkeeper.client.BookKeeperAdmin.areEntriesOfLedgerStoredInTheBookie((-2882382797L), bookieId1, ledgerMetadata2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0235() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0235");
+            System.out.format("%n%s%n", "RegressionTest3.test1533");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) ' ', "hi!", (java.lang.Object) "");
+            resultCallBack1.processResult((int) (byte) 1, "hi!", (java.lang.Object) 0.0d);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -3543,14 +536,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0236() throws Throwable {
+    public void test1534() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0236");
+            System.out.format("%n%s%n", "RegressionTest3.test1534");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) ' ', "hi!", (java.lang.Object) 10.0f);
+            resultCallBack1.processResult((int) '4', "", (java.lang.Object) (byte) 0);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -3558,14 +551,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0237() throws Throwable {
+    public void test1535() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0237");
+            System.out.format("%n%s%n", "RegressionTest3.test1535");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (byte) 10, "hi!", (java.lang.Object) (-1L));
+            resultCallBack1.processResult((int) (byte) 10, "", (java.lang.Object) '#');
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -3573,14 +566,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0238() throws Throwable {
+    public void test1536() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0238");
+            System.out.format("%n%s%n", "RegressionTest3.test1536");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) '#', "", (java.lang.Object) true);
+            resultCallBack1.processResult((int) ' ', "", (java.lang.Object) 10);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -3588,14 +581,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0239() throws Throwable {
+    public void test1537() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0239");
+            System.out.format("%n%s%n", "RegressionTest3.test1537");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) 'a', "hi!", (java.lang.Object) 0L);
+            resultCallBack1.processResult(10, "hi!", (java.lang.Object) ' ');
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -3603,14 +596,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0240() throws Throwable {
+    public void test1538() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0240");
+            System.out.format("%n%s%n", "RegressionTest3.test1538");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) 'a', "", (java.lang.Object) (-1L));
+            resultCallBack1.processResult((int) (short) 10, "hi!", (java.lang.Object) (-1L));
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -3618,285 +611,214 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0241() throws Throwable {
+    public void test1539() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0241");
+            System.out.format("%n%s%n", "RegressionTest3.test1539");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) ' ', "hi!", (java.lang.Object) 1L);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1540() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1540");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 0, "hi!", (java.lang.Object) 10.0f);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1541() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1541");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 10, "", (java.lang.Object) (short) 1);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1542() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1542");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 1, "", (java.lang.Object) 0L);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1543() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1543");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) '#', "", (java.lang.Object) (short) 100);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1544() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1544");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) 'a', "hi!", (java.lang.Object) (-1.0f));
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1545() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1545");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) -1, "hi!", (java.lang.Object) 0L);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1546() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1546");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) -1, "", obj4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1547() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1547");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(0, "hi!", (java.lang.Object) (-1));
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1548() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1548");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 1, "", (java.lang.Object) '#');
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1549() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1549");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 1, "hi!", (java.lang.Object) 1L);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1550() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1550");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) ' ', "", (java.lang.Object) (short) 100);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1551() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1551");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (short) 1, "hi!", (java.lang.Object) voidCompletableFuture4);
+            resultCallBack1.processResult((int) (byte) 100, "hi!", (java.lang.Object) wildcardClass6);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
         }
+        org.junit.Assert.assertNotNull(wildcardClass6);
     }
 
     @Test
-    public void test0242() throws Throwable {
+    public void test1552() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0242");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 100, "hi!", (java.lang.Object) '#');
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0243() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0243");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) '4', "", (java.lang.Object) 10L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0244() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0244");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 0, "hi!", (java.lang.Object) 1.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0245() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0245");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) -1, "hi!", (java.lang.Object) 1.0f);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0246() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0246");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) '4', "hi!", (java.lang.Object) "hi!");
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0247() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0247");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "hi!", (java.lang.Object) 0L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0248() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0248");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(1, "", (java.lang.Object) true);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0249() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0249");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) -1, "hi!", (java.lang.Object) (short) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0250() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0250");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(1, "hi!", (java.lang.Object) 100);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0251() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0251");
+            System.out.format("%n%s%n", "RegressionTest3.test1552");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         java.lang.Object obj4 = new java.lang.Object();
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(100, "hi!", obj4);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0252() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0252");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 0, "hi!", (java.lang.Object) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0253() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0253");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) ' ', "", (java.lang.Object) 100.0f);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0254() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0254");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 0, "", (java.lang.Object) (byte) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0255() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0255");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 100, "", (java.lang.Object) "");
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0256() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0256");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) ' ', "hi!", (java.lang.Object) 10.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0257() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0257");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 10, "", (java.lang.Object) 100.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0258() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0258");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) -1, "hi!", (java.lang.Object) 10L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0259() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0259");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.lang.Object obj4 = null;
         // The following exception was thrown during execution in test generation
         try {
             resultCallBack1.processResult((int) (short) 100, "", obj4);
@@ -3907,14 +829,16 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0260() throws Throwable {
+    public void test1553() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0260");
+            System.out.format("%n%s%n", "RegressionTest3.test1553");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (short) 10, "hi!", (java.lang.Object) (byte) 100);
+            resultCallBack1.processResult(10, "hi!", (java.lang.Object) resultCallBack5);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -3922,1910 +846,13 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0261() throws Throwable {
+    public void test1554() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0261");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.lang.Object obj4 = new java.lang.Object();
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) -1, "", obj4);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0262() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0262");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 100, "hi!", (java.lang.Object) (short) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0263() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0263");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 10, "hi!", (java.lang.Object) (byte) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0264() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0264");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) -1, "", (java.lang.Object) (short) 0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0265() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0265");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "", (java.lang.Object) (-1.0d));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0266() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0266");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) '#', "hi!", (java.lang.Object) 10.0f);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0267() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0267");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) -1, "", (java.lang.Object) (short) 100);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0268() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0268");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 1, "", (java.lang.Object) 10L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0269() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0269");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) 'a', "hi!", (java.lang.Object) "hi!");
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0270() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0270");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) -1, "hi!", (java.lang.Object) (-1L));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0271() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0271");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "hi!", (java.lang.Object) (-1L));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0272() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0272");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 1, "", (java.lang.Object) 100.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0273() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0273");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) 'a', "", (java.lang.Object) 0.0f);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0274() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0274");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 0, "hi!", (java.lang.Object) (byte) 0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0275() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0275");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) -1, "hi!", (java.lang.Object) 1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0276() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0276");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 0, "hi!", (java.lang.Object) 1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0277() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0277");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) 'a', "hi!", (java.lang.Object) (short) 1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0278() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0278");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "hi!", (java.lang.Object) 0.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0279() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0279");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) '4', "", (java.lang.Object) 100);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0280() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0280");
+            System.out.format("%n%s%n", "RegressionTest3.test1554");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         java.lang.Object obj4 = new java.lang.Object();
         java.lang.Class<?> wildcardClass5 = obj4.getClass();
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(1, "", (java.lang.Object) wildcardClass5);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-        org.junit.Assert.assertNotNull(wildcardClass5);
-    }
-
-    @Test
-    public void test0281() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0281");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 0, "hi!", (java.lang.Object) (byte) 100);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0282() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0282");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 100, "hi!", (java.lang.Object) (byte) 1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0283() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0283");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(1, "", (java.lang.Object) 0.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0284() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0284");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 10, "hi!", (java.lang.Object) 'a');
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0285() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0285");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "", (java.lang.Object) (short) 1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0286() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0286");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 10, "hi!", (java.lang.Object) (short) -1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0287() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0287");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) 'a', "hi!", (java.lang.Object) (byte) -1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0288() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0288");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) '#', "", (java.lang.Object) 100L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0289() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0289");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 100, "", (java.lang.Object) 10.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0290() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0290");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.lang.Object obj4 = new java.lang.Object();
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 0, "", obj4);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0291() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0291");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
-        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "", (java.lang.Object) resultCallBack5);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-        org.junit.Assert.assertNotNull(wildcardClass6);
-    }
-
-    @Test
-    public void test0292() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0292");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) 'a', "hi!", (java.lang.Object) (-2882382797L));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0293() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0293");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) ' ', "hi!", (java.lang.Object) 10L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0294() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0294");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) 'a', "hi!", (java.lang.Object) (short) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0295() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0295");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "", (java.lang.Object) 1.0f);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0296() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0296");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.lang.Object obj4 = new java.lang.Object();
-        java.lang.Class<?> wildcardClass5 = obj4.getClass();
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) -1, "", obj4);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-        org.junit.Assert.assertNotNull(wildcardClass5);
-    }
-
-    @Test
-    public void test0297() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0297");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 10, "", (java.lang.Object) 0.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0298() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0298");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 0, "", (java.lang.Object) resultCallBack5);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0299() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0299");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) '4', "hi!", (java.lang.Object) resultCallBack5);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0300() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0300");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(100, "", (java.lang.Object) 100.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0301() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0301");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 100, "hi!", (java.lang.Object) (short) -1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0302() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0302");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) -1, "hi!", (java.lang.Object) 1.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0303() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0303");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.lang.Object obj4 = new java.lang.Object();
-        java.lang.Class<?> wildcardClass5 = obj4.getClass();
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 1, "hi!", (java.lang.Object) wildcardClass5);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-        org.junit.Assert.assertNotNull(wildcardClass5);
-    }
-
-    @Test
-    public void test0304() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0304");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) -1, "hi!", (java.lang.Object) (byte) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0305() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0305");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 0, "hi!", (java.lang.Object) "hi!");
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0306() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0306");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.lang.Object obj4 = new java.lang.Object();
-        java.lang.Class<?> wildcardClass5 = obj4.getClass();
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "", (java.lang.Object) wildcardClass5);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-        org.junit.Assert.assertNotNull(wildcardClass5);
-    }
-
-    @Test
-    public void test0307() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0307");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.lang.Object obj4 = new java.lang.Object();
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "", obj4);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0308() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0308");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 0, "hi!", (java.lang.Object) (byte) 1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0309() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0309");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(1, "hi!", (java.lang.Object) 10.0f);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0310() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0310");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) -1, "hi!", (java.lang.Object) (short) -1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0311() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0311");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 0, "", (java.lang.Object) 0L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0312() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0312");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) 'a', "hi!", (java.lang.Object) 1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0313() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0313");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 10, "", (java.lang.Object) 100);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0314() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0314");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 100, "hi!", (java.lang.Object) (-1.0f));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0315() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0315");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 1, "", (java.lang.Object) true);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0316() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0316");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 1, "hi!", (java.lang.Object) (short) 1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0317() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0317");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "", (java.lang.Object) (byte) 0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0318() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0318");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) -1, "", (java.lang.Object) '#');
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0319() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0319");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 100, "hi!", (java.lang.Object) 0L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0320() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0320");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 10, "", (java.lang.Object) 1.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0321() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0321");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 1, "hi!", (java.lang.Object) '#');
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0322() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0322");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 1, "hi!", (java.lang.Object) (byte) 100);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0323() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0323");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 10, "", (java.lang.Object) (byte) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0324() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0324");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "", (java.lang.Object) "hi!");
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0325() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0325");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) 'a', "", (java.lang.Object) (byte) 0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0326() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0326");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
-        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "hi!", (java.lang.Object) wildcardClass6);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-        org.junit.Assert.assertNotNull(wildcardClass6);
-    }
-
-    @Test
-    public void test0327() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0327");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 1, "hi!", (java.lang.Object) 0L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0328() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0328");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 1, "", (java.lang.Object) 100.0f);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0329() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0329");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) -1, "", (java.lang.Object) (byte) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0330() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0330");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 10, "", (java.lang.Object) 0L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0331() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0331");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((-1), "", (java.lang.Object) 10L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0332() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0332");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 1, "hi!", (java.lang.Object) 0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0333() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0333");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 100, "", (java.lang.Object) (short) 100);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0334() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0334");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) -1, "hi!", (java.lang.Object) (byte) -1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0335() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0335");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 10, "", (java.lang.Object) 10L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0336() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0336");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.lang.Object obj4 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 100, "hi!", obj4);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0337() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0337");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 100, "", (java.lang.Object) (short) 0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0338() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0338");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 100, "hi!", (java.lang.Object) resultCallBack5);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0339() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0339");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) '4', "hi!", (java.lang.Object) "");
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0340() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0340");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.lang.Object obj4 = new java.lang.Object();
-        java.lang.Class<?> wildcardClass5 = obj4.getClass();
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 0, "", obj4);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-        org.junit.Assert.assertNotNull(wildcardClass5);
-    }
-
-    @Test
-    public void test0341() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0341");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 0, "hi!", (java.lang.Object) (short) 100);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0342() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0342");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) '#', "", (java.lang.Object) (-2882382797L));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0343() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0343");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(100, "", (java.lang.Object) (byte) 0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0344() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0344");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 100, "", (java.lang.Object) voidCompletableFuture4);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0345() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0345");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) -1, "hi!", (java.lang.Object) (byte) 0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0346() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0346");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(100, "hi!", (java.lang.Object) (byte) -1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0347() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0347");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(1, "", (java.lang.Object) resultCallBack5);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0348() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0348");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "", (java.lang.Object) (short) 100);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0349() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0349");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) 'a', "hi!", (java.lang.Object) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0350() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0350");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((-1), "", (java.lang.Object) (byte) 0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0351() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0351");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 0, "", (java.lang.Object) '#');
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0352() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0352");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(10, "", (java.lang.Object) false);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0353() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0353");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "hi!", (java.lang.Object) (short) 100);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0354() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0354");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((-1), "hi!", (java.lang.Object) 1L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0355() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0355");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(10, "", (java.lang.Object) (short) -1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0356() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0356");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 100, "hi!", (java.lang.Object) 100);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0357() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0357");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) '#', "hi!", (java.lang.Object) 0.0f);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0358() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0358");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.lang.Object obj4 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 1, "hi!", obj4);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0359() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0359");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 0, "", (java.lang.Object) 100.0f);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0360() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0360");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
-        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((-1), "", (java.lang.Object) resultCallBack5);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-        org.junit.Assert.assertNotNull(wildcardClass6);
-    }
-
-    @Test
-    public void test0361() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0361");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 1, "hi!", (java.lang.Object) resultCallBack5);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0362() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0362");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 10, "", (java.lang.Object) true);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0363() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0363");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((-1), "", (java.lang.Object) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0364() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0364");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 10, "", (java.lang.Object) 'a');
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0365() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0365");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.lang.Object obj4 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(1, "", obj4);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0366() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0366");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.lang.Object obj4 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 0, "hi!", obj4);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0367() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0367");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) -1, "", (java.lang.Object) (short) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0368() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0368");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 10, "hi!", (java.lang.Object) (byte) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0369() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0369");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 100, "", (java.lang.Object) (short) 0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0370() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0370");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "", (java.lang.Object) 100.0f);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0371() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0371");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 1, "hi!", (java.lang.Object) 0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0372() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0372");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(1, "hi!", (java.lang.Object) (-1.0f));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0373() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0373");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
-        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(1, "hi!", (java.lang.Object) resultCallBack5);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-        org.junit.Assert.assertNotNull(wildcardClass6);
-    }
-
-    @Test
-    public void test0374() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0374");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) -1, "", (java.lang.Object) 1.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0375() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0375");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) -1, "hi!", (java.lang.Object) '#');
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0376() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0376");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) -1, "hi!", (java.lang.Object) 0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0377() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0377");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 100, "hi!", (java.lang.Object) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0378() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0378");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.lang.Object obj4 = new java.lang.Object();
-        java.lang.Class<?> wildcardClass5 = obj4.getClass();
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) 'a', "", (java.lang.Object) wildcardClass5);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-        org.junit.Assert.assertNotNull(wildcardClass5);
-    }
-
-    @Test
-    public void test0379() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0379");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(1, "hi!", (java.lang.Object) (byte) -1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0380() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0380");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 0, "hi!", (java.lang.Object) false);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0381() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0381");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(10, "hi!", (java.lang.Object) 100.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0382() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0382");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 100, "hi!", (java.lang.Object) (byte) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0383() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0383");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) -1, "hi!", (java.lang.Object) 1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0384() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0384");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.lang.Object obj4 = null;
         // The following exception was thrown during execution in test generation
         try {
             resultCallBack1.processResult((int) (byte) 1, "", obj4);
@@ -5833,17 +860,18 @@ public class RegressionTest0 {
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
         }
+        org.junit.Assert.assertNotNull(wildcardClass5);
     }
 
     @Test
-    public void test0385() throws Throwable {
+    public void test1555() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0385");
+            System.out.format("%n%s%n", "RegressionTest3.test1555");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (byte) 100, "", (java.lang.Object) 100);
+            resultCallBack1.processResult((int) (byte) 0, "hi!", (java.lang.Object) (short) 1);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -5851,14 +879,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0386() throws Throwable {
+    public void test1556() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0386");
+            System.out.format("%n%s%n", "RegressionTest3.test1556");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) '4', "hi!", (java.lang.Object) (short) 10);
+            resultCallBack1.processResult((int) (byte) 10, "hi!", (java.lang.Object) 1.0d);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -5866,14 +894,33 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0387() throws Throwable {
+    public void test1557() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0387");
+            System.out.format("%n%s%n", "RegressionTest3.test1557");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 1, "hi!", (java.lang.Object) wildcardClass6);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass6);
+    }
+
+    @Test
+    public void test1558() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1558");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult(10, "", (java.lang.Object) (short) 100);
+            resultCallBack1.processResult((int) (byte) 10, "hi!", (java.lang.Object) (short) 1);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -5881,14 +928,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0388() throws Throwable {
+    public void test1559() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0388");
+            System.out.format("%n%s%n", "RegressionTest3.test1559");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (byte) 0, "hi!", (java.lang.Object) 10);
+            resultCallBack1.processResult((int) (byte) 0, "", (java.lang.Object) 100.0f);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -5896,14 +943,33 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0389() throws Throwable {
+    public void test1560() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0389");
+            System.out.format("%n%s%n", "RegressionTest3.test1560");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) -1, "", (java.lang.Object) resultCallBack5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass6);
+    }
+
+    @Test
+    public void test1561() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1561");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult(10, "", (java.lang.Object) (short) 0);
+            resultCallBack1.processResult((int) (short) 1, "hi!", (java.lang.Object) (short) 100);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -5911,14 +977,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0390() throws Throwable {
+    public void test1562() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0390");
+            System.out.format("%n%s%n", "RegressionTest3.test1562");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult(100, "hi!", (java.lang.Object) (-2882382797L));
+            resultCallBack1.processResult(0, "", (java.lang.Object) 1L);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -5926,14 +992,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0391() throws Throwable {
+    public void test1563() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0391");
+            System.out.format("%n%s%n", "RegressionTest3.test1563");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult(10, "", (java.lang.Object) 0);
+            resultCallBack1.processResult((int) (byte) 0, "hi!", (java.lang.Object) true);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -5941,14 +1007,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0392() throws Throwable {
+    public void test1564() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0392");
+            System.out.format("%n%s%n", "RegressionTest3.test1564");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (short) 10, "hi!", (java.lang.Object) '4');
+            resultCallBack1.processResult((int) (byte) 100, "", (java.lang.Object) ' ');
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -5956,14 +1022,33 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0393() throws Throwable {
+    public void test1565() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0393");
+            System.out.format("%n%s%n", "RegressionTest3.test1565");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((-1), "", (java.lang.Object) wildcardClass6);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass6);
+    }
+
+    @Test
+    public void test1566() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1566");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) 'a', "", (java.lang.Object) (short) -1);
+            resultCallBack1.processResult((int) (byte) 1, "hi!", (java.lang.Object) 10L);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -5971,14 +1056,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0394() throws Throwable {
+    public void test1567() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0394");
+            System.out.format("%n%s%n", "RegressionTest3.test1567");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (byte) 1, "", (java.lang.Object) 10.0f);
+            resultCallBack1.processResult((int) (byte) -1, "", (java.lang.Object) (byte) 10);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -5986,14 +1071,33 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0395() throws Throwable {
+    public void test1568() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0395");
+            System.out.format("%n%s%n", "RegressionTest3.test1568");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) ' ', "", (java.lang.Object) resultCallBack5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass6);
+    }
+
+    @Test
+    public void test1569() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1569");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((-1), "hi!", (java.lang.Object) "hi!");
+            resultCallBack1.processResult((int) '#', "", (java.lang.Object) (byte) 0);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -6001,14 +1105,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0396() throws Throwable {
+    public void test1570() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0396");
+            System.out.format("%n%s%n", "RegressionTest3.test1570");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult(10, "", (java.lang.Object) (-1));
+            resultCallBack1.processResult((int) ' ', "hi!", (java.lang.Object) 'a');
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -6016,14 +1120,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0397() throws Throwable {
+    public void test1571() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0397");
+            System.out.format("%n%s%n", "RegressionTest3.test1571");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (short) 10, "", (java.lang.Object) 1.0f);
+            resultCallBack1.processResult((int) '4', "hi!", (java.lang.Object) 100.0d);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -6031,14 +1135,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0398() throws Throwable {
+    public void test1572() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0398");
+            System.out.format("%n%s%n", "RegressionTest3.test1572");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (short) 1, "", (java.lang.Object) (-1.0d));
+            resultCallBack1.processResult((int) (short) 10, "", (java.lang.Object) (short) -1);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -6046,14 +1150,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0399() throws Throwable {
+    public void test1573() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0399");
+            System.out.format("%n%s%n", "RegressionTest3.test1573");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) '4', "hi!", (java.lang.Object) 10);
+            resultCallBack1.processResult((int) (byte) -1, "", (java.lang.Object) 0.0d);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -6061,14 +1165,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0400() throws Throwable {
+    public void test1574() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0400");
+            System.out.format("%n%s%n", "RegressionTest3.test1574");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) 'a', "hi!", (java.lang.Object) 10.0d);
+            resultCallBack1.processResult((int) (short) 10, "hi!", (java.lang.Object) (short) 1);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -6076,14 +1180,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0401() throws Throwable {
+    public void test1575() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0401");
+            System.out.format("%n%s%n", "RegressionTest3.test1575");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) 'a', "hi!", (java.lang.Object) 10L);
+            resultCallBack1.processResult((int) (short) 100, "", (java.lang.Object) true);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -6091,12 +1195,3327 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0402() throws Throwable {
+    public void test1576() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0402");
+            System.out.format("%n%s%n", "RegressionTest3.test1576");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.lang.Object obj4 = null;
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) '#', "hi!", (java.lang.Object) 0L);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1577() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1577");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(1, "", (java.lang.Object) (-1L));
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1578() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1578");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) -1, "hi!", (java.lang.Object) wildcardClass6);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass6);
+    }
+
+    @Test
+    public void test1579() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1579");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 10, "hi!", (java.lang.Object) (byte) 0);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1580() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1580");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(10, "hi!", (java.lang.Object) (short) 10);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1581() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1581");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 0, "hi!", (java.lang.Object) (short) 0);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1582() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1582");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(0, "hi!", (java.lang.Object) '#');
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1583() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1583");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(0, "", (java.lang.Object) resultCallBack5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1584() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1584");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(100, "hi!", (java.lang.Object) (-1.0d));
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1585() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1585");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(100, "", (java.lang.Object) (short) 10);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1586() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1586");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) 'a', "", (java.lang.Object) 100.0d);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1587() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1587");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) '#', "", (java.lang.Object) (-1.0d));
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1588() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1588");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) ' ', "hi!", (java.lang.Object) 10);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1589() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1589");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((-1), "", (java.lang.Object) 100.0d);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1590() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1590");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(10, "hi!", (java.lang.Object) wildcardClass6);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass6);
+    }
+
+    @Test
+    public void test1591() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1591");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) -1, "hi!", (java.lang.Object) resultCallBack5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass6);
+    }
+
+    @Test
+    public void test1592() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1592");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 10, "", (java.lang.Object) (-1.0d));
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1593() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1593");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(100, "hi!", (java.lang.Object) resultCallBack5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1594() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1594");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((-1), "", (java.lang.Object) 1.0f);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1595() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1595");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 10, "hi!", (java.lang.Object) 1.0f);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1596() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1596");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 0, "hi!", (java.lang.Object) 1L);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1597() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1597");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(0, "", obj4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1598() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1598");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 100, "", (java.lang.Object) wildcardClass6);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass6);
+    }
+
+    @Test
+    public void test1599() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1599");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 0, "", (java.lang.Object) voidCompletableFuture4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1600() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1600");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 100, "", (java.lang.Object) 1.0f);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1601() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1601");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) '#', "", (java.lang.Object) (-1));
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1602() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1602");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(10, "hi!", (java.lang.Object) "");
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1603() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1603");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 1, "", (java.lang.Object) wildcardClass5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1604() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1604");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) -1, "hi!", (java.lang.Object) 0.0d);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1605() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1605");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(100, "hi!", (java.lang.Object) 100L);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1606() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1606");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((-1), "", (java.lang.Object) 'a');
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1607() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1607");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 100, "", (java.lang.Object) 1);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1608() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1608");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 100, "hi!", (java.lang.Object) (-1.0f));
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1609() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1609");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(1, "hi!", (java.lang.Object) 0);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1610() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1610");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 0, "", obj4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1611() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1611");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 1, "", (java.lang.Object) 100L);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1612() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1612");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((-1), "hi!", (java.lang.Object) 10L);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1613() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1613");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(1, "hi!", (java.lang.Object) "hi!");
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1614() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1614");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 100, "", (java.lang.Object) 0.0d);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1615() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1615");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 1, "", obj4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1616() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1616");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) '#', "", (java.lang.Object) (byte) -1);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1617() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1617");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 0, "hi!", (java.lang.Object) (short) 0);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1618() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1618");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 0, "hi!", (java.lang.Object) (short) 10);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1619() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1619");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) '4', "hi!", (java.lang.Object) 100.0f);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1620() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1620");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) -1, "", (java.lang.Object) "hi!");
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1621() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1621");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) -1, "hi!", (java.lang.Object) 100L);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1622() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1622");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 0, "hi!", (java.lang.Object) (-2882382797L));
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1623() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1623");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) 'a', "", obj4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1624() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1624");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(10, "", (java.lang.Object) voidCompletableFuture4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1625() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1625");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) ' ', "hi!", (java.lang.Object) 0);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1626() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1626");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) -1, "", (java.lang.Object) 100.0f);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1627() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1627");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(100, "", (java.lang.Object) 100);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1628() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1628");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 10, "", (java.lang.Object) wildcardClass6);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass6);
+    }
+
+    @Test
+    public void test1629() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1629");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) '#', "hi!", obj4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1630() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1630");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) -1, "", (java.lang.Object) 100);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1631() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1631");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(1, "", (java.lang.Object) (short) 1);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1632() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1632");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 100, "hi!", (java.lang.Object) voidCompletableFuture4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1633() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1633");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(1, "hi!", (java.lang.Object) voidCompletableFuture4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1634() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1634");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(10, "hi!", (java.lang.Object) (-1.0d));
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1635() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1635");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 0, "", (java.lang.Object) 10.0d);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1636() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1636");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) -1, "hi!", obj4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1637() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1637");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 10, "hi!", (java.lang.Object) 0.0d);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1638() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1638");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 100, "hi!", (java.lang.Object) (-1L));
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1639() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1639");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) 'a', "hi!", (java.lang.Object) ' ');
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1640() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1640");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((-1), "", obj4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1641() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1641");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(10, "hi!", (java.lang.Object) 1);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1642() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1642");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) '#', "hi!", (java.lang.Object) 'a');
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1643() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1643");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) -1, "hi!", (java.lang.Object) 1L);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1644() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1644");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) -1, "hi!", (java.lang.Object) voidCompletableFuture4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1645() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1645");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(100, "hi!", (java.lang.Object) (short) 10);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1646() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1646");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 1, "", (java.lang.Object) (byte) -1);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1647() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1647");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) ' ', "hi!", (java.lang.Object) "hi!");
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1648() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1648");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 0, "", (java.lang.Object) resultCallBack5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass6);
+    }
+
+    @Test
+    public void test1649() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1649");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(100, "", (java.lang.Object) voidCompletableFuture4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1650() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1650");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) -1, "hi!", (java.lang.Object) 10L);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1651() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1651");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(1, "hi!", obj4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1652() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1652");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) '4', "hi!", (java.lang.Object) voidCompletableFuture4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1653() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1653");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 1, "", (java.lang.Object) resultCallBack5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass6);
+    }
+
+    @Test
+    public void test1654() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1654");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) 'a', "", (java.lang.Object) false);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1655() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1655");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(100, "hi!", (java.lang.Object) wildcardClass6);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass6);
+    }
+
+    @Test
+    public void test1656() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1656");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) '4', "", (java.lang.Object) (-2882382797L));
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1657() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1657");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 100, "hi!", (java.lang.Object) 10.0d);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1658() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1658");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(10, "hi!", (java.lang.Object) (short) 0);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1659() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1659");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 10, "", (java.lang.Object) false);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1660() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1660");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 0, "", (java.lang.Object) 1L);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1661() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1661");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 10, "", (java.lang.Object) (byte) 0);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1662() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1662");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 100, "hi!", (java.lang.Object) (short) 100);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1663() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1663");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((-1), "", (java.lang.Object) '#');
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1664() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1664");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(1, "hi!", (java.lang.Object) 0.0d);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1665() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1665");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 0, "", (java.lang.Object) 10);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1666() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1666");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 100, "", (java.lang.Object) 0L);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1667() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1667");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 1, "hi!", (java.lang.Object) 10L);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1668() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1668");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(0, "", (java.lang.Object) 100.0d);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1669() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1669");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 10, "hi!", (java.lang.Object) "");
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1670() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1670");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) -1, "", (java.lang.Object) resultCallBack5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1671() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1671");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 1, "", (java.lang.Object) false);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1672() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1672");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) 'a', "", (java.lang.Object) resultCallBack5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass6);
+    }
+
+    @Test
+    public void test1673() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1673");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) '4', "hi!", (java.lang.Object) wildcardClass5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1674() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1674");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 1, "hi!", (java.lang.Object) 10);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1675() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1675");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 0, "hi!", (java.lang.Object) (-1L));
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1676() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1676");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 10, "hi!", (java.lang.Object) 1);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1677() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1677");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 100, "", (java.lang.Object) (byte) 100);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1678() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1678");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((-1), "", (java.lang.Object) 1);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1679() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1679");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(100, "hi!", (java.lang.Object) 1);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1680() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1680");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 0, "", (java.lang.Object) (-1L));
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1681() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1681");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 10, "", (java.lang.Object) (byte) 1);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1682() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1682");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) ' ', "hi!", (java.lang.Object) (-1.0d));
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1683() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1683");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) ' ', "", (java.lang.Object) (byte) 1);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1684() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1684");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 0, "", (java.lang.Object) (short) 10);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1685() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1685");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 0, "hi!", (java.lang.Object) (short) -1);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1686() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1686");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 1, "hi!", (java.lang.Object) (short) -1);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1687() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1687");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 100, "", (java.lang.Object) 100L);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1688() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1688");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) ' ', "hi!", (java.lang.Object) 0L);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1689() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1689");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) ' ', "hi!", (java.lang.Object) wildcardClass6);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass6);
+    }
+
+    @Test
+    public void test1690() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1690");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((-1), "", (java.lang.Object) 0);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1691() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1691");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 0, "hi!", (java.lang.Object) (-1L));
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1692() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1692");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 1, "hi!", (java.lang.Object) 1);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1693() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1693");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((-1), "hi!", (java.lang.Object) 100L);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1694() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1694");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(10, "hi!", (java.lang.Object) (short) -1);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1695() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1695");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 1, "hi!", (java.lang.Object) 1);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1696() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1696");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) -1, "", (java.lang.Object) ' ');
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1697() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1697");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(100, "", (java.lang.Object) 100.0f);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1698() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1698");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) 'a', "", (java.lang.Object) 10L);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1699() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1699");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(10, "", (java.lang.Object) 10);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1700() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1700");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 100, "", (java.lang.Object) '4');
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1701() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1701");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(10, "", (java.lang.Object) wildcardClass5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1702() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1702");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((-1), "hi!", obj4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1703() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1703");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 0, "hi!", (java.lang.Object) 'a');
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1704() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1704");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 100, "hi!", (java.lang.Object) resultCallBack5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1705() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1705");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) -1, "hi!", (java.lang.Object) (short) 1);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1706() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1706");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) '#', "", (java.lang.Object) (-1L));
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1707() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1707");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 10, "hi!", (java.lang.Object) resultCallBack5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1708() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1708");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(10, "hi!", (java.lang.Object) 0);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1709() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1709");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(10, "hi!", (java.lang.Object) 1.0d);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1710() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1710");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) -1, "hi!", (java.lang.Object) 100);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1711() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1711");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 0, "hi!", (java.lang.Object) voidCompletableFuture4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1712() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1712");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(100, "", (java.lang.Object) (-1.0f));
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1713() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1713");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 1, "", (java.lang.Object) ' ');
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1714() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1714");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 100, "hi!", (java.lang.Object) voidCompletableFuture4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1715() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1715");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 1, "hi!", (java.lang.Object) 1.0f);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1716() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1716");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) -1, "hi!", (java.lang.Object) 0.0d);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1717() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1717");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) '4', "hi!", (java.lang.Object) resultCallBack5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass6);
+    }
+
+    @Test
+    public void test1718() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1718");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(1, "", (java.lang.Object) (byte) 10);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1719() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1719");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 1, "", (java.lang.Object) (byte) 100);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1720() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1720");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) -1, "", (java.lang.Object) 0);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1721() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1721");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((-1), "hi!", (java.lang.Object) 'a');
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1722() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1722");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 10, "", (java.lang.Object) resultCallBack5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1723() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1723");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(1, "", (java.lang.Object) (-1.0f));
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1724() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1724");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 0, "hi!", (java.lang.Object) 100.0f);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1725() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1725");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 10, "hi!", (java.lang.Object) (short) 100);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1726() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1726");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 0, "", (java.lang.Object) 0);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1727() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1727");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 10, "hi!", (java.lang.Object) (byte) -1);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1728() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1728");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 1, "hi!", (java.lang.Object) wildcardClass6);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass6);
+    }
+
+    @Test
+    public void test1729() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1729");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(1, "hi!", (java.lang.Object) wildcardClass5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1730() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1730");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) '4', "", (java.lang.Object) 0.0d);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1731() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1731");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(0, "hi!", (java.lang.Object) voidCompletableFuture4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1732() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1732");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 10, "hi!", (java.lang.Object) '#');
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1733() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1733");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 0, "hi!", (java.lang.Object) 1L);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1734() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1734");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(1, "", (java.lang.Object) (short) 0);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1735() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1735");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 10, "hi!", (java.lang.Object) (byte) 1);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1736() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1736");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 100, "", (java.lang.Object) 100.0f);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1737() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1737");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) ' ', "", (java.lang.Object) (byte) 10);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1738() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1738");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) ' ', "hi!", (java.lang.Object) 0.0d);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1739() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1739");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 1, "hi!", (java.lang.Object) (short) 0);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1740() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1740");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) '4', "hi!", (java.lang.Object) 10L);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1741() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1741");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(1, "hi!", (java.lang.Object) (-1L));
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1742() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1742");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) 'a', "hi!", (java.lang.Object) 10.0f);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1743() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1743");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 10, "hi!", obj4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1744() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1744");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 1, "", (java.lang.Object) wildcardClass6);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass6);
+    }
+
+    @Test
+    public void test1745() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1745");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 1, "", obj4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1746() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1746");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 1, "hi!", (java.lang.Object) 1.0f);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1747() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1747");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 10, "", (java.lang.Object) 10.0f);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1748() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1748");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 10, "", (java.lang.Object) wildcardClass5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1749() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1749");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) ' ', "", obj4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1750() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1750");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((-1), "", (java.lang.Object) "hi!");
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1751() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1751");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 1, "", (java.lang.Object) wildcardClass5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1752() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1752");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(1, "hi!", (java.lang.Object) 100.0d);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1753() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1753");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 10, "", (java.lang.Object) wildcardClass6);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass6);
+    }
+
+    @Test
+    public void test1754() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1754");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 10, "hi!", (java.lang.Object) (byte) 1);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1755() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1755");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) -1, "", (java.lang.Object) "");
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1756() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1756");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 1, "hi!", (java.lang.Object) 0.0f);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1757() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1757");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(10, "hi!", (java.lang.Object) 10L);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1758() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1758");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(10, "hi!", (java.lang.Object) true);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1759() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1759");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) -1, "hi!", (java.lang.Object) (-1.0d));
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1760() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1760");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) '#', "hi!", (java.lang.Object) voidCompletableFuture4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1761() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1761");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(100, "hi!", (java.lang.Object) (byte) 0);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1762() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1762");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 100, "", (java.lang.Object) wildcardClass6);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass6);
+    }
+
+    @Test
+    public void test1763() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1763");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 0, "hi!", (java.lang.Object) wildcardClass5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1764() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1764");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 0, "hi!", (java.lang.Object) wildcardClass5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1765() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1765");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 0, "hi!", (java.lang.Object) '4');
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1766() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1766");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 10, "hi!", (java.lang.Object) true);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1767() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1767");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 100, "", (java.lang.Object) (byte) 10);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1768() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1768");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(10, "hi!", (java.lang.Object) (byte) -1);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1769() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1769");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((-1), "", (java.lang.Object) (-1.0d));
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1770() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1770");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 10, "hi!", (java.lang.Object) "hi!");
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1771() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1771");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 1, "", (java.lang.Object) 0);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1772() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1772");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 10, "hi!", (java.lang.Object) "");
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1773() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1773");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(10, "hi!", (java.lang.Object) wildcardClass5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1774() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1774");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) -1, "", (java.lang.Object) (short) 1);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1775() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1775");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) '4', "", obj4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1776() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1776");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) ' ', "", (java.lang.Object) resultCallBack5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1777() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1777");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) ' ', "", (java.lang.Object) 1.0f);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1778() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1778");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 100, "", (java.lang.Object) resultCallBack5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass6);
+    }
+
+    @Test
+    public void test1779() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1779");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 100, "", obj4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1780() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1780");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 0, "", (java.lang.Object) 0.0f);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1781() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1781");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((-1), "", (java.lang.Object) wildcardClass5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1782() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1782");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(1, "", (java.lang.Object) ' ');
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1783() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1783");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) -1, "", (java.lang.Object) 1L);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1784() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1784");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(1, "hi!", (java.lang.Object) '#');
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1785() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1785");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 0, "hi!", (java.lang.Object) '#');
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1786() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1786");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
         // The following exception was thrown during execution in test generation
         try {
             resultCallBack1.processResult(100, "", obj4);
@@ -6104,17 +4523,20 @@ public class RegressionTest0 {
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
         }
+        org.junit.Assert.assertNotNull(wildcardClass5);
     }
 
     @Test
-    public void test0403() throws Throwable {
+    public void test1787() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0403");
+            System.out.format("%n%s%n", "RegressionTest3.test1787");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (short) 10, "", (java.lang.Object) 10);
+            resultCallBack1.processResult((int) (byte) 0, "hi!", (java.lang.Object) resultCallBack5);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -6122,14 +4544,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0404() throws Throwable {
+    public void test1788() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0404");
+            System.out.format("%n%s%n", "RegressionTest3.test1788");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) '#', "", (java.lang.Object) 1.0d);
+            resultCallBack1.processResult(100, "", (java.lang.Object) 1.0f);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -6137,14 +4559,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0405() throws Throwable {
+    public void test1789() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0405");
+            System.out.format("%n%s%n", "RegressionTest3.test1789");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (short) 100, "", (java.lang.Object) (-1.0f));
+            resultCallBack1.processResult(1, "hi!", (java.lang.Object) 100.0f);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -6152,14 +4574,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0406() throws Throwable {
+    public void test1790() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0406");
+            System.out.format("%n%s%n", "RegressionTest3.test1790");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) '4', "hi!", (java.lang.Object) '#');
+            resultCallBack1.processResult((int) (byte) 100, "hi!", (java.lang.Object) 0.0f);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -6167,14 +4589,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0407() throws Throwable {
+    public void test1791() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0407");
+            System.out.format("%n%s%n", "RegressionTest3.test1791");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (byte) 100, "hi!", (java.lang.Object) 1L);
+            resultCallBack1.processResult((int) (byte) 1, "", (java.lang.Object) (byte) 1);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -6182,12 +4604,145 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0408() throws Throwable {
+    public void test1792() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0408");
+            System.out.format("%n%s%n", "RegressionTest3.test1792");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.lang.Object obj4 = null;
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) -1, "", (java.lang.Object) wildcardClass6);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass6);
+    }
+
+    @Test
+    public void test1793() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1793");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) -1, "", (java.lang.Object) 0.0f);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1794() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1794");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) 'a', "hi!", obj4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1795() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1795");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 100, "hi!", (java.lang.Object) 100L);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1796() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1796");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 10, "hi!", (java.lang.Object) wildcardClass6);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass6);
+    }
+
+    @Test
+    public void test1797() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1797");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) 'a', "hi!", (java.lang.Object) resultCallBack5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass6);
+    }
+
+    @Test
+    public void test1798() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1798");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 100, "hi!", (java.lang.Object) 100L);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1799() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1799");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 100, "hi!", (java.lang.Object) (short) 1);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1800() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1800");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
         // The following exception was thrown during execution in test generation
         try {
             resultCallBack1.processResult(10, "", obj4);
@@ -6198,14 +4753,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0409() throws Throwable {
+    public void test1801() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0409");
+            System.out.format("%n%s%n", "RegressionTest3.test1801");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult(1, "hi!", (java.lang.Object) 0L);
+            resultCallBack1.processResult((int) '#', "", (java.lang.Object) 0.0f);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -6213,16 +4768,92 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0410() throws Throwable {
+    public void test1802() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0410");
+            System.out.format("%n%s%n", "RegressionTest3.test1802");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 100, "hi!", obj4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1803() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1803");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((-1), "", (java.lang.Object) 1.0d);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1804() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1804");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 10, "hi!", (java.lang.Object) 0L);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1805() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1805");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 10, "hi!", (java.lang.Object) 10L);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1806() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1806");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) '4', "hi!", (java.lang.Object) (short) 1);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1807() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1807");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) 'a', "hi!", (java.lang.Object) resultCallBack5);
+            resultCallBack1.processResult((-1), "hi!", (java.lang.Object) resultCallBack5);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -6230,14 +4861,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0411() throws Throwable {
+    public void test1808() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0411");
+            System.out.format("%n%s%n", "RegressionTest3.test1808");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) '4', "", (java.lang.Object) 1.0d);
+            resultCallBack1.processResult((int) (byte) -1, "", (java.lang.Object) (-2882382797L));
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -6245,14 +4876,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0412() throws Throwable {
+    public void test1809() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0412");
+            System.out.format("%n%s%n", "RegressionTest3.test1809");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (byte) -1, "", (java.lang.Object) (-1L));
+            resultCallBack1.processResult(1, "", (java.lang.Object) 100.0d);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -6260,14 +4891,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0413() throws Throwable {
+    public void test1810() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0413");
+            System.out.format("%n%s%n", "RegressionTest3.test1810");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult(10, "hi!", (java.lang.Object) (-1));
+            resultCallBack1.processResult((int) (short) 100, "hi!", (java.lang.Object) ' ');
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -6275,14 +4906,31 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0414() throws Throwable {
+    public void test1811() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0414");
+            System.out.format("%n%s%n", "RegressionTest3.test1811");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((-1), "", (java.lang.Object) voidCompletableFuture4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+    }
+
+    @Test
+    public void test1812() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1812");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (short) 1, "", (java.lang.Object) (-1L));
+            resultCallBack1.processResult((int) (short) 1, "", (java.lang.Object) 'a');
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -6290,14 +4938,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0415() throws Throwable {
+    public void test1813() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0415");
+            System.out.format("%n%s%n", "RegressionTest3.test1813");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (byte) 100, "hi!", (java.lang.Object) (-2882382797L));
+            resultCallBack1.processResult(10, "hi!", (java.lang.Object) (byte) 1);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -6305,121 +4953,16 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0416() throws Throwable {
+    public void test1814() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0416");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) ' ', "", (java.lang.Object) 0L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0417() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0417");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 1, "hi!", (java.lang.Object) (-1.0f));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0418() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0418");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(100, "hi!", (java.lang.Object) (short) -1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0419() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0419");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) 'a', "", (java.lang.Object) (short) 100);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0420() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0420");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 100, "", (java.lang.Object) (short) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0421() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0421");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) -1, "hi!", (java.lang.Object) (-1));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0422() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0422");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 100, "", (java.lang.Object) 'a');
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0423() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0423");
+            System.out.format("%n%s%n", "RegressionTest3.test1814");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         java.lang.Object obj4 = new java.lang.Object();
         java.lang.Class<?> wildcardClass5 = obj4.getClass();
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (byte) 1, "hi!", obj4);
+            resultCallBack1.processResult((int) (byte) -1, "hi!", (java.lang.Object) wildcardClass5);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -6428,434 +4971,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0424() throws Throwable {
+    public void test1815() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0424");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(10, "", (java.lang.Object) 10.0f);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0425() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0425");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.lang.Object obj4 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 0, "hi!", obj4);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0426() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0426");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(100, "hi!", (java.lang.Object) 'a');
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0427() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0427");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) -1, "", (java.lang.Object) true);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0428() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0428");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.lang.Object obj4 = new java.lang.Object();
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 10, "hi!", obj4);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0429() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0429");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.lang.Object obj4 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) -1, "", obj4);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0430() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0430");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(1, "", (java.lang.Object) (-1));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0431() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0431");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) ' ', "", (java.lang.Object) 100L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0432() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0432");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 0, "", (java.lang.Object) (short) 0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0433() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0433");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(10, "", (java.lang.Object) ' ');
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0434() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0434");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "", (java.lang.Object) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0435() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0435");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.lang.Object obj4 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(100, "hi!", obj4);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0436() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0436");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) '#', "", (java.lang.Object) 10.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0437() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0437");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 1, "", (java.lang.Object) (-1L));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0438() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0438");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.lang.Object obj4 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) '#', "", obj4);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0439() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0439");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 100, "", (java.lang.Object) true);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0440() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0440");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 1, "", (java.lang.Object) (-1));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0441() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0441");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) -1, "hi!", (java.lang.Object) (-1.0d));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0442() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0442");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) -1, "hi!", (java.lang.Object) (-2882382797L));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0443() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0443");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "hi!", (java.lang.Object) 100L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0444() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0444");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(0, "hi!", (java.lang.Object) 1L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0445() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0445");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) ' ', "hi!", (java.lang.Object) 100L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0446() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0446");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) '4', "hi!", (java.lang.Object) 1.0f);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0447() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0447");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 10, "", (java.lang.Object) (byte) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0448() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0448");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 100, "hi!", (java.lang.Object) (-1.0d));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0449() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0449");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) 'a', "hi!", (java.lang.Object) false);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0450() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0450");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(100, "", (java.lang.Object) (byte) 1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0451() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0451");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 10, "hi!", (java.lang.Object) 0.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0452() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0452");
+            System.out.format("%n%s%n", "RegressionTest3.test1815");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
@@ -6863,7 +4981,7 @@ public class RegressionTest0 {
         java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult(0, "hi!", (java.lang.Object) resultCallBack5);
+            resultCallBack1.processResult((int) (short) 100, "", (java.lang.Object) resultCallBack5);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -6872,14 +4990,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0453() throws Throwable {
+    public void test1816() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0453");
+            System.out.format("%n%s%n", "RegressionTest3.test1816");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (short) 0, "", (java.lang.Object) 100);
+            resultCallBack1.processResult(100, "hi!", (java.lang.Object) (short) 1);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -6887,14 +5005,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0454() throws Throwable {
+    public void test1817() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0454");
+            System.out.format("%n%s%n", "RegressionTest3.test1817");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (short) 10, "hi!", (java.lang.Object) 10L);
+            resultCallBack1.processResult(100, "hi!", (java.lang.Object) (short) 100);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -6902,14 +5020,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0455() throws Throwable {
+    public void test1818() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0455");
+            System.out.format("%n%s%n", "RegressionTest3.test1818");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (short) -1, "", (java.lang.Object) 10.0d);
+            resultCallBack1.processResult(100, "hi!", (java.lang.Object) (byte) 100);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -6917,77 +5035,16 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0456() throws Throwable {
+    public void test1819() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0456");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) '4', "hi!", (java.lang.Object) (byte) 1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0457() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0457");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.lang.Object obj4 = new java.lang.Object();
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 1, "hi!", obj4);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0458() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0458");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 0, "hi!", (java.lang.Object) 0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0459() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0459");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 1, "hi!", (java.lang.Object) 1L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0460() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0460");
+            System.out.format("%n%s%n", "RegressionTest3.test1819");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (byte) 0, "", (java.lang.Object) resultCallBack5);
+            resultCallBack1.processResult(1, "", (java.lang.Object) voidCompletableFuture4);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -6995,14 +5052,34 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0461() throws Throwable {
+    public void test1820() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0461");
+            System.out.format("%n%s%n", "RegressionTest3.test1820");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (byte) 0, "hi!", (java.lang.Object) 0.0f);
+            resultCallBack1.processResult(100, "hi!", (java.lang.Object) resultCallBack5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass6);
+    }
+
+    @Test
+    public void test1821() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1821");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 100, "", obj4);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -7010,14 +5087,32 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0462() throws Throwable {
+    public void test1822() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0462");
+            System.out.format("%n%s%n", "RegressionTest3.test1822");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) 'a', "hi!", obj4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1823() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1823");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) '#', "", (java.lang.Object) (short) 10);
+            resultCallBack1.processResult(100, "hi!", (java.lang.Object) true);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -7025,14 +5120,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0463() throws Throwable {
+    public void test1824() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0463");
+            System.out.format("%n%s%n", "RegressionTest3.test1824");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) ' ', "", (java.lang.Object) 1L);
+            resultCallBack1.processResult((int) ' ', "hi!", (java.lang.Object) (byte) 100);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -7040,14 +5135,34 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0464() throws Throwable {
+    public void test1825() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0464");
+            System.out.format("%n%s%n", "RegressionTest3.test1825");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((-1), "hi!", (java.lang.Object) (short) 100);
+            resultCallBack1.processResult((int) '#', "", obj4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1826() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1826");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((-1), "hi!", (java.lang.Object) voidCompletableFuture4);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -7055,14 +5170,16 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0465() throws Throwable {
+    public void test1827() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0465");
+            System.out.format("%n%s%n", "RegressionTest3.test1827");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (short) 0, "hi!", (java.lang.Object) (byte) 100);
+            resultCallBack1.processResult(100, "", (java.lang.Object) resultCallBack5);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -7070,14 +5187,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0466() throws Throwable {
+    public void test1828() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0466");
+            System.out.format("%n%s%n", "RegressionTest3.test1828");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (byte) 0, "", (java.lang.Object) 'a');
+            resultCallBack1.processResult((int) (byte) 100, "hi!", (java.lang.Object) 10L);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -7085,14 +5202,33 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0467() throws Throwable {
+    public void test1829() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0467");
+            System.out.format("%n%s%n", "RegressionTest3.test1829");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(10, "hi!", (java.lang.Object) resultCallBack5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass6);
+    }
+
+    @Test
+    public void test1830() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1830");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((-1), "", (java.lang.Object) (byte) 100);
+            resultCallBack1.processResult((int) (short) 0, "hi!", (java.lang.Object) false);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -7100,14 +5236,70 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0468() throws Throwable {
+    public void test1831() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0468");
+            System.out.format("%n%s%n", "RegressionTest3.test1831");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (short) 10, "hi!", (java.lang.Object) (-2882382797L));
+            resultCallBack1.processResult((int) '4', "hi!", obj4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1832() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1832");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 1, "hi!", (java.lang.Object) wildcardClass5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1833() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1833");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) 0, "hi!", (java.lang.Object) resultCallBack5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass6);
+    }
+
+    @Test
+    public void test1834() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1834");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((-1), "hi!", obj4);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -7115,14 +5307,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0469() throws Throwable {
+    public void test1835() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0469");
+            System.out.format("%n%s%n", "RegressionTest3.test1835");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) 'a', "hi!", (java.lang.Object) (-1.0d));
+            resultCallBack1.processResult((int) (short) 100, "", (java.lang.Object) 10L);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -7130,14 +5322,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0470() throws Throwable {
+    public void test1836() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0470");
+            System.out.format("%n%s%n", "RegressionTest3.test1836");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (short) 0, "", (java.lang.Object) true);
+            resultCallBack1.processResult(10, "hi!", (java.lang.Object) 1L);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -7145,14 +5337,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0471() throws Throwable {
+    public void test1837() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0471");
+            System.out.format("%n%s%n", "RegressionTest3.test1837");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (byte) 100, "", (java.lang.Object) (short) 1);
+            resultCallBack1.processResult((int) (short) 1, "", (java.lang.Object) (short) 1);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -7160,14 +5352,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0472() throws Throwable {
+    public void test1838() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0472");
+            System.out.format("%n%s%n", "RegressionTest3.test1838");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult(0, "", (java.lang.Object) (-1L));
+            resultCallBack1.processResult((int) (byte) 1, "hi!", (java.lang.Object) (byte) -1);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -7175,14 +5367,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0473() throws Throwable {
+    public void test1839() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0473");
+            System.out.format("%n%s%n", "RegressionTest3.test1839");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (byte) -1, "", (java.lang.Object) 10);
+            resultCallBack1.processResult((int) (byte) 100, "hi!", (java.lang.Object) 1.0d);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -7190,14 +5382,32 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0474() throws Throwable {
+    public void test1840() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0474");
+            System.out.format("%n%s%n", "RegressionTest3.test1840");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(100, "hi!", (java.lang.Object) wildcardClass5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1841() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1841");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (byte) -1, "hi!", (java.lang.Object) (short) 0);
+            resultCallBack1.processResult(100, "", (java.lang.Object) 1L);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -7205,14 +5415,16 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0475() throws Throwable {
+    public void test1842() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0475");
+            System.out.format("%n%s%n", "RegressionTest3.test1842");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult(1, "hi!", (java.lang.Object) 1L);
+            resultCallBack1.processResult((int) (byte) -1, "", (java.lang.Object) voidCompletableFuture4);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -7220,14 +5432,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0476() throws Throwable {
+    public void test1843() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0476");
+            System.out.format("%n%s%n", "RegressionTest3.test1843");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (byte) 0, "", (java.lang.Object) (byte) 0);
+            resultCallBack1.processResult((int) (byte) 100, "hi!", (java.lang.Object) 1.0f);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -7235,14 +5447,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0477() throws Throwable {
+    public void test1844() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0477");
+            System.out.format("%n%s%n", "RegressionTest3.test1844");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (byte) 0, "", (java.lang.Object) 10.0f);
+            resultCallBack1.processResult(10, "hi!", (java.lang.Object) 100.0f);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -7250,14 +5462,50 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0478() throws Throwable {
+    public void test1845() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0478");
+            System.out.format("%n%s%n", "RegressionTest3.test1845");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (short) 10, "hi!", (java.lang.Object) wildcardClass5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1846() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1846");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(100, "hi!", obj4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1847() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1847");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult(100, "hi!", (java.lang.Object) 100.0d);
+            resultCallBack1.processResult((int) (byte) -1, "", (java.lang.Object) 0L);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -7265,14 +5513,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0479() throws Throwable {
+    public void test1848() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0479");
+            System.out.format("%n%s%n", "RegressionTest3.test1848");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (byte) 1, "", (java.lang.Object) 0.0d);
+            resultCallBack1.processResult((int) (short) 100, "hi!", (java.lang.Object) (-2882382797L));
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -7280,14 +5528,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0480() throws Throwable {
+    public void test1849() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0480");
+            System.out.format("%n%s%n", "RegressionTest3.test1849");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (short) 1, "", (java.lang.Object) 0.0d);
+            resultCallBack1.processResult((int) '4', "hi!", (java.lang.Object) (byte) 10);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -7295,14 +5543,53 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0481() throws Throwable {
+    public void test1850() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0481");
+            System.out.format("%n%s%n", "RegressionTest3.test1850");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult(0, "hi!", (java.lang.Object) 0);
+            resultCallBack1.processResult((int) '4', "", (java.lang.Object) wildcardClass6);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass6);
+    }
+
+    @Test
+    public void test1851() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1851");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) '#', "", (java.lang.Object) wildcardClass5);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1852() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1852");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult(10, "", (java.lang.Object) resultCallBack5);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -7310,14 +5597,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0482() throws Throwable {
+    public void test1853() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0482");
+            System.out.format("%n%s%n", "RegressionTest3.test1853");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (byte) 10, "hi!", (java.lang.Object) (-1.0d));
+            resultCallBack1.processResult((int) (byte) 0, "", (java.lang.Object) 1.0f);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -7325,14 +5612,16 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0483() throws Throwable {
+    public void test1854() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0483");
+            System.out.format("%n%s%n", "RegressionTest3.test1854");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult(10, "hi!", (java.lang.Object) false);
+            resultCallBack1.processResult(10, "hi!", (java.lang.Object) voidCompletableFuture4);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -7340,14 +5629,14 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0484() throws Throwable {
+    public void test1855() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0484");
+            System.out.format("%n%s%n", "RegressionTest3.test1855");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult(0, "", (java.lang.Object) 100);
+            resultCallBack1.processResult((int) 'a', "hi!", (java.lang.Object) 0);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -7355,14 +5644,32 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0485() throws Throwable {
+    public void test1856() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0485");
+            System.out.format("%n%s%n", "RegressionTest3.test1856");
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.lang.Object obj4 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass5 = obj4.getClass();
+        // The following exception was thrown during execution in test generation
+        try {
+            resultCallBack1.processResult((int) (byte) -1, "hi!", obj4);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test1857() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1857");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) ' ', "hi!", (java.lang.Object) '#');
+            resultCallBack1.processResult((int) '4', "", (java.lang.Object) (byte) 10);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
@@ -7370,229 +5677,41 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test0486() throws Throwable {
+    public void test1858() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0486");
+            System.out.format("%n%s%n", "RegressionTest3.test1858");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult(100, "hi!", (java.lang.Object) 1.0f);
+            resultCallBack1.processResult((int) '#', "", (java.lang.Object) wildcardClass6);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
         }
+        org.junit.Assert.assertNotNull(wildcardClass6);
     }
 
     @Test
-    public void test0487() throws Throwable {
+    public void test1859() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0487");
+            System.out.format("%n%s%n", "RegressionTest3.test1859");
         java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
         org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
+        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture4 = null;
+        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack5 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture4);
+        java.lang.Class<?> wildcardClass6 = resultCallBack5.getClass();
         // The following exception was thrown during execution in test generation
         try {
-            resultCallBack1.processResult((int) (byte) 0, "hi!", (java.lang.Object) 10L);
+            resultCallBack1.processResult((-1), "hi!", (java.lang.Object) wildcardClass6);
             org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
         } catch (java.lang.NullPointerException e) {
             // Expected exception.
         }
-    }
-
-    @Test
-    public void test0488() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0488");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) '4', "", (java.lang.Object) 100.0f);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0489() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0489");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 100, "hi!", (java.lang.Object) (short) 10);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0490() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0490");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) 'a', "hi!", (java.lang.Object) 0.0f);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0491() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0491");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 1, "", (java.lang.Object) (-1));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0492() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0492");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 10, "", (java.lang.Object) (byte) 1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0493() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0493");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult(10, "", (java.lang.Object) 1L);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0494() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0494");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((-1), "hi!", (java.lang.Object) 0.0f);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0495() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0495");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 10, "hi!", (java.lang.Object) ' ');
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0496() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0496");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 100, "", (java.lang.Object) 1.0f);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0497() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0497");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) -1, "", (java.lang.Object) 0.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0498() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0498");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (short) 0, "hi!", (java.lang.Object) 100.0d);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0499() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0499");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) ' ', "", (java.lang.Object) (-1L));
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-    }
-
-    @Test
-    public void test0500() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test0500");
-        java.util.concurrent.CompletableFuture<java.lang.Void> voidCompletableFuture0 = null;
-        org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack resultCallBack1 = new org.apache.bookkeeper.client.BookKeeperAdmin.ResultCallBack(voidCompletableFuture0);
-        java.lang.Object obj4 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            resultCallBack1.processResult((int) (byte) 10, "hi!", obj4);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
+        org.junit.Assert.assertNotNull(wildcardClass6);
     }
 }
 
