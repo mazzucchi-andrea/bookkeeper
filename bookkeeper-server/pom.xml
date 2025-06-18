@@ -305,7 +305,7 @@
                     </properties>
                     <excludes>
                         <exclude>org.apache.bookkeeper.client.LedgerHandle_ESTest</exclude>
-                        <exclude>org.apache.bookkeeper.client.LedgerHandle_ESTest_scaffolding</exclude>
+                        <exclude>org.apache.bookkeeper.client.BookKeeperAdmin_ESTest</exclude>
                         <exclude>org.apache.bookkeeper.client.LedgerHandleExampleTest</exclude>
                         <exclude>org.apache.bookkeeper.client.BookKeeperAdminExampleTest</exclude>
                     </excludes>
