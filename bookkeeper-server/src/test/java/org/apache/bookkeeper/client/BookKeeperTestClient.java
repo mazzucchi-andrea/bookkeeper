@@ -21,9 +21,6 @@
 package org.apache.bookkeeper.client;
 
 import io.netty.buffer.UnpooledByteBufAllocator;
-import java.io.IOException;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.Future;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.bookkeeper.common.concurrent.FutureUtils;
 import org.apache.bookkeeper.conf.ClientConfiguration;
@@ -35,8 +32,12 @@ import org.apache.bookkeeper.stats.NullStatsLogger;
 import org.apache.bookkeeper.test.TestStatsProvider;
 import org.apache.zookeeper.ZooKeeper;
 
+import java.io.IOException;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Future;
+
 /**
- * Test BookKeeperClient which allows access to members we don't
+ * BookKeeperTEstClient allows access to members we don't
  * wish to expose in the public API.
  */
 @Slf4j
@@ -46,8 +47,8 @@ public class BookKeeperTestClient extends BookKeeper {
     public BookKeeperTestClient(ClientConfiguration conf, TestStatsProvider statsProvider)
             throws IOException, InterruptedException, BKException {
         super(conf, null, null, new UnpooledByteBufAllocator(false),
-              statsProvider == null ? NullStatsLogger.INSTANCE : statsProvider.getStatsLogger(""),
-              null, null, null);
+                statsProvider == null ? NullStatsLogger.INSTANCE : statsProvider.getStatsLogger(""),
+                null, null, null);
         this.statsProvider = statsProvider;
     }
 
@@ -66,44 +67,42 @@ public class BookKeeperTestClient extends BookKeeper {
         return ((ZKMetadataClientDriver) metadataDriver).getZk();
     }
 
+    @Override
     public ClientConfiguration getConf() {
         return super.getConf();
     }
 
+    @Override
     public BookieClient getBookieClient() {
         return bookieClient;
     }
 
-    public Future<?> waitForReadOnlyBookie(BookieId b)
-            throws Exception {
+    public Future<?> waitForReadOnlyBookie(BookieId b) {
         return waitForBookieInSet(b, false);
     }
 
-    public Future<?> waitForWritableBookie(BookieId b)
-            throws Exception {
+    public Future<?> waitForWritableBookie(BookieId b) {
         return waitForBookieInSet(b, true);
     }
 
     /**
-     * Wait for bookie to appear in either the writable set of bookies,
-     * or the read only set of bookies. Also ensure that it doesn't exist
-     * in the other set before completing.
+     * Wait for bookie to appear in either the writable set or the read-only set.
+     * Also ensure that it doesn't exist in the other set before completing.
      */
-    private Future<?> waitForBookieInSet(BookieId b,
-                                                       boolean writable) throws Exception {
+    private Future<?> waitForBookieInSet(BookieId b, boolean writable) {
         log.info("Wait for {} to become {}",
-                 b, writable ? "writable" : "readonly");
+                b, writable ? "writable" : "readonly");
 
         CompletableFuture<Void> readOnlyFuture = new CompletableFuture<>();
         CompletableFuture<Void> writableFuture = new CompletableFuture<>();
 
-        RegistrationListener readOnlyListener = (bookies) -> {
+        RegistrationListener readOnlyListener = bookies -> {
             boolean contains = bookies.getValue().contains(b);
             if ((!writable && contains) || (writable && !contains)) {
                 readOnlyFuture.complete(null);
             }
         };
-        RegistrationListener writableListener = (bookies) -> {
+        RegistrationListener writableListener = bookies -> {
             boolean contains = bookies.getValue().contains(b);
             if ((writable && contains) || (!writable && !contains)) {
                 writableFuture.complete(null);
@@ -115,26 +114,26 @@ public class BookKeeperTestClient extends BookKeeper {
 
         if (writable) {
             return writableFuture
-                .thenCompose(ignored -> getMetadataClientDriver().getRegistrationClient().getReadOnlyBookies())
-                .thenCompose(readonlyBookies -> {
-                    if (readonlyBookies.getValue().contains(b)) {
-                        // if the bookie still shows up at readonly path, wait for it to disappear
-                        return readOnlyFuture;
-                    } else {
-                        return FutureUtils.Void();
-                    }
-                });
+                    .thenCompose(ignored -> getMetadataClientDriver().getRegistrationClient().getReadOnlyBookies())
+                    .thenCompose(readonlyBookies -> {
+                        if (readonlyBookies.getValue().contains(b)) {
+                            // if the bookie still shows up at read-only path, wait for it to disappear
+                            return readOnlyFuture;
+                        } else {
+                            return FutureUtils.Void();
+                        }
+                    });
         } else {
             return readOnlyFuture
-                .thenCompose(ignored -> getMetadataClientDriver().getRegistrationClient().getWritableBookies())
-                .thenCompose(writableBookies -> {
-                    if (writableBookies.getValue().contains(b)) {
-                        // if the bookie still shows up at writable path, wait for it to disappear
-                        return writableFuture;
-                    } else {
-                        return FutureUtils.Void();
-                    }
-                });
+                    .thenCompose(ignored -> getMetadataClientDriver().getRegistrationClient().getWritableBookies())
+                    .thenCompose(writableBookies -> {
+                        if (writableBookies.getValue().contains(b)) {
+                            // if the bookie still shows up at writable path, wait for it to disappear
+                            return writableFuture;
+                        } else {
+                            return FutureUtils.Void();
+                        }
+                    });
         }
     }
 
