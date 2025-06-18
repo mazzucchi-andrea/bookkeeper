@@ -116,20 +116,12 @@ public abstract class BookKeeperClusterTestCase {
         }
     }
 
-    public BookKeeperClusterTestCase(int numBookies, int numOfZKNodes, boolean autoRecoveryEnabled) {
-        if (autoRecoveryEnabled) {
-            baseConf.setAutoRecoveryDaemonEnabled(true);
-            setAutoRecoveryEnabled(autoRecoveryEnabled);
-        }
-        this.numBookies = numBookies;
-        if (numOfZKNodes == 1) {
-            zkUtil = new ZooKeeperUtil();
-        } else {
-            try {
-                zkUtil = new ZooKeeperClusterUtil(numOfZKNodes);
-            } catch (IOException | KeeperException | InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+    protected void captureThrowable(Runnable c) {
+        try {
+            c.run();
+        } catch (Throwable e) {
+            LOG.error("Captured error: ", e);
+            asyncExceptions.add(e);
         }
     }
 
@@ -205,6 +197,10 @@ public abstract class BookKeeperClusterTestCase {
             throw tearDownException;
         }
 
+        clearMetricsThreadRegistry();
+    }
+
+    public void clearMetricsThreadRegistry() {
         ThreadRegistry.clear();
     }
 
