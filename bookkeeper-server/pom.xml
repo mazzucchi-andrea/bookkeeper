@@ -212,12 +212,6 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <!-- needed by ZooKeeper server tests utilities -->
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>org.apache.bookkeeper.stats</groupId>
             <artifactId>prometheus-metrics-provider</artifactId>
             <version>${project.parent.version}</version>
@@ -312,6 +306,8 @@
                     <excludes>
                         <exclude>org.apache.bookkeeper.client.LedgerHandle_ESTest</exclude>
                         <exclude>org.apache.bookkeeper.client.LedgerHandle_ESTest_scaffolding</exclude>
+                        <exclude>org.apache.bookkeeper.client.LedgerHandleExampleTest</exclude>
+                        <exclude>org.apache.bookkeeper.client.BookKeeperAdminExampleTest</exclude>
                     </excludes>
                 </configuration>
             </plugin>
@@ -338,11 +334,8 @@
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <configuration>
                     <sourcepath>${src.dir}</sourcepath>
-                    <!-- Avoid for missing javadoc comments to be marked as errors -->
+                    <!-- Avoid for missing Javadoc comments to be marked as errors -->
                     <doclint>none</doclint>
-                    <!--
-                    <subpackages>org.apache.bookkeeper.client:org.apache.bookkeeper.conf:org.apache.bookkeeper.feature</subpackages>
-                    -->
                     <groups>
                         <group>
                             <title>Bookkeeper</title>
@@ -366,21 +359,9 @@
                 <configuration>
                     <targetClasses>
                         <param>org.apache.bookkeeper.client.LedgerHandle</param>
+                        <param>org.apache.bookkeeper.client.BookKeeperAdmin</param>
                     </targetClasses>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.evosuite.plugins</groupId>
-                <artifactId>evosuite-maven-plugin</artifactId>
-                <version>${evosuiteVersion}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>prepare</goal>
-                        </goals>
-                        <phase>process-test-classes</phase>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
@@ -436,6 +417,30 @@
                         <configuration>
                             <skipTests>true</skipTests>
                         </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <!-- evosuite -->
+        <profile>
+            <id>evosuite</id>
+            <activation>
+                <jdk>1.8</jdk>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.evosuite.plugins</groupId>
+                        <artifactId>evosuite-maven-plugin</artifactId>
+                        <version>${evosuiteVersion}</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>prepare</goal>
+                                </goals>
+                                <phase>process-test-classes</phase>
+                            </execution>
+                        </executions>
                     </plugin>
                 </plugins>
             </build>
