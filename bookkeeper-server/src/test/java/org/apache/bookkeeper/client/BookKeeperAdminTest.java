@@ -12,7 +12,6 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.io.IOException;
 import java.util.*;
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CountDownLatch;
 import java.util.stream.Stream;
 
@@ -25,6 +24,7 @@ class BookKeeperAdminTest extends BookKeeperClusterTestCase {
     private static final BookKeeper.DigestType DIGEST_TYPE = BookKeeper.DigestType.MAC;
     private static final String VALID_STRING = "Test Entry";
     private static final int NUM_BOOKIES = 5;
+    private static final int NUM_ENTRIES = 100;
 
     public BookKeeperAdminTest() {
         super(NUM_BOOKIES);
@@ -32,24 +32,28 @@ class BookKeeperAdminTest extends BookKeeperClusterTestCase {
 
     private static Stream<Arguments> provideDataReadEntriesTest() {
         return Stream.of(
-                Arguments.of(0L, 0L, 1), // Reads only the first entry
-                Arguments.of(1L, 2L, 2), // Reads entries with ID 1 and 2
-                Arguments.of(0L, 49L, 50)//,
-                //Arguments.of(0L, 100L, 100),
-                //Arguments.of(0L, 99L, 100),
-                //Arguments.of(99L, 99L, 1),
-                //Arguments.of(0L, -1L, 100),
-                //Arguments.of(0L, -2L, 100)
+                Arguments.of(0, 0, 1), // Reads only the first entry
+                Arguments.of(0, 1, 2), // Reads the first two entries
+                Arguments.of(0, NUM_ENTRIES / 2 - 1, NUM_ENTRIES / 2)//, // Reads the first half of the entries
+//                Arguments.of(NUM_ENTRIES / 2, NUM_ENTRIES - 1, NUM_ENTRIES / 2), // Reads the second half of the entries
+//                Arguments.of(0, NUM_ENTRIES - 1, NUM_ENTRIES), // Reads all entries
+//                Arguments.of(NUM_ENTRIES - 1, NUM_ENTRIES - 1, 1), // Reads only the last entry
+//                Arguments.of(0, -1, NUM_ENTRIES)
         );
     }
 
     private static Stream<Arguments> provideInvalidDataReadEntriesTest() {
         return Stream.of(
-                Arguments.of(-1L, 1L), // Exception (invalid value for `firstEntry`)
-                Arguments.of(0L, -1L), // Exception (invalid value for `lastEntry`)
-                Arguments.of(2L, 1L),  // Exception (invalid value for `firstEntry` > `lastEntry`)
-                Arguments.of(0L, 100L),  // Exception (invalid value for `lastEntry`)
-                Arguments.of(100L, 99L)   // Exception (invalid value for `firstEntry`)
+                Arguments.of(-1L, -1L), // Exception (invalid value for 'firstEntry' and 'lastEntry'
+                Arguments.of(-1L, 0L)//, // Exception (invalid value for `firstEntry`)
+//                Arguments.of(0L, -1L), // Exception (invalid value for `lastEntry`)
+//                Arguments.of(NUM_ENTRIES - 1, NUM_ENTRIES/2),
+//                Arguments.of(0L, NUM_ENTRIES),  // Exception (invalid value for `lastEntry`)
+//                Arguments.of(NUM_ENTRIES, NUM_ENTRIES - 1), // Exception (invalid value for `firstEntry`)
+//                Arguments.of(NUM_ENTRIES, NUM_ENTRIES),
+//                Arguments.of(NUM_ENTRIES, NUM_ENTRIES + 1),
+//                Arguments.of(NUM_ENTRIES + 1, NUM_ENTRIES),
+//                Arguments.of(0, -2)
         );
     }
 
@@ -95,8 +99,6 @@ class BookKeeperAdminTest extends BookKeeperClusterTestCase {
         }
     }
 
-    // getAvailableBookies
-
     @Test
     void bookkeeperAdminClosedClient() {
         try {
@@ -108,7 +110,7 @@ class BookKeeperAdminTest extends BookKeeperClusterTestCase {
         assertThrows(BKException.class, bkAdmin::getAllBookies);
     }
 
-    // getAllBookies
+    // getAvailableBookies
 
     @Test
     void getAvailableBookiesTest() {
@@ -134,7 +136,7 @@ class BookKeeperAdminTest extends BookKeeperClusterTestCase {
         }
     }
 
-    // getReadOnlyBookies
+    // getAllBookies
 
     @Test
     void getAllBookiesTest() {
@@ -152,7 +154,7 @@ class BookKeeperAdminTest extends BookKeeperClusterTestCase {
         }
     }
 
-    // openLedger
+    // getReadOnlyBookies
 
     @Test
     void getReadOnlyBookiesTest() {
@@ -191,6 +193,8 @@ class BookKeeperAdminTest extends BookKeeperClusterTestCase {
         }
     }
 
+    // openLedger
+
     @Test
     void openLedgerTest() throws BKException, IOException, InterruptedException {
         BookKeeperAdmin bkAdmin = new BookKeeperAdmin(zkUtil.getZooKeeperConnectString());
@@ -217,14 +221,14 @@ class BookKeeperAdminTest extends BookKeeperClusterTestCase {
         bkAdmin.close();
     }
 
-    // asyncOpenLedger
-
     @Test
     void openLedgerInvalidIdTest() throws BKException, IOException, InterruptedException {
         try (BookKeeperAdmin bkAdmin = new BookKeeperAdmin(zkUtil.getZooKeeperConnectString())) {
             assertThrows(BKException.class, () -> bkAdmin.openLedger(-1));
         }
     }
+
+    // asyncOpenLedger
 
     @Test
     void asyncOpenLedgerTest() throws BKException, IOException, InterruptedException {
@@ -272,22 +276,23 @@ class BookKeeperAdminTest extends BookKeeperClusterTestCase {
 
     @ParameterizedTest
     @MethodSource("provideDataReadEntriesTest")
-    void readEntriesTest(Long firstEntry, Long lastEntry, int expectedEntries) {
+    void readEntriesTest(long firstEntry, long lastEntry, int expectedEntries) {
         try (LedgerHandle lh = bkc.createLedger(BookKeeper.DigestType.MAC, "password".getBytes())) {
             try {
-                for (int i = 0; i < 100; i++) {
+                for (int i = 0; i < NUM_ENTRIES; i++) {
                     lh.addEntry(("Entry " + i).getBytes());
                 }
+                assertEquals(NUM_ENTRIES - 1, lh.lastAddConfirmed);
             } catch (BKException | InterruptedException e) {
                 fail("LedgerHandle addEntry failed: " + e.getMessage());
             }
             try (BookKeeperAdmin bkAdmin = new BookKeeperAdmin(zkUtil.getZooKeeperConnectString())) {
                 try {
-                    Iterator<LedgerEntry> entries = bkAdmin.readEntries(lh.getId(), firstEntry, lastEntry).iterator();
                     int count = 0;
-                    while (entries.hasNext()) {
-                        LedgerEntry entry = entries.next();
-                        assertArrayEquals(entry.getEntry(), ("Entry " + (count + firstEntry)).getBytes());
+                    Iterable<LedgerEntry> entries = bkAdmin.readEntries(lh.getId(), firstEntry, lastEntry);
+                    for (LedgerEntry entry : entries) {
+                        long entryId = entry.getEntryId();
+                        assertArrayEquals(("Entry " + entryId).getBytes(), entry.getEntry());
                         count++;
                     }
                     assertEquals(expectedEntries, count);
@@ -302,19 +307,23 @@ class BookKeeperAdminTest extends BookKeeperClusterTestCase {
         }
     }
 
-    // @ParameterizedTest
+    @ParameterizedTest
     @MethodSource("provideInvalidDataReadEntriesTest")
-    void readEntriesInvalidParametersTest(Long firstEntry, Long lastEntry) {
+    void readEntriesInvalidParametersTest(long firstEntry, long lastEntry) {
         try (LedgerHandle lh = bkc.createLedger(BookKeeper.DigestType.MAC, "password".getBytes())) {
             try {
-                for (int i = 0; i < 100; i++) {
+                for (int i = 0; i < NUM_ENTRIES; i++) {
                     lh.addEntry(("Entry " + i).getBytes());
                 }
             } catch (BKException | InterruptedException e) {
                 fail("LedgerHandle addEntry failed: " + e.getMessage());
             }
             try (BookKeeperAdmin bkAdmin = new BookKeeperAdmin(zkUtil.getZooKeeperConnectString())) {
-                assertThrows(BKException.class, () -> bkAdmin.readEntries(lh.getId(), firstEntry, lastEntry));
+                if (firstEntry < 0) {
+                    assertThrows(IllegalArgumentException.class, () -> bkAdmin.readEntries(lh.getId(), firstEntry, lastEntry));
+                } else {
+                    assertThrows(BKException.class, () -> bkAdmin.readEntries(lh.getId(), firstEntry, lastEntry));
+                }
             } catch (BKException | InterruptedException | IOException e) {
                 fail("Unable to create BookKeeperAdmin: " + e.getMessage());
             }

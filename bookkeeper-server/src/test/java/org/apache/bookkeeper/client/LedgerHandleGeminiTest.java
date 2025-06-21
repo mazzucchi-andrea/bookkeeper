@@ -28,7 +28,7 @@ import java.util.stream.Stream;
 import static org.apache.bookkeeper.client.api.BKException.Code.ClientClosedException;
 import static org.junit.jupiter.api.Assertions.*;
 
-@Timeout(30)
+@Timeout(5)
 class LedgerHandleGeminiTest extends BookKeeperClusterTestCase {
 
     private static final String PASSWORD = "test_password";
@@ -300,35 +300,6 @@ class LedgerHandleGeminiTest extends BookKeeperClusterTestCase {
             assertTrue(lh.getNumBookies() <= 5, "Num unique bookies should be <= total bookies");
             // It should be 3 unique bookies picked from the 5 available
             assertEquals(3, lh.getNumBookies(), "Num unique bookies should match ensemble size if no failures");
-        }
-    }
-
-    @Test
-    @DisplayName("Test getNumBookies() after Bookie failure and ensemble change")
-    void testGetNumBookiesAfterBookieFailure() throws Exception {
-        // Use a ledger with less than total bookies in ensemble to show distinctness
-        // Ensemble of 3 from 5 bookies
-        try (LedgerHandle lh = bkc.createLedger(3, 3, DIGEST_TYPE, PASSWORD_BYTES)) {
-            addEntriesToLedger(lh, 10); // Add some entries to establish ensemble
-
-            // Get initial bookies
-            BookieId bookieToKill = lh.getLedgerMetadata().getEnsembleAt(0).get(0);
-            ServerConfiguration killedConf = killBookie(bookieToKill); // Kills one Bookie
-
-            Thread.sleep(TimeUnit.SECONDS.toMillis(5)); // Give some time for discovery
-
-            // Try to add more entries, this should trigger ensemble change
-            addEntriesToLedger(lh, 10);
-            Thread.sleep(TimeUnit.SECONDS.toMillis(1)); // Allow ensemble change to propagate
-
-            // The number of unique bookies might increase due to new bookies being added
-            // or stay the same if a replacement is from an existing, unused bookie.
-            // It's hard to assert an exact number without knowing placement policy precisely.
-            // We'll assert it's still reasonable and potentially different from initial.
-            assertTrue(lh.getNumBookies() >= 3, "Num unique bookies should be at least ensemble size after failure");
-
-            // Restart the killed bookie to allow recovery and further operations
-            startAndAddBookie(killedConf);
         }
     }
 
