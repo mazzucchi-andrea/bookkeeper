@@ -88,8 +88,8 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
         return Stream.of(
                 Arguments.of(0, 0), // Reads only the first entry
                 Arguments.of(0, 1), // Reads the first two entries
-                Arguments.of(0, NUM_ENTRIES/2 - 1), // Reads the first half of the entries
-                Arguments.of(NUM_ENTRIES/2, NUM_ENTRIES - 1), // Reads the second half of the entries
+                Arguments.of(0, NUM_ENTRIES / 2 - 1), // Reads the first half of the entries
+                Arguments.of(NUM_ENTRIES / 2, NUM_ENTRIES - 1), // Reads the second half of the entries
                 Arguments.of(0, NUM_ENTRIES - 1), // Reads all entries
                 Arguments.of(NUM_ENTRIES - 1, NUM_ENTRIES - 1) // Reads only the last entry
         );
@@ -100,7 +100,7 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
                 Arguments.of(-1L, -1L), // Exception (invalid value for 'firstEntry' and 'lastEntry'
                 Arguments.of(-1L, 0L), // Exception (invalid value for `firstEntry`)
                 Arguments.of(0L, -1L), // Exception (invalid value for `lastEntry`)
-                Arguments.of(NUM_ENTRIES - 1, NUM_ENTRIES/2),
+                Arguments.of(NUM_ENTRIES - 1, NUM_ENTRIES / 2),
                 Arguments.of(0L, NUM_ENTRIES),  // Exception (invalid value for `lastEntry`)
                 Arguments.of(NUM_ENTRIES, NUM_ENTRIES - 1), // Exception (invalid value for `firstEntry`)
                 Arguments.of(NUM_ENTRIES, NUM_ENTRIES),
@@ -703,7 +703,7 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
 
     @ParameterizedTest
     @MethodSource("provideDataReadEntriesTest")
-    void readUnconfirmedEntriesTest(long firstEntry, long lastEntry) {
+    void readUnconfirmedEntries1Test(long firstEntry, long lastEntry) {
         try (LedgerHandle lh = bkc.createLedger(DIGEST_TYPE, PASSWORD_BYTES)) {
             for (int i = 0; i < NUM_ENTRIES; i++) {
                 lh.appendAsync(("Entry " + i).getBytes());
@@ -728,13 +728,62 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
     }
 
     @ParameterizedTest
+    @MethodSource("provideDataReadEntriesTest")
+    void readUnconfirmedEntries2Test(long firstEntry, long lastEntry) {
+        try (LedgerHandle lh = bkc.createLedger(DIGEST_TYPE, PASSWORD_BYTES)) {
+            for (int i = 0; i < NUM_ENTRIES; i++) {
+                lh.addEntry(("Entry " + i).getBytes());
+            }
+            assertEquals(NUM_ENTRIES - 1, lh.lastAddConfirmed);
+            assertEquals(NUM_ENTRIES - 1, lh.lastAddPushed);
+            try {
+                Enumeration<LedgerEntry> entries = lh.readUnconfirmedEntries(firstEntry, lastEntry);
+                int count = 0;
+                while (entries.hasMoreElements()) {
+                    LedgerEntry entry = entries.nextElement();
+                    assertArrayEquals(("Entry " + (count + firstEntry)).getBytes(), entry.getEntry());
+                    assertTrue(entry.getEntryId() >= 0 && entry.getEntryId() <= NUM_ENTRIES - 1);
+                    count++;
+                }
+                assertEquals(lastEntry - firstEntry + 1, count);
+            } catch (BKException | InterruptedException e) {
+                fail("readUnconfirmedEntries failed: " + e.getMessage());
+            }
+        } catch (BKException | InterruptedException e) {
+            fail("LedgerHandle creation failed: " + e.getMessage());
+        }
+    }
+
+    @ParameterizedTest
     @MethodSource("provideInvalidDataReadEntriesTest")
-    void readUnconfirmedEntriesInvalidParametersTest(long firstEntry, long lastEntry) {
+    void readUnconfirmedEntriesInvalidParameters1Test(long firstEntry, long lastEntry) {
         try (LedgerHandle lh = bkc.createLedger(DIGEST_TYPE, PASSWORD_BYTES)) {
             for (int i = 0; i < NUM_ENTRIES; i++) {
                 lh.appendAsync(("Entry " + i).getBytes());
             }
             assertTrue(lh.lastAddConfirmed < NUM_ENTRIES - 1);
+            BKException e = assertThrows(BKException.class, () -> lh.readUnconfirmedEntries(firstEntry, lastEntry));
+            if (lastEntry < NUM_ENTRIES || (firstEntry > lastEntry)) {
+                assertEquals(BKException.Code.IncorrectParameterException, e.getCode());
+            } else if (firstEntry > lh.lastAddPushed || lastEntry > lh.lastAddPushed) {
+                assertEquals(BKException.Code.NoSuchEntryException, e.getCode());
+            } else {
+                assertEquals(BKException.Code.ReadException, e.getCode());
+            }
+        } catch (BKException | InterruptedException e) {
+            fail("LedgerHandle creation failed: " + e.getMessage());
+        }
+    }
+
+    @ParameterizedTest
+    @MethodSource("provideInvalidDataReadEntriesTest")
+    void readUnconfirmedEntriesInvalidParameters2Test(long firstEntry, long lastEntry) {
+        try (LedgerHandle lh = bkc.createLedger(DIGEST_TYPE, PASSWORD_BYTES)) {
+            for (int i = 0; i < NUM_ENTRIES; i++) {
+                lh.addEntry(("Entry " + i).getBytes());
+            }
+            assertEquals(NUM_ENTRIES - 1, lh.lastAddConfirmed);
+            assertEquals(NUM_ENTRIES - 1, lh.lastAddPushed);
             BKException e = assertThrows(BKException.class, () -> lh.readUnconfirmedEntries(firstEntry, lastEntry));
             if (lastEntry < NUM_ENTRIES || (firstEntry > lastEntry)) {
                 assertEquals(BKException.Code.IncorrectParameterException, e.getCode());
@@ -763,7 +812,7 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
 
     @ParameterizedTest
     @MethodSource("provideDataBatchReadUnconfirmedEntriesTest")
-    void batchReadUnconfirmedEntriesTest(long startEntry, int maxCount, long maxSize, int expectedEntries,
+    void batchReadUnconfirmedEntries1Test(long startEntry, int maxCount, long maxSize, int expectedEntries,
                                          boolean batchReadEnabled) {
         ClientConfiguration conf;
         if (batchReadEnabled) {
@@ -804,8 +853,50 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
     }
 
     @ParameterizedTest
+    @MethodSource("provideDataBatchReadUnconfirmedEntriesTest")
+    void batchReadUnconfirmedEntries2Test(long startEntry, int maxCount, long maxSize, int expectedEntries,
+                                          boolean batchReadEnabled) {
+        ClientConfiguration conf;
+        if (batchReadEnabled) {
+            conf = new ClientConfiguration().setUseV2WireProtocol(true);
+            conf.setBatchReadEnabled(true);
+            conf.setMetadataServiceUri(zkUtil.getMetadataServiceUri());
+        } else {
+            conf = new ClientConfiguration();
+            conf.setBatchReadEnabled(false);
+            conf.setMetadataServiceUri(zkUtil.getMetadataServiceUri());
+        }
+        try (BookKeeper bkc = new BookKeeper(conf)) {
+            try (LedgerHandle lh = bkc.createLedger(3, 3, DIGEST_TYPE, PASSWORD_BYTES)) {
+                for (int i = 0; i < NUM_ENTRIES; i++) {
+                    lh.addEntry(("Entry " + i).getBytes());
+                }
+                assertEquals(NUM_ENTRIES - 1, lh.lastAddConfirmed);
+                assertEquals(NUM_ENTRIES - 1, lh.lastAddPushed);
+                try {
+                    Enumeration<LedgerEntry> entries = lh.batchReadUnconfirmedEntries(startEntry, maxCount, maxSize);
+                    int count = 0;
+                    while (entries.hasMoreElements()) {
+                        LedgerEntry entry = entries.nextElement();
+                        assertTrue(entry.getEntryId() >= startEntry);
+                        assertArrayEquals(("Entry " + (count + startEntry)).getBytes(), entry.getEntry());
+                        count++;
+                    }
+                    assertTrue(count <= expectedEntries);
+                } catch (BKException | InterruptedException e) {
+                    fail("Failed batchReadUnconfirmedEntries: " + e.getMessage());
+                }
+            } catch (BKException | InterruptedException e) {
+                fail("LedgerHandle creation failed: " + e.getMessage());
+            }
+        } catch (BKException | InterruptedException | IOException e) {
+            fail("BookKeeper client init failed: " + e.getMessage());
+        }
+    }
+
+    @ParameterizedTest
     @MethodSource("provideInvalidDataBatchUnconfirmedReadEntriesTest")
-    void batchReadUnconfirmedEntriesInvalidParametersTest(long startEntry, int maxCount, long maxSize, boolean batchReadEnabled) {
+    void batchReadUnconfirmedEntriesInvalidParameters1Test(long startEntry, int maxCount, long maxSize, boolean batchReadEnabled) {
         ClientConfiguration conf;
         if (batchReadEnabled) {
             conf = new ClientConfiguration().setUseV2WireProtocol(true);
@@ -822,6 +913,39 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
                     lh.appendAsync(("Entry " + i).getBytes());
                 }
                 assertTrue(lh.lastAddConfirmed < NUM_ENTRIES - 1);
+                if (startEntry < 0) {
+                    assertThrows(BKException.BKIncorrectParameterException.class, () -> lh.batchReadUnconfirmedEntries(startEntry, maxCount, maxSize));
+                } else {
+                    assertThrows(BKException.BKNoSuchEntryException.class, () -> lh.batchReadUnconfirmedEntries(startEntry, maxCount, maxSize));
+                }
+            } catch (BKException | InterruptedException e) {
+                fail("LedgerHandle creation failed: " + e.getMessage());
+            }
+        } catch (BKException | InterruptedException | IOException e) {
+            fail("BookKeeper client init failed: " + e.getMessage());
+        }
+    }
+
+    @ParameterizedTest
+    @MethodSource("provideInvalidDataBatchUnconfirmedReadEntriesTest")
+    void batchReadUnconfirmedEntriesInvalidParameters2Test(long startEntry, int maxCount, long maxSize, boolean batchReadEnabled) {
+        ClientConfiguration conf;
+        if (batchReadEnabled) {
+            conf = new ClientConfiguration().setUseV2WireProtocol(true);
+            conf.setBatchReadEnabled(true);
+            conf.setMetadataServiceUri(zkUtil.getMetadataServiceUri());
+        } else {
+            conf = new ClientConfiguration();
+            conf.setBatchReadEnabled(false);
+            conf.setMetadataServiceUri(zkUtil.getMetadataServiceUri());
+        }
+        try (BookKeeper bkc = new BookKeeper(conf)) {
+            try (LedgerHandle lh = bkc.createLedger(3, 3, DIGEST_TYPE, PASSWORD_BYTES)) {
+                for (int i = 0; i < NUM_ENTRIES; i++) {
+                    lh.addEntry(("Entry " + i).getBytes());
+                }
+                assertEquals(NUM_ENTRIES - 1, lh.lastAddConfirmed);
+                assertEquals(NUM_ENTRIES - 1, lh.lastAddPushed);
                 if (startEntry < 0) {
                     assertThrows(BKException.BKIncorrectParameterException.class, () -> lh.batchReadUnconfirmedEntries(startEntry, maxCount, maxSize));
                 } else {
@@ -1000,11 +1124,36 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
         }
     }
 
+    @ParameterizedTest
+    @MethodSource("provideDataBatchReadEntriesNoEntriesTest")
+    void batchReadAsyncNoEntriesTest(boolean batchReadEnabled) {
+        ClientConfiguration conf;
+        if (batchReadEnabled) {
+            conf = new ClientConfiguration().setUseV2WireProtocol(true);
+            conf.setBatchReadEnabled(true);
+            conf.setMetadataServiceUri(zkUtil.getMetadataServiceUri());
+        } else {
+            conf = new ClientConfiguration();
+            conf.setBatchReadEnabled(false);
+            conf.setMetadataServiceUri(zkUtil.getMetadataServiceUri());
+        }
+        try (BookKeeper bkc = new BookKeeper(conf)) {
+            try (LedgerHandle lh = bkc.createLedger(3, 3, DIGEST_TYPE, PASSWORD_BYTES)) {
+                CompletableFuture<LedgerEntries> future = lh.batchReadAsync(0, NUM_ENTRIES, -1);
+                assertThrows(CompletionException.class, future::join);
+            } catch (BKException | InterruptedException e) {
+                fail("LedgerHandle creation failed: " + e.getMessage());
+            }
+        } catch (BKException | InterruptedException | IOException e) {
+            fail("BookKeeper client init failed: " + e.getMessage());
+        }
+    }
+
     // readUnconfirmedAsync
 
     @ParameterizedTest
     @MethodSource("provideDataReadEntriesTest")
-    void readUnconfirmedAsyncTest(long firstEntry, long lastEntry) {
+    void readUnconfirmedAsync1Test(long firstEntry, long lastEntry) {
         try (LedgerHandle lh = bkc.createLedger(DIGEST_TYPE, PASSWORD_BYTES)) {
             for (int i = 0; i < NUM_ENTRIES; i++) {
                 lh.appendAsync(("Entry " + i).getBytes());
@@ -1032,17 +1181,70 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
     }
 
     @ParameterizedTest
-    @MethodSource("provideInvalidDataReadEntriesTest")
-    void readUnconfirmedAsyncInvalidParametersTest(long firstEntry, long lastEntry) {
+    @MethodSource("provideDataReadEntriesTest")
+    void readUnconfirmedAsync2Test(long firstEntry, long lastEntry) {
         try (LedgerHandle lh = bkc.createLedger(DIGEST_TYPE, PASSWORD_BYTES)) {
             for (int i = 0; i < NUM_ENTRIES; i++) {
-                lh.asyncAddEntry(("Entry " + i).getBytes(), (rc, lh1, entryId, ctx) -> {
-                    // I don't care when it is completed and if it is completed
-                }, null);
+                lh.addEntry(("Entry " + i).getBytes());
+            }
+            assertEquals(NUM_ENTRIES - 1, lh.lastAddConfirmed);
+            assertEquals(NUM_ENTRIES - 1, lh.lastAddPushed);
+            try {
+                CompletableFuture<LedgerEntries> future = lh.readUnconfirmedAsync(firstEntry, lastEntry);
+                LedgerEntries entries = future.join();
+                int count = 0;
+                Iterator<org.apache.bookkeeper.client.api.LedgerEntry> iterator = entries.iterator();
+                while (iterator.hasNext()) {
+                    try (org.apache.bookkeeper.client.api.LedgerEntry entry = iterator.next()) {
+                        assertTrue(entry.getEntryId() >= firstEntry && entry.getEntryId() <= lastEntry);
+                    }
+                    count++;
+                }
+                assertEquals(lastEntry - firstEntry + 1, count);
+            } catch (CancellationException | CompletionException e) {
+                fail("readUnconfirmedAsync failed: " + e.getMessage());
+            }
+        } catch (BKException | InterruptedException e) {
+            fail("LedgerHandle creation failed: " + e.getMessage());
+        }
+    }
+
+    @ParameterizedTest
+    @MethodSource("provideInvalidDataReadEntriesTest")
+    void readUnconfirmedAsyncInvalidParameters1Test(long firstEntry, long lastEntry) {
+        try (LedgerHandle lh = bkc.createLedger(DIGEST_TYPE, PASSWORD_BYTES)) {
+            for (int i = 0; i < NUM_ENTRIES; i++) {
+                lh.appendAsync(("Entry " + i).getBytes());
             }
             assertTrue(lh.lastAddConfirmed < NUM_ENTRIES - 1);
             assertEquals(NUM_ENTRIES - 1, lh.lastAddPushed);
-            CompletableFuture<LedgerEntries> future = lh.readAsync(firstEntry, lastEntry);
+            CompletableFuture<LedgerEntries> future = lh.readUnconfirmedAsync(firstEntry, lastEntry);
+            assertThrows(CompletionException.class, future::join);
+        } catch (BKException | InterruptedException e) {
+            fail("LedgerHandle creation failed: " + e.getMessage());
+        }
+    }
+
+    @ParameterizedTest
+    @MethodSource("provideInvalidDataReadEntriesTest")
+    void readUnconfirmedAsyncInvalidParameters2Test(long firstEntry, long lastEntry) {
+        try (LedgerHandle lh = bkc.createLedger(DIGEST_TYPE, PASSWORD_BYTES)) {
+            for (int i = 0; i < NUM_ENTRIES; i++) {
+                lh.addEntry(("Entry " + i).getBytes());
+            }
+            assertEquals(NUM_ENTRIES - 1, lh.lastAddConfirmed);
+            assertEquals(NUM_ENTRIES - 1, lh.lastAddPushed);
+            CompletableFuture<LedgerEntries> future = lh.readUnconfirmedAsync(firstEntry, lastEntry);
+            assertThrows(CompletionException.class, future::join);
+        } catch (BKException | InterruptedException e) {
+            fail("LedgerHandle creation failed: " + e.getMessage());
+        }
+    }
+
+    @Test
+    void readUnconfirmedAsyncNoEntryTest() {
+        try (LedgerHandle lh = bkc.createLedger(DIGEST_TYPE, PASSWORD_BYTES)) {
+            CompletableFuture<LedgerEntries> future = lh.readUnconfirmedAsync(0, NUM_ENTRIES - 1);
             assertThrows(CompletionException.class, future::join);
         } catch (BKException | InterruptedException e) {
             fail("LedgerHandle creation failed: " + e.getMessage());
