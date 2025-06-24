@@ -15,53 +15,48 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <artifactId>stream-storage-parent</artifactId>
-    <groupId>org.apache.bookkeeper</groupId>
-    <version>4.18.0-SNAPSHOT</version>
-    <relativePath>..</relativePath>
-  </parent>
-  <artifactId>stream-storage-common</artifactId>
-  <name>Apache BookKeeper :: Stream Storage :: Common</name>
-  <dependencies>
-    <dependency>
-      <groupId>org.apache.bookkeeper</groupId>
-      <artifactId>bookkeeper-common</artifactId>
-      <version>${project.parent.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>io.netty</groupId>
-      <artifactId>netty-buffer</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.grpc</groupId>
-      <artifactId>grpc-all</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.grpc</groupId>
-      <artifactId>grpc-netty-shaded</artifactId>
-    </dependency>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <dependency>
-      <groupId>javax.annotation</groupId>
-      <artifactId>javax.annotation-api</artifactId>
-      <!-- this should not be bundled in binary distributions -->
-      <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.bookkeeper</groupId>
-      <artifactId>bookkeeper-common</artifactId>
-      <version>${project.version}</version>
-      <type>test-jar</type>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.bookkeeper.tests</groupId>
-      <artifactId>stream-storage-tests-common</artifactId>
-      <version>${project.version}</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>stream-storage-parent</artifactId>
+        <groupId>org.apache.bookkeeper</groupId>
+        <version>4.18.0-SNAPSHOT</version>
+        <relativePath>..</relativePath>
+    </parent>
+
+    <artifactId>stream-storage-common</artifactId>
+    <name>Apache BookKeeper :: Stream Storage :: Common</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.bookkeeper</groupId>
+            <artifactId>bookkeeper-common</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-buffer</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-all</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-netty-shaded</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <!-- this should not be bundled in binary distributions -->
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
 </project>
