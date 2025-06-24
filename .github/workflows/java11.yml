@@ -33,8 +33,8 @@ jobs:
       - name: Build with Maven
         run: mvn clean install
       - name: Create staging directory for JaCoCo Reports
-        run: mkdir staging && cp ./test/target/site staging
+        run: mkdir staging && cp -r tests/target/site staging
       - uses: actions/upload-artifact@v4
         with:
-         name: Package
-         path: staging
+          name: Package
+          path: staging
