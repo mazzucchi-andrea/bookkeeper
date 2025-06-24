@@ -29,18 +29,6 @@
     <artifactId>tests</artifactId>
     <name>Tests</name>
 
-    <!--  <modules>-->
-    <!--    <module>shaded</module>-->
-    <!--    <module>docker-images</module>-->
-    <!--    <module>integration-tests-base</module>-->
-    <!--    <module>integration-tests-base-groovy</module>-->
-    <!--    <module>integration-tests-utils</module>-->
-    <!--    <module>integration-tests-topologies</module>-->
-    <!--    <module>backward-compat</module>-->
-    <!--    <module>integration</module>-->
-    <!--    <module>scripts</module>-->
-    <!--  </modules>-->
-
     <dependencies>
         <dependency>
             <groupId>org.apache.bookkeeper</groupId>
@@ -51,13 +39,6 @@
 
     <build>
         <plugins>
-            <!--      <plugin>-->
-            <!--        <groupId>org.apache.maven.plugins</groupId>-->
-            <!--        <artifactId>maven-deploy-plugin</artifactId>-->
-            <!--        <configuration>-->
-            <!--          <skip>true</skip>-->
-            <!--        </configuration>-->
-            <!--      </plugin>-->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
