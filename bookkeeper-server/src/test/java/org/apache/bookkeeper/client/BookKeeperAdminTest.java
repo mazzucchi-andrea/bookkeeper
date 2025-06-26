@@ -254,8 +254,6 @@ class BookKeeperAdminTest extends BookKeeperClusterTestCase {
         }
     }
 
-    // readEntries
-
     @Test
     void asyncOpenLedgerInvalidIdTest() throws BKException, IOException, InterruptedException {
         try (BookKeeperAdmin bkAdmin = new BookKeeperAdmin(zkUtil.getZooKeeperConnectString())) {
@@ -274,6 +272,8 @@ class BookKeeperAdminTest extends BookKeeperClusterTestCase {
         }
     }
 
+    // readEntries
+
     @ParameterizedTest
     @MethodSource("provideDataReadEntriesTest")
     void readEntriesTest(long firstEntry, long lastEntry, int expectedEntries) {
@@ -290,11 +290,14 @@ class BookKeeperAdminTest extends BookKeeperClusterTestCase {
                 try {
                     int count = 0;
                     Iterable<LedgerEntry> entries = bkAdmin.readEntries(lh.getId(), firstEntry, lastEntry);
+                    List<LedgerEntry> entryList = new ArrayList<>();
                     for (LedgerEntry entry : entries) {
                         long entryId = entry.getEntryId();
                         assertArrayEquals(("Entry " + entryId).getBytes(), entry.getEntry());
                         count++;
+                        entryList.add(entry);
                     }
+                    assertEquals(expectedEntries, entryList.size());
                     assertEquals(expectedEntries, count);
                 } catch (BKException | InterruptedException e) {
                     fail("Unable to read entries: " + e.getMessage());
@@ -303,7 +306,7 @@ class BookKeeperAdminTest extends BookKeeperClusterTestCase {
                 fail("Unable to create BookKeeperAdmin: " + e.getMessage());
             }
         } catch (BKException | InterruptedException e) {
-            fail("LedgerHandle creation failed: " + e.getMessage());
+            fail("Unable to create LedgerHandle: " + e.getMessage());
         }
     }
 
@@ -329,6 +332,13 @@ class BookKeeperAdminTest extends BookKeeperClusterTestCase {
             }
         } catch (BKException | InterruptedException e) {
             fail("LedgerHandle creation failed: " + e.getMessage());
+        }
+    }
+
+    @Test
+    void readEntriesInvalidIdTest() throws BKException, IOException, InterruptedException {
+        try (BookKeeperAdmin bkAdmin = new BookKeeperAdmin(zkUtil.getZooKeeperConnectString())) {
+            assertThrows(IllegalArgumentException.class, () -> bkAdmin.readEntries(-1, 0, 0));
         }
     }
 
