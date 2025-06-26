@@ -40,7 +40,7 @@ jobs:
       - name: Create staging directory for PIT
         run: mkdir staging && cp bookkeeper-server/.pit-history/pit-history staging
       - name: copy PIT reports
-        run: cp - r bookkeeper-server/target/pit-reports staging
+        run: cp -r bookkeeper-server/target/pit-reports staging
       - uses: actions/upload-artifact@v4
         with:
           name: Package
