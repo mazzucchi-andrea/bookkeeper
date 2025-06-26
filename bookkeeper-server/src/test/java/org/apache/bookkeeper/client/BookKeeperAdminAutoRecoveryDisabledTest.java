@@ -33,9 +33,12 @@ class BookKeeperAdminAutoRecoveryDisabledTest extends BookKeeperClusterTestCase 
 
     private static Stream<Arguments> provideDataDecommissionBookieTest() {
         return Stream.of(
-                // boolean running
-                Arguments.of(false),
-                Arguments.of(true)
+                // boolean running, boolean readOnly
+                Arguments.of(true, true),
+                Arguments.of(false, false),
+                Arguments.of(true, false),
+                Arguments.of(false, true)
+
         );
     }
 
@@ -43,7 +46,7 @@ class BookKeeperAdminAutoRecoveryDisabledTest extends BookKeeperClusterTestCase 
 
     @ParameterizedTest
     @MethodSource("provideDataDecommissionBookieTest")
-    void decommissionBookieTest(boolean running) {
+    void decommissionBookieTest(boolean running, boolean readOnly) {
         BookKeeperAdmin bkAdmin = new BookKeeperAdmin(bkc);
         LedgerHandle lh;
         try {
@@ -54,6 +57,13 @@ class BookKeeperAdminAutoRecoveryDisabledTest extends BookKeeperClusterTestCase 
         }
         LedgerMetadata lm = bkAdmin.getLedgerMetadata(lh);
         BookieId bookieId = lm.getAllEnsembles().get(0L).get(0);
+        if (readOnly){
+            try {
+                setBookieToReadOnly(bookieId);
+            } catch (Exception e) {
+                fail("Unable to set bookie readOnly: " + e.getMessage());
+            }
+        }
         if (!running) {
             shutdownBookie(bookieId);
             assertThrows(Exception.class, () -> bkAdmin.decommissionBookie(bookieId));
