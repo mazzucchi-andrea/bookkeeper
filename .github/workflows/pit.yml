@@ -37,8 +37,10 @@ jobs:
         run: mvn clean install
       - name: PIT
         run: mvn test-compile org.pitest:pitest-maven:mutationCoverage -pl bookkeeper-server
-      - name: Create staging directory for PIT History
+      - name: Create staging directory for PIT
         run: mkdir staging && cp bookkeeper-server/.pit-history/pit-history staging
+      - name: copy PIT reports
+        run: cp - r bookkeeper-server/target/pit-reports staging
       - uses: actions/upload-artifact@v4
         with:
           name: Package
