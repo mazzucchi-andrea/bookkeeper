@@ -409,7 +409,7 @@
                         <mutator>INCREMENTS</mutator>
                         <mutator>INVERT_NEGS</mutator>
                         <mutator>MATH</mutator>
-<!--                        <mutator>NEGATE_CONDITIONALS</mutator>-->
+                        <mutator>NEGATE_CONDITIONALS</mutator>
 <!--                        <mutator>VOID_METHOD_CALLS</mutator>-->
                         <mutator>EMPTY_RETURNS</mutator>
                         <mutator>FALSE_RETURNS</mutator>
