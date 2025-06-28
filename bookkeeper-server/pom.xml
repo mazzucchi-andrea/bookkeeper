@@ -407,7 +407,7 @@
                     <mutators>
 <!--                        <mutator>CONDITIONALS_BOUNDARY</mutator>-->
                         <mutator>INCREMENTS</mutator>
-<!--                        <mutator>INVERT_NEGS</mutator>-->
+                        <mutator>INVERT_NEGS</mutator>
 <!--                        <mutator>MATH</mutator>-->
 <!--                        <mutator>NEGATE_CONDITIONALS</mutator>-->
 <!--                        <mutator>VOID_METHOD_CALLS</mutator>-->

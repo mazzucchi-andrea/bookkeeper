@@ -311,14 +311,20 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
             }
             long lastAddConfirmed = lh.getLastAddConfirmed();
             assertEquals(NUM_ENTRIES - 1, lastAddConfirmed);
-            Enumeration<LedgerEntry> entries = lh.readEntries(0, lastAddConfirmed);
-            long count = 0;
-            while (entries.hasMoreElements()) {
-                LedgerEntry entry = entries.nextElement();
-                assertTrue(entry.getEntryId() >= 0 && entry.getEntryId() <= lastAddConfirmed);
-                count++;
+            try {
+                Enumeration<LedgerEntry> entries = lh.readEntries(0, lastAddConfirmed);
+                long count = 0;
+                while (entries.hasMoreElements()) {
+                    LedgerEntry entry = entries.nextElement();
+                    long entryId = entry.getEntryId();
+                    assertEquals(entryId, count);
+                    assertArrayEquals(("Entry " + count).getBytes(), entry.getEntry());
+                    count++;
+                }
+                assertEquals(lastAddConfirmed + 1, count);
+            } catch (BKException | InterruptedException e) {
+                fail("readEntries failed: " + e.getMessage());
             }
-            assertEquals(lastAddConfirmed + 1, count);
         } catch (BKException | InterruptedException e) {
             fail("LedgerHandle creation failed: " + e.getMessage());
         }
@@ -338,14 +344,20 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
                 fail("LedgerHandle addEntry failed: " + e.getMessage());
             }
             long lastAddPushed = lh.getLastAddPushed();
-            Enumeration<LedgerEntry> entries = lh.readEntries(0, lastAddPushed);
-            long count = 0;
-            while (entries.hasMoreElements()) {
-                LedgerEntry entry = entries.nextElement();
-                assertTrue(entry.getEntryId() >= 0 && entry.getEntryId() <= lastAddPushed);
-                count++;
+            try {
+                Enumeration<LedgerEntry> entries = lh.readEntries(0, lastAddPushed);
+                long count = 0;
+                while (entries.hasMoreElements()) {
+                    LedgerEntry entry = entries.nextElement();
+                    long entryId = entry.getEntryId();
+                    assertEquals(entryId, count);
+                    assertArrayEquals(("Entry " + count).getBytes(), entry.getEntry());
+                    count++;
+                }
+                assertEquals(lastAddPushed, count - 1);
+            } catch (BKException | InterruptedException e) {
+                fail("readEntries failed: " + e.getMessage());
             }
-            assertEquals(lastAddPushed, count - 1);
         } catch (BKException | InterruptedException e) {
             fail("LedgerHandle creation failed: " + e.getMessage());
         }
@@ -358,8 +370,24 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
             for (int i = 0; i < NUM_ENTRIES; i++) {
                 lh.appendAsync(("Entry " + i).getBytes());
             }
-            assertEquals(NUM_ENTRIES - 1, lh.getLastAddPushed());
-            assertTrue(lh.getLastAddPushed() > lh.getLastAddConfirmed());
+            long lastAddPushed = lh.getLastAddPushed();
+            long lastAddConfirmed = lh.getLastAddConfirmed();
+            assertEquals(NUM_ENTRIES - 1, lastAddPushed);
+            assertTrue(lastAddPushed > lastAddConfirmed);
+            try {
+                Enumeration<LedgerEntry> entries = lh.readUnconfirmedEntries(0, lastAddPushed);
+                long count = 0;
+                while (entries.hasMoreElements()) {
+                    LedgerEntry entry = entries.nextElement();
+                    long entryId = entry.getEntryId();
+                    assertEquals(entryId, count);
+                    assertArrayEquals(("Entry " + count).getBytes(), entry.getEntry());
+                    count++;
+                }
+                assertEquals(lastAddPushed, count - 1);
+            } catch (BKException | InterruptedException e) {
+                fail("readUnconfirmedEntries failed: " + e.getMessage());
+            }
         } catch (BKException | InterruptedException e) {
             fail("LedgerHandle creation failed: " + e.getMessage());
         }
@@ -436,7 +464,9 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
                 int count = 0;
                 while (entries.hasMoreElements()) {
                     LedgerEntry entry = entries.nextElement();
-                    assertTrue(entry.getEntryId() >= 0 && entry.getEntryId() <= NUM_ENTRIES - 1);
+                    long entryId = entry.getEntryId();
+                    assertEquals(entryId, count);
+                    assertArrayEquals(("Entry " + count).getBytes(), entry.getEntry());
                     count++;
                 }
                 assertEquals(NUM_ENTRIES, count);
@@ -474,7 +504,9 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
                 int count = 0;
                 while (entries.hasMoreElements()) {
                     LedgerEntry entry = entries.nextElement();
-                    assertTrue(entry.getEntryId() >= 0 && entry.getEntryId() <= NUM_ENTRIES - 1);
+                    long entryId = entry.getEntryId();
+                    assertEquals(entryId, count);
+                    assertArrayEquals(("Entry " + count).getBytes(), entry.getEntry());
                     count++;
                 }
                 assertEquals(NUM_ENTRIES, count);
@@ -522,7 +554,9 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
                 int count = 0;
                 while (entries.hasMoreElements()) {
                     LedgerEntry entry = entries.nextElement();
-                    assertTrue(entry.getEntryId() >= 0 && entry.getEntryId() <= NUM_ENTRIES - 1);
+                    long entryId = entry.getEntryId();
+                    assertEquals(entryId, count);
+                    assertArrayEquals(("Entry " + count).getBytes(), entry.getEntry());
                     count++;
                 }
                 assertEquals(NUM_ENTRIES, count);
@@ -591,7 +625,7 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
                 fail("LedgerHandle addEntry failed: " + e.getMessage());
             }
             BKException e = assertThrows(BKException.class, () -> lh.readEntries(firstEntry, lastEntry));
-            if (lastEntry < NUM_ENTRIES || (firstEntry > lastEntry)) {
+            if (firstEntry < 0 || (firstEntry > lastEntry)) {
                 assertEquals(BKException.Code.IncorrectParameterException, e.getCode());
             } else {
                 assertEquals(BKException.Code.ReadException, e.getCode());
@@ -813,7 +847,7 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
     @ParameterizedTest
     @MethodSource("provideDataBatchReadUnconfirmedEntriesTest")
     void batchReadUnconfirmedEntries1Test(long startEntry, int maxCount, long maxSize, int expectedEntries,
-                                         boolean batchReadEnabled) {
+                                          boolean batchReadEnabled) {
         ClientConfiguration conf;
         if (batchReadEnabled) {
             conf = new ClientConfiguration().setUseV2WireProtocol(true);
