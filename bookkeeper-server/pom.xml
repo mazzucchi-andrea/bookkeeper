@@ -405,7 +405,7 @@
                         <targetClass>org.apache.bookkeeper.client.BookKeeperAdmin</targetClass>
                     </targetClasses>
                     <mutators>
-<!--                        <mutator>CONDITIONALS_BOUNDARY</mutator>-->
+                        <mutator>CONDITIONALS_BOUNDARY</mutator>
                         <mutator>INCREMENTS</mutator>
                         <mutator>INVERT_NEGS</mutator>
                         <mutator>MATH</mutator>
