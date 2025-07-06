@@ -2,8 +2,10 @@ package org.apache.bookkeeper.client;
 
 import org.apache.bookkeeper.client.api.LedgerMetadata;
 import org.apache.bookkeeper.net.BookieId;
+import org.apache.bookkeeper.replication.ReplicationException;
 import org.apache.bookkeeper.test.BookKeeperClusterTestCase;
 import org.apache.bookkeeper.test.TestStatsProvider;
+import org.apache.zookeeper.KeeperException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -13,11 +15,12 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeoutException;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@Timeout(120)
+@Timeout(5)
 class BookKeeperAdminTest extends BookKeeperClusterTestCase {
     private static final String PASSWORD = "password";
     private static final byte[] PASSWORD_BYTES = PASSWORD.getBytes();
@@ -28,6 +31,8 @@ class BookKeeperAdminTest extends BookKeeperClusterTestCase {
 
     public BookKeeperAdminTest() {
         super(NUM_BOOKIES);
+        baseConf.setLostBookieRecoveryDelay(1800);
+        baseConf.setOpenLedgerRereplicationGracePeriod(String.valueOf(30000));
     }
 
     private static Stream<Arguments> provideDataReadEntriesTest() {
@@ -54,6 +59,16 @@ class BookKeeperAdminTest extends BookKeeperClusterTestCase {
 //                Arguments.of(NUM_ENTRIES, NUM_ENTRIES + 1),
 //                Arguments.of(NUM_ENTRIES + 1, NUM_ENTRIES),
 //                Arguments.of(0, -2)
+        );
+    }
+
+    private static Stream<Arguments> provideDataDecommissionBookieTest() {
+        return Stream.of(
+                // boolean running, boolean readOnly
+                Arguments.of(true, true),
+                Arguments.of(false, false),
+                Arguments.of(true, false),
+                Arguments.of(false, true)
         );
     }
 
@@ -323,7 +338,7 @@ class BookKeeperAdminTest extends BookKeeperClusterTestCase {
             }
             try (BookKeeperAdmin bkAdmin = new BookKeeperAdmin(zkUtil.getZooKeeperConnectString())) {
                 if (firstEntry < 0) {
-                    assertThrows(IllegalArgumentException.class, () -> bkAdmin.readEntries(lh.getId(), firstEntry, lastEntry));
+                    assertThrows(IllegalArgumentException.class, () -> bkAdmin.readEntries(lh.ledgerId, firstEntry, lastEntry));
                 } else {
                     assertThrows(BKException.class, () -> bkAdmin.readEntries(lh.getId(), firstEntry, lastEntry));
                 }
@@ -342,11 +357,144 @@ class BookKeeperAdminTest extends BookKeeperClusterTestCase {
         }
     }
 
+    // decommissionBookie
+
+    @Timeout(120)
+    @ParameterizedTest
+    @MethodSource("provideDataDecommissionBookieTest")
+    void decommissionBookieAutoRecoveryEnabledTest(boolean running, boolean readOnly) {
+        setAutoRecoveryEnabled(true);
+        try {
+            restartBookies();
+        } catch (Exception e) {
+            fail("BookKeeperCluster restart failed: " + e.getMessage());
+        }
+        BookKeeperAdmin bkAdmin = new BookKeeperAdmin(bkc);
+        BookieId bookieId = null;
+        try {
+            bookieId = (BookieId) bkAdmin.getAllBookies().toArray()[0];
+        } catch (BKException e) {
+            fail("Unable to get BookieId: " + e.getMessage());
+        }
+        if (readOnly) {
+            try {
+                setBookieToReadOnly(bookieId);
+            } catch (Exception e) {
+                fail("Unable to set bookie readOnly: " + e.getMessage());
+            }
+        }
+        BookieId finalBookieId = bookieId;
+        if (!running) {
+            shutdownBookie(bookieId);
+            try {
+                bkAdmin.decommissionBookie(bookieId);
+            } catch (ReplicationException.CompatibilityException | ReplicationException.UnavailableException |
+                     BKException | IOException | InterruptedException | ReplicationException.BKAuditException |
+                     KeeperException | TimeoutException e) {
+                fail("Unable to decommission bookie: " + e.getMessage());
+            }
+        } else {
+            assertThrows(Exception.class, () -> bkAdmin.decommissionBookie(finalBookieId));
+        }
+    }
+
+    @Test
+    @Timeout(120)
+    void decommissionBookieNoLedgerAutoRecoveryEnabledTest() {
+        setAutoRecoveryEnabled(true);
+        try {
+            restartBookies();
+        } catch (Exception e) {
+            fail("BookKeeperCluster restart failed: " + e.getMessage());
+        }
+        BookKeeperAdmin bkAdmin = new BookKeeperAdmin(bkc);
+        BookieId bookieId = null;
+        try {
+            bookieId = (BookieId) bkAdmin.getAllBookies().toArray()[0];
+        } catch (BKException e) {
+            fail("Unable to get BookieId: " + e.getMessage());
+        }
+        shutdownBookie(bookieId);
+        try {
+            bkAdmin.decommissionBookie(bookieId);
+        } catch (ReplicationException.CompatibilityException | ReplicationException.UnavailableException |
+                 KeeperException | InterruptedException | IOException | ReplicationException.BKAuditException |
+                 TimeoutException | BKException e) {
+            fail("Unable to decommission bookie: " + e.getMessage());
+        }
+    }
+
+    @Timeout(120)
+    @ParameterizedTest
+    @MethodSource("provideDataDecommissionBookieTest")
+    void decommissionBookieAutoRecoveryDisabledTest(boolean running, boolean readOnly) {
+        setAutoRecoveryEnabled(false);
+        try {
+            restartBookies();
+        } catch (Exception e) {
+            fail("BookKeeperCluster restart failed: " + e.getMessage());
+        }
+        BookKeeperAdmin bkAdmin = new BookKeeperAdmin(bkc);
+        BookieId bookieId = null;
+        try {
+            bookieId = (BookieId) bkAdmin.getAllBookies().toArray()[0];
+        } catch (BKException e) {
+            fail("Unable to get BookieId: " + e.getMessage());
+        }
+        if (readOnly) {
+            try {
+                setBookieToReadOnly(bookieId);
+            } catch (Exception e) {
+                fail("Unable to set bookie readOnly: " + e.getMessage());
+            }
+        }
+        BookieId finalBookieId = bookieId;
+        if (!running) {
+            shutdownBookie(bookieId);
+            assertThrows(Exception.class, () -> bkAdmin.decommissionBookie(finalBookieId));
+        } else {
+            assertThrows(Exception.class, () -> bkAdmin.decommissionBookie(finalBookieId));
+        }
+    }
+
+    @Test
+    @Timeout(120)
+    void decommissionBookieNoLedgerAutoRecoveryDisabledTest() {
+        setAutoRecoveryEnabled(false);
+        try {
+            restartBookies();
+        } catch (Exception e) {
+            fail("BookKeeperCluster restart failed: " + e.getMessage());
+        }
+        BookKeeperAdmin bkAdmin = new BookKeeperAdmin(bkc);
+        BookieId bookieId = null;
+        try {
+            bookieId = (BookieId) bkAdmin.getAllBookies().toArray()[0];
+        } catch (BKException e) {
+            fail("Unable to get BookieId: " + e.getMessage());
+        }
+        shutdownBookie(bookieId);
+        BookieId finalBookieId = bookieId;
+        assertThrows(Exception.class, () -> bkAdmin.decommissionBookie(finalBookieId));
+    }
+
     // utils
 
     private void shutdownBookie() {
         try {
             servers.get(0).shutdown();
+        } catch (Exception e) {
+            fail("Unable to shutdown Bookie: " + e.getMessage());
+        }
+    }
+
+    private void shutdownBookie(BookieId bookieId) {
+        try {
+            for (ServerTester server : servers) {
+                if (server.getServer().getBookieId().equals(bookieId)) {
+                    server.shutdown();
+                }
+            }
         } catch (Exception e) {
             fail("Unable to shutdown Bookie: " + e.getMessage());
         }

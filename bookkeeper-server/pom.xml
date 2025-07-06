@@ -26,6 +26,7 @@
         <version>4.18.0-SNAPSHOT</version>
     </parent>
 
+    <name>Apache BookKeeper :: Server</name>
     <artifactId>bookkeeper-server</artifactId>
 
     <properties>

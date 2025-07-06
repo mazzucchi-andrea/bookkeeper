@@ -177,17 +177,6 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
         );
     }
 
-    private static Stream<Arguments> provideInvalidDataBatchUnconfirmedReadEntriesTest() {
-        long defaultSize = 5 * 1024 * 1024;
-        return Stream.of(
-                // startEntry, maxCount, maxSize, batchReadEnabled
-                Arguments.of(-1L, 1, defaultSize, true), // Exception (valore non valido per `startEntry`) TODO
-                Arguments.of(-1L, 1, defaultSize, false), // TODO
-                Arguments.of(NUM_ENTRIES, 1, defaultSize, true), // startEntry > lastEntry -> exception
-                Arguments.of(NUM_ENTRIES, 1, defaultSize, false)
-        );
-    }
-
     private static Stream<Arguments> provideInvalidDataBatchReadAsyncTest() {
         long defaultSize = 5 * 1024 * 1024;
         return Stream.of(
@@ -929,7 +918,7 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
     }
 
     @ParameterizedTest
-    @MethodSource("provideInvalidDataBatchUnconfirmedReadEntriesTest")
+    @MethodSource("provideInvalidDataBatchReadEntriesTest")
     void batchReadUnconfirmedEntriesInvalidParameters1Test(long startEntry, int maxCount, long maxSize, boolean batchReadEnabled) {
         ClientConfiguration conf;
         if (batchReadEnabled) {
@@ -961,7 +950,7 @@ class LedgerHandleTest extends BookKeeperClusterTestCase {
     }
 
     @ParameterizedTest
-    @MethodSource("provideInvalidDataBatchUnconfirmedReadEntriesTest")
+    @MethodSource("provideInvalidDataBatchReadEntriesTest")
     void batchReadUnconfirmedEntriesInvalidParameters2Test(long startEntry, int maxCount, long maxSize, boolean batchReadEnabled) {
         ClientConfiguration conf;
         if (batchReadEnabled) {
