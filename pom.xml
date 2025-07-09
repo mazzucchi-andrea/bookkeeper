@@ -139,7 +139,7 @@
         <commons-io.version>2.17.0</commons-io.version>
         <bouncycastle.version>1.0.2.5</bouncycastle.version>
         <curator.version>5.7.1</curator.version>
-        <disruptor.version>4.0.0</disruptor.version> <!--> 3.4.0 for evosuite <-->
+        <disruptor.version>3.4.0</disruptor.version> <!--> 3.4.0 for evosuite <-->
         <dropwizard.version>4.1.12.1</dropwizard.version>
         <jetcd.version>0.7.7</jetcd.version>
         <failsafe.version>3.2.2</failsafe.version>
@@ -151,7 +151,7 @@
         <kerby.version>1.1.1</kerby.version>
         <hadoop.version>3.3.5</hadoop.version>
         <hdrhistogram.version>2.1.10</hdrhistogram.version>
-        <jackson.version>2.17.1</jackson.version> <!--> 2.14.3 for evosuite <-->
+        <jackson.version>2.14.3</jackson.version> <!--> 2.14.3 for evosuite <-->
         <jcommander.version>1.82</jcommander.version>
         <jetty.version>9.4.55.v20240627</jetty.version>
         <jmh.version>1.37</jmh.version>
