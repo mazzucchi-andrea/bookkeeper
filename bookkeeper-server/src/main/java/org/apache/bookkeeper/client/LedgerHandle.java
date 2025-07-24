@@ -760,8 +760,18 @@ public class LedgerHandle implements WriteHandle {
             cb.readComplete(BKException.Code.IncorrectParameterException, this, null, ctx);
             return;
         }
+        if (maxCount < 0) {
+            LOG.error("IncorrectParameterException on ledgerId:{} maxCount:{}", ledgerId, maxCount);
+            cb.readComplete(BKException.Code.IncorrectParameterException, this, null, ctx);
+            return;
+        }
         if (notSupportBatchRead()) {
-            long lastEntry = Math.min(startEntry + maxCount - 1, lastAddConfirmed);
+            long lastEntry;
+            if (maxCount > 0) {
+                lastEntry = Math.min(startEntry + maxCount - 1, lastAddConfirmed);
+            } else {
+                lastEntry = lastAddConfirmed;
+            }
             asyncReadEntriesInternal(startEntry, lastEntry, cb, ctx, false);
         } else {
             asyncBatchReadEntriesInternal(startEntry, maxCount, maxSize, new ReadCallback() {

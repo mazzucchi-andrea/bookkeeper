@@ -754,6 +754,52 @@ public class BookKeeperTest extends BookKeeperClusterTestCase {
     }
 
     @Test
+    public void testBatchReadWithV3Protocol() throws Exception {
+        ClientConfiguration conf = new ClientConfiguration();
+        conf.setMetadataServiceUri(zkUtil.getMetadataServiceUri());
+        conf.setBatchReadEnabled(false);
+        int numEntries = 100;
+        byte[] data = "foobar".getBytes();
+        try (BookKeeper bkc = new BookKeeper(conf)) {
+            // basic read/write
+            {
+                long ledgerId;
+                try (LedgerHandle lh = bkc.createLedger(2, 2, 2, digestType, "testPasswd".getBytes())) {
+                    ledgerId = lh.getId();
+                    for (int i = 0; i < numEntries; i++) {
+                        lh.addEntry(data);
+                    }
+                }
+                try (LedgerHandle lh = bkc.openLedger(ledgerId, digestType, "testPasswd".getBytes())) {
+                    assertEquals(numEntries - 1, lh.readLastConfirmed());
+                    int entries = 0;
+                    for (Enumeration<LedgerEntry> readEntries = lh.batchReadEntries(0, numEntries, 5 * 1024 * 1024);
+                         readEntries.hasMoreElements();) {
+                        LedgerEntry entry = readEntries.nextElement();
+                        assertArrayEquals(data, entry.getEntry());
+                        entries++;
+                    }
+                    assertEquals(numEntries, entries);
+
+                    //The maxCount is 0, the result is not limited by maxSize if batchRead is disabled.
+                    entries = 0;
+                    for (Enumeration<LedgerEntry> readEntries = lh.batchReadEntries(0, 0, 5 * 1024 * 1024);
+                         readEntries.hasMoreElements();) {
+                        LedgerEntry entry = readEntries.nextElement();
+                        assertArrayEquals(data, entry.getEntry());
+                        entries++;
+                    }
+                    assertEquals(numEntries, entries);
+
+                    //The maxCount is -1, should throw an BKIncorrectParameterException.
+                    Assertions.assertThrows(BKException.BKIncorrectParameterException.class,
+                            () -> lh.batchReadEntries(0, -1, 5 * 1024 * 1024));
+                }
+            }
+        }
+    }
+
+    @Test
     public void testBatchReadWithV2Protocol() throws Exception {
         ClientConfiguration conf = new ClientConfiguration().setUseV2WireProtocol(true);
         conf.setMetadataServiceUri(zkUtil.getMetadataServiceUri());
@@ -816,6 +862,10 @@ public class BookKeeperTest extends BookKeeperClusterTestCase {
                         entries++;
                     }
                     assertEquals(expectEntriesNum, entries);
+
+                    //The maxCount is -1, should throw an BKIncorrectParameterException.
+                    Assertions.assertThrows(BKException.BKIncorrectParameterException.class,
+                            () -> lh.batchReadEntries(0, -1, 5 * 1024 * 1024));
                 }
             }
         }
