@@ -1,13 +1,14 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const {themes: prismThemes} = require('prism-react-renderer');
+const lightCodeTheme = prismThemes.github;
+const darkCodeTheme = prismThemes.dracula;
 const baseUrl = process.env.BASE_URL || "/"
 const deployUrl = process.env.DEPLOY_URL || "https://bookkeeper.apache.org";
 const variables = {
   /** They are used in .md files*/
-  latest_release: "4.17.2",
+  latest_release: "4.17.3",
   stable_release: "4.16.7",
   github_repo: "https://github.com/apache/bookkeeper",
   github_master: "https://github.com/apache/bookkeeper/tree/master",
@@ -17,17 +18,29 @@ const variables = {
   archive_releases_base_url: deployUrl + "/archives",
 }
 
+
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Apache BookKeeper',
   url: deployUrl,
   baseUrl,
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'apache',
   projectName: 'bookkeeper',
   plugins: ['docusaurus-plugin-sass'],
+  markdown: {
+    format: 'detect',
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+    preprocessor: ({fileContent}) => {
+      return fileContent.replace(/\{\{\s*site\.([\w]+)\s*\}\}/g, (match, key) => {
+        return key in variables ? String(variables[key]) : match;
+      });
+    },
+  },
 
   presets: [
     [
@@ -36,10 +49,12 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.json'),
-          breadcrumbs: false
+          breadcrumbs: false,
         },
         blog: {
           showReadingTime: true,
+        },
+        pages: {
         },
         theme: {
           customCss: require.resolve('./src/sass/index.scss'),
@@ -95,27 +110,27 @@ const config = {
               {
                 label: "Coding guide",
                 to: "community/coding-guide"
-              },  
+              },
               {
                 label: "Testing guide",
                 to: "community/testing"
-              },  
+              },
               {
                 label: "Issue report guide",
                 to: "community/issue-report"
-              },  
+              },
               {
                 label: "Release guide",
                 to: "community/release-guide"
-              },  
+              },
               {
                 label: "Presentations",
                 to: "community/presentations"
-              },  
+              },
               {
                 label: "BookKeeper proposals (BP)",
                 to: "community/bookkeeper-proposals"
-              },  
+              },
             ]
           },
           {
@@ -235,7 +250,7 @@ const config = {
           ]
         },
         {
-          
+
           title: 'Project',
           items: [
             {
@@ -264,7 +279,7 @@ const config = {
             }
           ]
         }
-     
+
       ],
     },
 
@@ -272,7 +287,7 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
-      
+
     }),
     customFields: variables
 };

@@ -140,6 +140,7 @@ public class ClientConfiguration extends AbstractConfiguration<ClientConfigurati
     protected static final String BOOKIE_ERROR_THRESHOLD_PER_INTERVAL = "bookieErrorThresholdPerInterval";
     protected static final String BOOKIE_QUARANTINE_TIME_SECONDS = "bookieQuarantineTimeSeconds";
     protected static final String BOOKIE_QUARANTINE_RATIO = "bookieQuarantineRatio";
+    protected static final String BOOKIE_CONNECTION_ERROR_QUARANTINE_ENABLED = "bookieConnectionErrorQuarantineEnabled";
 
     // Bookie info poll interval
     protected static final String DISK_WEIGHT_BASED_PLACEMENT_ENABLED = "diskWeightBasedPlacementEnabled";
@@ -203,6 +204,11 @@ public class ClientConfiguration extends AbstractConfiguration<ClientConfigurati
 
     //For batch read api, it the batch read is not stable, we can fail back to single read by this config.
     protected static final String BATCH_READ_ENABLED = "batchReadEnabled";
+
+    // SO_KEEPALIVE related configurations
+    public static final String TCP_KEEPIDLE = "tcpKeepIdle";
+    public static final String TCP_KEEPINTVL = "tcpKeepIntvl";
+    public static final String TCP_KEEPCNT = "tcpKeepCnt";
 
     /**
      * Construct a default client-side configuration.
@@ -1451,6 +1457,28 @@ public class ClientConfiguration extends AbstractConfiguration<ClientConfigurati
         return this;
     }
 
+
+    /**
+     * Set if count the bookie connecting error into the quarantine condition. If this is enabled, the connection
+     * error will be counted into the BookieErrorThresholdPerInterval. So be careful to set the quarantine time.
+     *
+     * @param enabled
+     * @return
+     */
+    public ClientConfiguration setBookieConnectionErrorQuarantineEnabled(boolean enabled) {
+        setProperty(BOOKIE_CONNECTION_ERROR_QUARANTINE_ENABLED, enabled);
+        return this;
+    }
+
+    /**
+     * Get if count the bookie connecting error into the quarantine condition.
+     *
+     * @return
+     */
+    public boolean getBookieConnectionErrorQuarantineEnabled() {
+        return getBoolean(BOOKIE_CONNECTION_ERROR_QUARANTINE_ENABLED, false);
+    }
+
     /**
      * Get the time for which a bookie will be quarantined.
      *
@@ -2082,6 +2110,60 @@ public class ClientConfiguration extends AbstractConfiguration<ClientConfigurati
 
     public boolean isBatchReadEnabled() {
         return getBoolean(BATCH_READ_ENABLED, true);
+    }
+
+    /**
+     * Set TCP_KEEPIDLE value for SO_KEEPALIVE.
+     * @param keepIdle time in seconds
+     * @return client configuration
+     */
+    public ClientConfiguration setTcpKeepIdle(int keepIdle) {
+        setProperty(TCP_KEEPIDLE, keepIdle);
+        return this;
+    }
+
+    /**
+     * Get TCP_KEEPIDLE value for SO_KEEPALIVE.
+     * @return time in seconds, -1 means use system default
+     */
+    public int getTcpKeepIdle() {
+        return getInt(TCP_KEEPIDLE, -1);
+    }
+
+    /**
+     * Set TCP_KEEPINTVL value for SO_KEEPALIVE.
+     * @param keepIntvl time in seconds
+     * @return client configuration
+     */
+    public ClientConfiguration setTcpKeepIntvl(int keepIntvl) {
+        setProperty(TCP_KEEPINTVL, keepIntvl);
+        return this;
+    }
+
+    /**
+     * Get TCP_KEEPINTVL value for SO_KEEPALIVE.
+     * @return time in seconds, -1 means use system default
+     */
+    public int getTcpKeepIntvl() {
+        return getInt(TCP_KEEPINTVL, -1);
+    }
+
+    /**
+     * Set TCP_KEEPCNT value for SO_KEEPALIVE.
+     * @param keepCnt count
+     * @return client configuration
+     */
+    public ClientConfiguration setTcpKeepCnt(int keepCnt) {
+        setProperty(TCP_KEEPCNT, keepCnt);
+        return this;
+    }
+
+    /**
+     * Get TCP_KEEPCNT value for SO_KEEPALIVE.
+     * @return count, -1 means use system default
+     */
+    public int getTcpKeepCnt() {
+        return getInt(TCP_KEEPCNT, -1);
     }
 
     @Override

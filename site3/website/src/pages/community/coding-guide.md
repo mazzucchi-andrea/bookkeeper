@@ -50,7 +50,7 @@ Please log the _stack traces_ at **ERROR** level, but never at **INFO** level or
 
 ### Monitoring
 
-* Apache BookKeeper uses a pluggable [StatsProvider](https://github.com/apache/bookkeeper/tree/master/stats/bookkeeper-stats-providers) on exporting metrics
+* Apache BookKeeper uses a pluggable [StatsProvider]({{site.github_master}}/stats/bookkeeper-stats-providers) on exporting metrics
 * Any new features should come with appropriate metrics for monitoring the feature is working correctly.
 * Those metrics should be taken seriously and only export useful metrics that would be used on production on monitoring/alerting healthy of the system, or troubleshooting problems.
 
@@ -83,3 +83,17 @@ Apache BookKeeper is a low latency system. So it is implemented as a purely asyn
 ### Backwards Compatibility
 * Wire protocol should support backwards compatibility to enable no-downtime upgrades. This means the servers **MUST** be able to support requests from both old and new clients simultaneously.
 * Metadata formats and data formats should support backwards compatibility.
+
+### CI Workflow Management with BookKeeper Bot
+
+To facilitate easier CI workflow management and improve contributor experience, Apache BookKeeper utilizes a GitHub Actions bot ("BookKeeper Bot") that enables maintainers and contributors to rerun or cancel workflows directly via PR comments.
+
+**Usage Guidelines:**
+- The bot is triggered when a PR comment contains `/bkbot`.
+- Supported commands:
+    - `/bkbot rerun`: Reruns the latest failed, cancelled, timed out, or skipped workflow runs for the PR head SHA.
+    - `/bkbot rerun <keyword>`: Reruns jobs in the latest runs whose name matches the specified keyword.
+    - `/bkbot stop` or `/bkbot cancel`: Cancels all running (queued/in_progress) workflow runs associated with the PR.
+- The bot cannot rerun jobs from workflows that are currently running.
+
+Using these commands streamlines workflow/job management, reduces manual effort, and helps to address CI failures caused by infrastructure flakiness. Please use the bot commands as appropriate to manage CI jobs related to your PRs.

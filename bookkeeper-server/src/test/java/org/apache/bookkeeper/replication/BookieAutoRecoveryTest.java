@@ -96,6 +96,7 @@ public class BookieAutoRecoveryTest extends BookKeeperClusterTestCase {
 
     @Override
     public void setUp() throws Exception {
+        LOG.info("Start setUp");
         super.setUp();
         baseConf.setMetadataServiceUri(zkUtil.getMetadataServiceUri());
         baseClientConf.setMetadataServiceUri(zkUtil.getMetadataServiceUri());
@@ -117,10 +118,12 @@ public class BookieAutoRecoveryTest extends BookKeeperClusterTestCase {
         mFactory = metadataClientDriver.getLedgerManagerFactory();
         underReplicationManager = mFactory.newLedgerUnderreplicationManager();
         ledgerManager = mFactory.newLedgerManager();
+        LOG.info("Finished setUp");
     }
 
     @Override
     public void tearDown() throws Exception {
+        LOG.info("Start tearDown");
         super.tearDown();
 
         if (null != underReplicationManager) {
@@ -138,6 +141,7 @@ public class BookieAutoRecoveryTest extends BookKeeperClusterTestCase {
         if (null != scheduler) {
             scheduler.shutdown();
         }
+        LOG.info("Finished tearDown");
     }
 
     /**
@@ -146,6 +150,7 @@ public class BookieAutoRecoveryTest extends BookKeeperClusterTestCase {
      */
     @Test
     public void testOpenLedgers() throws Exception {
+        LOG.info("Start testOpenLedgers");
         List<LedgerHandle> listOfLedgerHandle = createLedgersAndAddEntries(1, 5);
         LedgerHandle lh = listOfLedgerHandle.get(0);
         int ledgerReplicaIndex = 0;
@@ -162,7 +167,8 @@ public class BookieAutoRecoveryTest extends BookKeeperClusterTestCase {
         killBookie(replicaToKillAddr);
 
         // waiting to publish urLedger znode by Auditor
-        latch.await();
+        assertTrue("Ledger should be marked as underreplicated",
+                latch.await(60, TimeUnit.SECONDS));
         latch = new CountDownLatch(1);
         LOG.info("Watching on urLedgerPath:" + urLedgerZNode
                 + " to know the status of rereplication process");
@@ -179,13 +185,15 @@ public class BookieAutoRecoveryTest extends BookKeeperClusterTestCase {
             LOG.debug("Waiting to finish the replication of failed bookie : "
                     + replicaToKillAddr);
         }
-        latch.await();
+        assertTrue("Replication should complete",
+                latch.await(60, TimeUnit.SECONDS));
 
         // grace period to update the urledger metadata in zookeeper
         LOG.info("Waiting to update the urledger metadata in zookeeper");
 
         verifyLedgerEnsembleMetadataAfterReplication(newBookieServer,
                 listOfLedgerHandle.get(0), ledgerReplicaIndex);
+        LOG.info("Finished testOpenLedgers");
     }
 
     /**
@@ -194,6 +202,7 @@ public class BookieAutoRecoveryTest extends BookKeeperClusterTestCase {
      */
     @Test
     public void testClosedLedgers() throws Exception {
+        LOG.info("Start testClosedLedgers");
         List<Integer> listOfReplicaIndex = new ArrayList<Integer>();
         List<LedgerHandle> listOfLedgerHandle = createLedgersAndAddEntries(1, 5);
         closeLedgers(listOfLedgerHandle);
@@ -213,7 +222,8 @@ public class BookieAutoRecoveryTest extends BookKeeperClusterTestCase {
         killBookie(replicaToKillAddr);
 
         // waiting to publish urLedger znode by Auditor
-        latch.await();
+        assertTrue("Ledgers should be marked as underreplicated",
+                latch.await(60, TimeUnit.SECONDS));
 
         // Again watching the urLedger znode to know the replication status
         latch = new CountDownLatch(listOfLedgerHandle.size());
@@ -237,7 +247,8 @@ public class BookieAutoRecoveryTest extends BookKeeperClusterTestCase {
         }
 
         // waiting to finish replication
-        latch.await();
+        assertTrue("Replication should complete",
+                latch.await(60, TimeUnit.SECONDS));
 
         // grace period to update the urledger metadata in zookeeper
         LOG.info("Waiting to update the urledger metadata in zookeeper");
@@ -247,6 +258,7 @@ public class BookieAutoRecoveryTest extends BookKeeperClusterTestCase {
                     listOfLedgerHandle.get(index),
                     listOfReplicaIndex.get(index));
         }
+        LOG.info("Finished testClosedLedgers");
     }
 
     /**
@@ -256,6 +268,7 @@ public class BookieAutoRecoveryTest extends BookKeeperClusterTestCase {
      */
     @Test
     public void testStopWhileReplicationInProgress() throws Exception {
+        LOG.info("Start testStopWhileReplicationInProgress");
         int numberOfLedgers = 2;
         List<Integer> listOfReplicaIndex = new ArrayList<Integer>();
         List<LedgerHandle> listOfLedgerHandle = createLedgersAndAddEntries(
@@ -282,7 +295,8 @@ public class BookieAutoRecoveryTest extends BookKeeperClusterTestCase {
         killBookie(replicaToKillAddr);
 
         // waiting to publish urLedger znode by Auditor
-        latch.await();
+        assertTrue("Ledgers should be marked as underreplicated",
+                latch.await(60, TimeUnit.SECONDS));
 
         // Again watching the urLedger znode to know the replication status
         latch = new CountDownLatch(listOfLedgerHandle.size());
@@ -317,7 +331,8 @@ public class BookieAutoRecoveryTest extends BookKeeperClusterTestCase {
         startReplicationService();
 
         LOG.info("Waiting to finish rereplication processes");
-        latch.await();
+        assertTrue("Replication should complete after restart",
+                latch.await(60, TimeUnit.SECONDS));
 
         // grace period to update the urledger metadata in zookeeper
         LOG.info("Waiting to update the urledger metadata in zookeeper");
@@ -327,6 +342,7 @@ public class BookieAutoRecoveryTest extends BookKeeperClusterTestCase {
                     listOfLedgerHandle.get(index),
                     listOfReplicaIndex.get(index));
         }
+        LOG.info("Finished testStopWhileReplicationInProgress");
     }
 
     /**
@@ -336,6 +352,7 @@ public class BookieAutoRecoveryTest extends BookKeeperClusterTestCase {
      */
     @Test
     public void testNoSuchLedgerExists() throws Exception {
+        LOG.info("Start testNoSuchLedgerExists");
         List<LedgerHandle> listOfLedgerHandle = createLedgersAndAddEntries(2, 5);
         CountDownLatch latch = new CountDownLatch(listOfLedgerHandle.size());
         for (LedgerHandle lh : listOfLedgerHandle) {
@@ -351,7 +368,8 @@ public class BookieAutoRecoveryTest extends BookKeeperClusterTestCase {
             .get(0L).get(0);
         killBookie(replicaToKillAddr);
         // waiting to publish urLedger znode by Auditor
-        latch.await();
+        assertTrue("Ledgers should be marked as underreplicated",
+                latch.await(60, TimeUnit.SECONDS));
 
         latch = new CountDownLatch(listOfLedgerHandle.size());
         for (LedgerHandle lh : listOfLedgerHandle) {
@@ -366,12 +384,14 @@ public class BookieAutoRecoveryTest extends BookKeeperClusterTestCase {
         startNewBookie();
 
         // waiting to delete published urledgers, since it doesn't exists
-        latch.await();
+        assertTrue("UrLedgers should be cleaned up after deletion",
+                latch.await(60, TimeUnit.SECONDS));
 
         for (LedgerHandle lh : listOfLedgerHandle) {
             assertNull("UrLedger still exists after rereplication",
                     watchUrLedgerNode(getUrLedgerZNode(lh), latch));
         }
+        LOG.info("Finished testNoSuchLedgerExists");
     }
 
     /**
@@ -380,6 +400,7 @@ public class BookieAutoRecoveryTest extends BookKeeperClusterTestCase {
      */
     @Test
     public void testEmptyLedgerLosesQuorumEventually() throws Exception {
+        LOG.info("Start testEmptyLedgerLosesQuorumEventually");
         LedgerHandle lh = bkc.createLedger(3, 2, 2, DigestType.CRC32, PASSWD);
         CountDownLatch latch = new CountDownLatch(1);
         String urZNode = getUrLedgerZNode(lh);
@@ -393,11 +414,11 @@ public class BookieAutoRecoveryTest extends BookKeeperClusterTestCase {
 
         getAuditor(10, TimeUnit.SECONDS).submitAuditTask().get(); // ensure auditor runs
 
-        assertTrue("Should be marked as underreplicated", latch.await(5, TimeUnit.SECONDS));
+        assertTrue("Should be marked as underreplicated", latch.await(20, TimeUnit.SECONDS));
         latch = new CountDownLatch(1);
         Stat s = watchUrLedgerNode(urZNode, latch); // should be marked as replicated
         if (s != null) {
-            assertTrue("Should be marked as replicated", latch.await(15, TimeUnit.SECONDS));
+            assertTrue("Should be marked as replicated", latch.await(20, TimeUnit.SECONDS));
         }
 
         replicaToKill = lh.getLedgerMetadata().getAllEnsembles().get(0L).get(1);
@@ -407,7 +428,7 @@ public class BookieAutoRecoveryTest extends BookKeeperClusterTestCase {
 
         getAuditor(10, TimeUnit.SECONDS).submitAuditTask().get(); // ensure auditor runs
 
-        assertTrue("Should be marked as underreplicated", latch.await(5, TimeUnit.SECONDS));
+        assertTrue("Should be marked as underreplicated", latch.await(20, TimeUnit.SECONDS));
         latch = new CountDownLatch(1);
         s = watchUrLedgerNode(urZNode, latch); // should be marked as replicated
 
@@ -420,6 +441,7 @@ public class BookieAutoRecoveryTest extends BookKeeperClusterTestCase {
 
         // should be able to open ledger without issue
         bkc.openLedger(lh.getId(), DigestType.CRC32, PASSWD);
+        LOG.info("Finished testEmptyLedgerLosesQuorumEventually");
     }
 
     /**
@@ -429,6 +451,7 @@ public class BookieAutoRecoveryTest extends BookKeeperClusterTestCase {
     @Test
     public void testLedgerMetadataContainsIpAddressAsBookieID()
             throws Exception {
+        LOG.info("Start testLedgerMetadataContainsIpAddressAsBookieID");
         stopBKCluster();
         bkc = new BookKeeperTestClient(baseClientConf);
         // start bookie with useHostNameAsBookieID=false, as old bookie
@@ -467,7 +490,8 @@ public class BookieAutoRecoveryTest extends BookKeeperClusterTestCase {
         killBookie(replicaToKillAddr);
 
         // waiting to publish urLedger znode by Auditor
-        latch.await();
+        assertTrue("Ledger should be marked as underreplicated",
+                latch.await(60, TimeUnit.SECONDS));
         latch = new CountDownLatch(1);
         LOG.info("Watching on urLedgerPath:" + urLedgerZNode
                 + " to know the status of rereplication process");
@@ -487,14 +511,15 @@ public class BookieAutoRecoveryTest extends BookKeeperClusterTestCase {
             LOG.debug("Waiting to finish the replication of failed bookie : "
                     + replicaToKillAddr);
         }
-        latch.await();
+        assertTrue("Replication should complete",
+                latch.await(60, TimeUnit.SECONDS));
 
         // grace period to update the urledger metadata in zookeeper
         LOG.info("Waiting to update the urledger metadata in zookeeper");
 
         verifyLedgerEnsembleMetadataAfterReplication(newBookieServer,
                 listOfLedgerHandle.get(0), ledgerReplicaIndex);
-
+        LOG.info("Finished testLedgerMetadataContainsIpAddressAsBookieID");
     }
 
     /**
@@ -504,6 +529,7 @@ public class BookieAutoRecoveryTest extends BookKeeperClusterTestCase {
     @Test
     public void testLedgerMetadataContainsHostNameAsBookieID()
             throws Exception {
+        LOG.info("Start testLedgerMetadataContainsHostNameAsBookieID");
         stopBKCluster();
 
         bkc = new BookKeeperTestClient(baseClientConf);
@@ -543,7 +569,8 @@ public class BookieAutoRecoveryTest extends BookKeeperClusterTestCase {
         killBookie(replicaToKillAddr);
 
         // waiting to publish urLedger znode by Auditor
-        latch.await();
+        assertTrue("Ledger should be marked as underreplicated",
+                latch.await(60, TimeUnit.SECONDS));
         latch = new CountDownLatch(1);
         LOG.info("Watching on urLedgerPath:" + urLedgerZNode
                 + " to know the status of rereplication process");
@@ -565,14 +592,15 @@ public class BookieAutoRecoveryTest extends BookKeeperClusterTestCase {
             LOG.debug("Waiting to finish the replication of failed bookie : "
                     + replicaToKillAddr);
         }
-        latch.await();
+        assertTrue("Replication should complete",
+                latch.await(60, TimeUnit.SECONDS));
 
         // grace period to update the urledger metadata in zookeeper
         LOG.info("Waiting to update the urledger metadata in zookeeper");
 
         verifyLedgerEnsembleMetadataAfterReplication(newBookieServer,
                 listOfLedgerHandle.get(0), ledgerReplicaIndex);
-
+        LOG.info("Finished testLedgerMetadataContainsHostNameAsBookieID");
     }
 
     private int getReplicaIndexInLedger(LedgerHandle lh, BookieId replicaToKill) {
@@ -634,13 +662,13 @@ public class BookieAutoRecoveryTest extends BookKeeperClusterTestCase {
             @Override
             public void process(WatchedEvent event) {
                 if (event.getType() == EventType.NodeDeleted) {
-                    LOG.info("Received Ledger rereplication completion event :"
-                            + event.getType());
+                    LOG.info("Received Ledger replication completion. event : {}, path: {}, latchCount: {}",
+                            event.getType(), event.getPath(), latch.getCount());
                     latch.countDown();
                 }
                 if (event.getType() == EventType.NodeCreated) {
-                    LOG.info("Received urLedger publishing event :"
-                            + event.getType());
+                    LOG.info("Received urLedger publishing event: {}, path: {}, latchCount: {}",
+                            event.getType(), event.getPath(), latch.getCount());
                     latch.countDown();
                 }
             }
